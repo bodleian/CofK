@@ -1,4 +1,0 @@
-CofK
-====
-
-Cultures Of Knowledge
