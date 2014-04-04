@@ -1,0 +1,59 @@
+<template id="section" xmlns="">
+<section id="personalLife" title="Basic Data">
+<group id="personalName"/>
+<group id="birth"/>
+<group id="death"/>
+<group id="familyRelationships"/>
+
+
+</section>
+<section id="education" title="Education">
+<group id="UniversityMatriculation"/>
+<group id="InclusionClassList" />
+<group id="Disputation" />
+<group id="PersonalTestimony" />
+<group id="PromotionToDegree" />
+<group id="Study" />
+<group id="Teaching"/>
+
+</section>
+<section id="career" title="Career">
+<group id="employmentLegalProfession" />
+<group id="employmentMedicalProfession" />
+<group id="employment" />
+<group id="membershipProfessionalBody" />
+<group id="disqualification" />
+</section>
+<section id="socialContacts" title="Contacts">
+<group id="gift" />
+<group id="trade" />
+<group id="contract" />
+<group id="dedication" />
+<group id="inclusionAlbumAmicorum" />
+<group id="exchangeOccasionalVerse" />
+<group id="collaboration" />
+<group id="travel" />
+<group id="socialVisit" />
+<group id="meeting" />
+<group id="introduction" />
+<group id="acquaintance" />
+<group id="correspondence" />
+<group id="friendship"/>
+</section>
+<section id="locationHistory" title="Location">
+<group id="location" />
+</section>
+<section id="learnedProduction" title="Learned Activity" >
+<group id="createWork" />
+<group id="authorWork" />
+<group id="contributeWork" />
+<group id="dedicateWork" />
+<group id="dedicateItem" />
+<group id="printWork" />
+<group id="publishWork" />
+<group id="research" />
+<group id="salon" />
+<group id="holdOfficeLearnedOrganisation"/>
+<group id="membershipLearnedOrganisation"/>
+</section>
+</template>
