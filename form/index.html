@@ -1,0 +1,3165 @@
+<?xml version="1.0" encoding="UTF-8"?><html>
+   <head>
+      <meta charset="utf-8"></meta>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+      <title>Prosopography Input Form</title>
+      <link rel="stylesheet" href="../f5/css/foundation.css"></link>
+      <script src="../f5/js/vendor/modernizr.js"></script>
+      <script src="./js/form.js"></script>
+      <script src="http://d3js.org/d3.v3.min.js"></script>
+      <link rel="stylesheet" href="css/style.css"></link>
+   </head>
+   <body>
+      <form method="get">
+         <div class="off-canvas-wrap" data-offcanvas="">
+            <div class="inner-wrap">
+               <aside class="left-off-canvas-menu">
+                  <ul>
+                     <li class="active">
+                        <a href="#panel1a">Input Form</a>
+                     </li>
+                     <li>
+                        <a href="#panel2a">Load Data</a>
+                     </li>
+                     <li>
+                        <a href="#panel3a">Save Report</a>
+                     </li>
+                     <li>
+                        <a href="#panel4a">Validate Form</a>
+                     </li>
+                     <li>
+                        <a href="#panel5a">Help</a>
+                     </li>
+                  </ul>
+               </aside>
+               <p>
+                  <a class="left-off-canvas-toggle" href="#">Menu</a>
+               </p>
+               <div class="tabs-content">
+                  <div class="content active" id="panel1a">
+                     <div class="row">
+                        <dl class="tabs" data-tab="">
+                           <dd>
+                              <a href="#personalLife" class="active">Basic Data</a>
+                           </dd>
+                           <dd>
+                              <a href="#locationHistory" class="">Location</a>
+                           </dd>
+                           <dd>
+                              <a href="#education" class="">Education</a>
+                           </dd>
+                           <dd>
+                              <a href="#socialContacts" class="">Contacts</a>
+                           </dd>
+                           <dd>
+                              <a href="#statusChange" class="">Social Status Change</a>
+                           </dd>
+                           <dd>
+                              <a href="#learnedProduction" class="">Learned Activity</a>
+                           </dd>
+                           <dd>
+                              <a href="#career" class="">Career</a>
+                           </dd>
+                           <dd>
+                              <a href="#ecclesiastic" class="">Ecclesiastic Activity</a>
+                           </dd>
+                           <dd>
+                              <a href="#political" class="">Political Activity</a>
+                           </dd>
+                           <dd>
+                              <a href="#provenance" class="">Provenance</a>
+                           </dd>
+                        </dl>
+                        <div class="tabs-content">
+                           <div class="content " id="provenance">
+                              <fieldset>
+                                 <legend>Provenance of this report</legend>
+                              </fieldset>
+                           </div>
+                           <div class="content active" id="personalLife">
+                              <dl class="sub-nav">
+                                 <dt>Context:</dt>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#personalName')">Personal Name</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#birth')">Birth</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#death')">Death</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#familyRelationships')">Family Relationships</a>
+                                 </dd>
+                              </dl>
+                              <fieldset id="personalName">
+                                 <legend>Personal Name</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphpersonalName()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgpersonalName", "context-personalName"); 
+                                    
+                                    
+                                    graph.addNode('Name');
+                                    graph.addNode('NameComponent');
+                                    graph.addNode('DatabaseSystem');
+                                     graph.addLink('Name','NameComponent','');
+                                     graph.addLink('Name','DatabaseSystem','');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p>A person's name.</p>
+                                 <div class="form-group">
+                                    <label for="personalName-nameComponent">Name Component</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-personalName-nameComponent',  'context-personalName', 'nameComponent')" id="personalName-nameComponent" placeholder=""></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="personalName-">Database System</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-personalName-',  'context-personalName', '')" id="personalName-" placeholder=""></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgpersonalName"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul>
+                                    <li>Name  
+                                       <span class="assertion a-personalName-Name"></span>    
+                                       <span class="assertion a-personalName-NameComponent"></span>
+                                    </li>
+                                    <li>Name  
+                                       <span class="assertion a-personalName-Name"></span>    
+                                       <span class="assertion a-personalName-DatabaseSystem"></span>
+                                    </li>
+                                 </ul>
+                              </fieldset>
+                              <fieldset id="birth">
+                                 <legend>Birth</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphbirth()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgbirth", "context-birth"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    graph.addNode('birth');
+                                    graph.addNode('mother');
+                                    graph.addNode('child');
+                                    graph.addNode('father');
+                                     graph.addLink('birth','date','has date');
+                                     graph.addLink('birth','location','has location');
+                                     graph.addLink('birth','mother','associated with');
+                                     graph.addLink('birth','child','associated with');
+                                     graph.addLink('birth','father','associated with');
+                                     graph.addLink('mother','child','mother of');
+                                     graph.addLink('child','mother','has mother');
+                                     graph.addLink('child','father','has father');
+                                     graph.addLink('father','child','father of');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p>Description of a human birth.</p>
+                                 <div class="form-group">
+                                    <label for="birth-date">Date </label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-birth-date',  'context-birth', 'date')" id="birth-date" placeholder="Enter date "></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="birth-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-birth-location',  'context-birth', 'location')" id="birth-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="birth-child">Child</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-birth-child',  'context-birth', 'child')" id="birth-child" placeholder=""></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="birth-mother">Mother</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-birth-mother',  'context-birth', 'mother')" id="birth-mother" placeholder=""></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="birth-father">Father</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-birth-father',  'context-birth', 'father')" id="birth-father" placeholder=""></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgbirth"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul>
+                                    <li>birth  
+                                       <span class="assertion a-birth-birth"></span>  has date  
+                                       <span class="assertion a-birth-date"></span>
+                                    </li>
+                                    <li>birth  
+                                       <span class="assertion a-birth-birth"></span>  has location  
+                                       <span class="assertion a-birth-location"></span>
+                                    </li>
+                                    <li>birth  
+                                       <span class="assertion a-birth-birth"></span>  associated with  
+                                       <span class="assertion a-birth-mother"></span>
+                                    </li>
+                                    <li>birth  
+                                       <span class="assertion a-birth-birth"></span>  associated with  
+                                       <span class="assertion a-birth-child"></span>
+                                    </li>
+                                    <li>birth  
+                                       <span class="assertion a-birth-birth"></span>  associated with  
+                                       <span class="assertion a-birth-father"></span>
+                                    </li>
+                                    <li>mother  
+                                       <span class="assertion a-birth-mother"></span>  mother of  
+                                       <span class="assertion a-birth-child"></span>
+                                    </li>
+                                    <li>child  
+                                       <span class="assertion a-birth-child"></span>  has mother  
+                                       <span class="assertion a-birth-mother"></span>
+                                    </li>
+                                    <li>child  
+                                       <span class="assertion a-birth-child"></span>  has father  
+                                       <span class="assertion a-birth-father"></span>
+                                    </li>
+                                    <li>father  
+                                       <span class="assertion a-birth-father"></span>  father of  
+                                       <span class="assertion a-birth-child"></span>
+                                    </li>
+                                 </ul>
+                              </fieldset>
+                              <fieldset id="death">
+                                 <legend>Death</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphdeath()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgdeath", "context-death"); 
+                                    
+                                    
+                                    graph.addNode('death');
+                                    graph.addNode('deceased');
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    graph.addNode('causeOfDeath');
+                                     graph.addLink('death','date','has date');
+                                     graph.addLink('death','location','has location');
+                                     graph.addLink('death','deceased','associated with');
+                                     graph.addLink('death','causeOfDeath','has cause');
+                                     graph.addLink('deceased','causeOfDeath','has cause of death');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p>Description of the death of a person.</p>
+                                 <div class="form-group">
+                                    <label for="death-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-death-date',  'context-death', 'date')" id="death-date" placeholder=""></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="death-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-death-location',  'context-death', 'location')" id="death-location" placeholder=""></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="death-causeOfDeath">Cause of Death</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-death-causeOfDeath',  'context-death', 'causeOfDeath')" id="death-causeOfDeath" placeholder=""></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="death-deceased">Person Deceased</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-death-deceased',  'context-death', 'deceased')" id="death-deceased" placeholder=""></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgdeath"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul>
+                                    <li>death  
+                                       <span class="assertion a-death-death"></span>  has date  
+                                       <span class="assertion a-death-date"></span>
+                                    </li>
+                                    <li>death  
+                                       <span class="assertion a-death-death"></span>  has location  
+                                       <span class="assertion a-death-location"></span>
+                                    </li>
+                                    <li>death  
+                                       <span class="assertion a-death-death"></span>  associated with  
+                                       <span class="assertion a-death-deceased"></span>
+                                    </li>
+                                    <li>death  
+                                       <span class="assertion a-death-death"></span>  has cause  
+                                       <span class="assertion a-death-causeOfDeath"></span>
+                                    </li>
+                                    <li>deceased  
+                                       <span class="assertion a-death-deceased"></span>  has cause of death  
+                                       <span class="assertion a-death-causeOfDeath"></span>
+                                    </li>
+                                 </ul>
+                              </fieldset>
+                              <fieldset id="familyRelationships">
+                                 <legend>Family Relationships</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphfamilyRelationships()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgfamilyRelationships", "context-familyRelationships"); 
+                                    
+                                    
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p>This context describes relationships of a person to family
+                                    			members.
+                                 </p>
+                                 <h4>Graph</h4>
+                                 <svg id="svgfamilyRelationships"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                           </div>
+                           <div class="content " id="locationHistory">
+                              <dl class="sub-nav">
+                                 <dt>Context:</dt>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#Displacement')">Displacement</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#Emmigration')">Emmigration</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#Exile')">Exile</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#Immigration')">Immigration</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#Residence')">Residence</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#Travel')">Travel</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#Visit')">Visit</a>
+                                 </dd>
+                              </dl>
+                              <fieldset id="Displacement">
+                                 <legend>Displacement</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphDisplacement()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgDisplacement", "context-Displacement"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p>Description of </p>
+                                 <div class="form-group">
+                                    <label for="Displacement-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Displacement-date',  'context-Displacement', 'date')" id="Displacement-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="Displacement-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Displacement-location',  'context-Displacement', 'location')" id="Displacement-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="Displacement-"></label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Displacement-',  'context-Displacement', '')" id="Displacement-" placeholder=""></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgDisplacement"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="Emmigration">
+                                 <legend>Emmigration</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphEmmigration()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgEmmigration", "context-Emmigration"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p>Description of </p>
+                                 <div class="form-group">
+                                    <label for="Emmigration-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Emmigration-date',  'context-Emmigration', 'date')" id="Emmigration-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="Emmigration-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Emmigration-location',  'context-Emmigration', 'location')" id="Emmigration-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="Emmigration-"></label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Emmigration-',  'context-Emmigration', '')" id="Emmigration-" placeholder=""></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgEmmigration"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="Exile">
+                                 <legend>Exile</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphExile()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgExile", "context-Exile"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p>Description of </p>
+                                 <div class="form-group">
+                                    <label for="Exile-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Exile-date',  'context-Exile', 'date')" id="Exile-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="Exile-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Exile-location',  'context-Exile', 'location')" id="Exile-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="Exile-"></label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Exile-',  'context-Exile', '')" id="Exile-" placeholder=""></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgExile"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="Immigration">
+                                 <legend>Immigration</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphImmigration()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgImmigration", "context-Immigration"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p>Description of </p>
+                                 <div class="form-group">
+                                    <label for="Immigration-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Immigration-date',  'context-Immigration', 'date')" id="Immigration-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="Immigration-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Immigration-location',  'context-Immigration', 'location')" id="Immigration-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="Immigration-"></label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Immigration-',  'context-Immigration', '')" id="Immigration-" placeholder=""></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgImmigration"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="Residence">
+                                 <legend>Residence</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphResidence()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgResidence", "context-Residence"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p>Description of </p>
+                                 <div class="form-group">
+                                    <label for="Residence-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Residence-date',  'context-Residence', 'date')" id="Residence-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="Residence-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Residence-location',  'context-Residence', 'location')" id="Residence-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="Residence-"></label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Residence-',  'context-Residence', '')" id="Residence-" placeholder=""></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgResidence"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="Travel">
+                                 <legend>Travel</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphTravel()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgTravel", "context-Travel"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p>Description of </p>
+                                 <div class="form-group">
+                                    <label for="Travel-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Travel-date',  'context-Travel', 'date')" id="Travel-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="Travel-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Travel-location',  'context-Travel', 'location')" id="Travel-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="Travel-"></label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Travel-',  'context-Travel', '')" id="Travel-" placeholder=""></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgTravel"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="Visit">
+                                 <legend>Visit</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphVisit()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgVisit", "context-Visit"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p>Description of </p>
+                                 <div class="form-group">
+                                    <label for="Visit-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Visit-date',  'context-Visit', 'date')" id="Visit-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="Visit-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Visit-location',  'context-Visit', 'location')" id="Visit-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="Visit-"></label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Visit-',  'context-Visit', '')" id="Visit-" placeholder=""></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgVisit"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                           </div>
+                           <div class="content " id="education">
+                              <dl class="sub-nav">
+                                 <dt>Context:</dt>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#UniversityMatriculation')">University Matriculation</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#InclusionClassList')">Inclusion in Class List</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#Disputation')">Disputation</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#PersonalTestimony')">PersonalTestimony</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#PromotionToDegree')">Promotion to Degree</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#Study')">Study</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#Teaching')">Teaching</a>
+                                 </dd>
+                              </dl>
+                              <fieldset id="UniversityMatriculation">
+                                 <legend>University Matriculation</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphUniversityMatriculation()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgUniversityMatriculation", "context-UniversityMatriculation"); 
+                                    
+                                    
+                                    graph.addNode('universityMatriculation');
+                                    graph.addNode('date');
+                                    graph.addNode('matriculant');
+                                    graph.addNode('location');
+                                    graph.addNode('matriculationRegister');
+                                    graph.addNode('Entry');
+                                    graph.addNode('Name');
+                                     graph.addLink('universityMatriculation','date','has date');
+                                     graph.addLink('universityMatriculation','matriculant','associated with');
+                                     graph.addLink('universityMatriculation','matriculationRegister','used');
+                                     graph.addLink('universityMatriculation','Entry','generated');
+                                     graph.addLink('matriculant','location','has location');
+                                     graph.addLink('matriculant','Name','has name');
+                                     graph.addLink('matriculant','matriculationRegister','has entry in');
+                                     graph.addLink('matriculationRegister','Entry','has entry');
+                                     graph.addLink('Entry','matriculant','is entry for');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p>This context is concerned with the formal process of entering a university or
+                                    			of becoming eligible to enter by fulfilling certain academic requirements.
+                                 </p>
+                                 <div class="form-group">
+                                    <label for="UniversityMatriculation-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-UniversityMatriculation-date',  'context-UniversityMatriculation', 'date')" id="UniversityMatriculation-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="UniversityMatriculation-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-UniversityMatriculation-location',  'context-UniversityMatriculation', 'location')" id="UniversityMatriculation-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="UniversityMatriculation-matriculant">Matriculant</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-UniversityMatriculation-matriculant',  'context-UniversityMatriculation', 'matriculant')" id="UniversityMatriculation-matriculant" placeholder=""></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="UniversityMatriculation-matriculationRegister">MatriculationRegister</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-UniversityMatriculation-matriculationRegister',  'context-UniversityMatriculation', 'matriculationRegister')" id="UniversityMatriculation-matriculationRegister" placeholder="Enter matriculation register"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="UniversityMatriculation-Entry">Personal Name as Entered</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-UniversityMatriculation-Entry',  'context-UniversityMatriculation', 'Entry')" id="UniversityMatriculation-Entry" placeholder="Enter the personal name as entered in the matriculation register"></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgUniversityMatriculation"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul>
+                                    <li>universityMatriculation  
+                                       <span class="assertion a-UniversityMatriculation-universityMatriculation"></span>  has date  
+                                       <span class="assertion a-UniversityMatriculation-date"></span>
+                                    </li>
+                                    <li>universityMatriculation  
+                                       <span class="assertion a-UniversityMatriculation-universityMatriculation"></span>  associated with  
+                                       <span class="assertion a-UniversityMatriculation-matriculant"></span>
+                                    </li>
+                                    <li>universityMatriculation  
+                                       <span class="assertion a-UniversityMatriculation-universityMatriculation"></span>  used  
+                                       <span class="assertion a-UniversityMatriculation-matriculationRegister"></span>
+                                    </li>
+                                    <li>universityMatriculation  
+                                       <span class="assertion a-UniversityMatriculation-universityMatriculation"></span>  generated  
+                                       <span class="assertion a-UniversityMatriculation-Entry"></span>
+                                    </li>
+                                    <li>matriculant  
+                                       <span class="assertion a-UniversityMatriculation-matriculant"></span>  has location  
+                                       <span class="assertion a-UniversityMatriculation-location"></span>
+                                    </li>
+                                    <li>matriculant  
+                                       <span class="assertion a-UniversityMatriculation-matriculant"></span>  has name  
+                                       <span class="assertion a-UniversityMatriculation-Name"></span>
+                                    </li>
+                                    <li>matriculant  
+                                       <span class="assertion a-UniversityMatriculation-matriculant"></span>  has entry in  
+                                       <span class="assertion a-UniversityMatriculation-matriculationRegister"></span>
+                                    </li>
+                                    <li>matriculationRegister  
+                                       <span class="assertion a-UniversityMatriculation-matriculationRegister"></span>  has entry  
+                                       <span class="assertion a-UniversityMatriculation-Entry"></span>
+                                    </li>
+                                    <li>Entry  
+                                       <span class="assertion a-UniversityMatriculation-Entry"></span>  is entry for  
+                                       <span class="assertion a-UniversityMatriculation-matriculant"></span>
+                                    </li>
+                                 </ul>
+                              </fieldset>
+                              <fieldset id="InclusionClassList">
+                                 <legend>Inclusion in Class List</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphInclusionClassList()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgInclusionClassList", "context-InclusionClassList"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p>This context is concerned with the inclusion of a person's name in a class
+                                    			list. 
+                                 </p>
+                                 <div class="form-group">
+                                    <label for="InclusionClassList-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-InclusionClassList-date',  'context-InclusionClassList', 'date')" id="InclusionClassList-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="InclusionClassList-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-InclusionClassList-location',  'context-InclusionClassList', 'location')" id="InclusionClassList-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="InclusionClassList-student">Student</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-InclusionClassList-student',  'context-InclusionClassList', 'student')" id="InclusionClassList-student" placeholder=""></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="InclusionClassList-entry">Entry</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-InclusionClassList-entry',  'context-InclusionClassList', 'entry')" id="InclusionClassList-entry" placeholder=""></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="InclusionClassList-classlist">Class List</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-InclusionClassList-classlist',  'context-InclusionClassList', 'classlist')" id="InclusionClassList-classlist" placeholder=""></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgInclusionClassList"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="Disputation">
+                                 <legend>Disputation</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphDisputation()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgDisputation", "context-Disputation"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p> This context describes a disputation. From
+                                    			https://en.wikipedia.org/wiki/Disputation: In the scholastic system of education
+                                    of the
+                                    			Middle Ages, disputations (in Latin: disputationes, singular: disputatio) offered
+                                    a
+                                    			formalized method of debate designed to uncover and establish truths in theology
+                                    and in
+                                    			sciences. Fixed rules governed the process: they demanded dependence on traditional
+                                    			written authorities and the thorough understanding of each argument on each side.
+                                    
+                                 </p>
+                                 <div class="form-group">
+                                    <label for="Disputation-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Disputation-date',  'context-Disputation', 'date')" id="Disputation-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="Disputation-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Disputation-location',  'context-Disputation', 'location')" id="Disputation-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="Disputation-respondent">Respondent</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Disputation-respondent',  'context-Disputation', 'respondent')" id="Disputation-respondent" placeholder=""></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="Disputation-praeses">Praeses</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Disputation-praeses',  'context-Disputation', 'praeses')" id="Disputation-praeses" placeholder=""></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="Disputation-thesis">Thesis</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Disputation-thesis',  'context-Disputation', 'thesis')" id="Disputation-thesis" placeholder=""></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgDisputation"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="PersonalTestimony">
+                                 <legend>PersonalTestimony</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphPersonalTestimony()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgPersonalTestimony", "context-PersonalTestimony"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p></p>
+                                 <div class="form-group">
+                                    <label for="PersonalTestimony-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-PersonalTestimony-date',  'context-PersonalTestimony', 'date')" id="PersonalTestimony-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="PersonalTestimony-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-PersonalTestimony-location',  'context-PersonalTestimony', 'location')" id="PersonalTestimony-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="PersonalTestimony-testifier">Testifier</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-PersonalTestimony-testifier',  'context-PersonalTestimony', 'testifier')" id="PersonalTestimony-testifier" placeholder=""></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgPersonalTestimony"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="PromotionToDegree">
+                                 <legend>Promotion to Degree</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphPromotionToDegree()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgPromotionToDegree", "context-PromotionToDegree"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p></p>
+                                 <div class="form-group">
+                                    <label for="PromotionToDegree-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-PromotionToDegree-date',  'context-PromotionToDegree', 'date')" id="PromotionToDegree-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="PromotionToDegree-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-PromotionToDegree-location',  'context-PromotionToDegree', 'location')" id="PromotionToDegree-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="PromotionToDegree-awardingBody">Awarding Body</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-PromotionToDegree-awardingBody',  'context-PromotionToDegree', 'awardingBody')" id="PromotionToDegree-awardingBody" placeholder=""></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="PromotionToDegree-graduate">Graduate</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-PromotionToDegree-graduate',  'context-PromotionToDegree', 'graduate')" id="PromotionToDegree-graduate" placeholder=""></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgPromotionToDegree"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="Study">
+                                 <legend>Study</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphStudy()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgStudy", "context-Study"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p></p>
+                                 <div class="form-group">
+                                    <label for="Study-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Study-date',  'context-Study', 'date')" id="Study-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="Study-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Study-location',  'context-Study', 'location')" id="Study-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="Study-teachingInstitution">Teaching Institution</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Study-teachingInstitution',  'context-Study', 'teachingInstitution')" id="Study-teachingInstitution" placeholder=""></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="Study-student">Student</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Study-student',  'context-Study', 'student')" id="Study-student" placeholder=""></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="Study-teacher">Teacher</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Study-teacher',  'context-Study', 'teacher')" id="Study-teacher" placeholder=""></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgStudy"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="Teaching">
+                                 <legend>Teaching</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphTeaching()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgTeaching", "context-Teaching"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p></p>
+                                 <div class="form-group">
+                                    <label for="Teaching-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Teaching-date',  'context-Teaching', 'date')" id="Teaching-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="Teaching-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Teaching-location',  'context-Teaching', 'location')" id="Teaching-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="Teaching-teachingInstitution">Teaching Institution</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Teaching-teachingInstitution',  'context-Teaching', 'teachingInstitution')" id="Teaching-teachingInstitution" placeholder=""></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="Teaching-student">Student</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Teaching-student',  'context-Teaching', 'student')" id="Teaching-student" placeholder=""></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="Teaching-teacher">Teacher</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Teaching-teacher',  'context-Teaching', 'teacher')" id="Teaching-teacher" placeholder=""></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgTeaching"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                           </div>
+                           <div class="content " id="socialContacts">
+                              <dl class="sub-nav">
+                                 <dt>Context:</dt>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#gift')">Gift Giving</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#trade')">Trade</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#contract')">Contract</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#dedication')">Dedication of Work</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#inclusionAlbumAmicorum')">Inclusion in Album Amicorum</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#exchangeOccasionalVerse')">Exchange of Occasional Verse</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#collaboration')">Collaboration</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#socialVisit')">Social Visit</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#meeting')">Meeting</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#introduction')">Introduction</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#acquaintance')">Acquaintance</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#correspondence')">Correspondence</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#friendship')">Friendship</a>
+                                 </dd>
+                              </dl>
+                              <fieldset id="gift">
+                                 <legend>Gift Giving</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphgift()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svggift", "context-gift"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p></p>
+                                 <div class="form-group">
+                                    <label for="gift-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-gift-date',  'context-gift', 'date')" id="gift-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="gift-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-gift-location',  'context-gift', 'location')" id="gift-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svggift"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="trade">
+                                 <legend>Trade</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphtrade()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgtrade", "context-trade"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p></p>
+                                 <div class="form-group">
+                                    <label for="trade-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-trade-date',  'context-trade', 'date')" id="trade-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="trade-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-trade-location',  'context-trade', 'location')" id="trade-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgtrade"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="contract">
+                                 <legend>Contract</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphcontract()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgcontract", "context-contract"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p></p>
+                                 <div class="form-group">
+                                    <label for="contract-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-contract-date',  'context-contract', 'date')" id="contract-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="contract-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-contract-location',  'context-contract', 'location')" id="contract-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgcontract"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="dedication">
+                                 <legend>Dedication of Work</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphdedication()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgdedication", "context-dedication"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p></p>
+                                 <div class="form-group">
+                                    <label for="dedication-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-dedication-date',  'context-dedication', 'date')" id="dedication-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="dedication-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-dedication-location',  'context-dedication', 'location')" id="dedication-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgdedication"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="inclusionAlbumAmicorum">
+                                 <legend>Inclusion in Album Amicorum</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphinclusionAlbumAmicorum()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svginclusionAlbumAmicorum", "context-inclusionAlbumAmicorum"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p></p>
+                                 <div class="form-group">
+                                    <label for="inclusionAlbumAmicorum-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-inclusionAlbumAmicorum-date',  'context-inclusionAlbumAmicorum', 'date')" id="inclusionAlbumAmicorum-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="inclusionAlbumAmicorum-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-inclusionAlbumAmicorum-location',  'context-inclusionAlbumAmicorum', 'location')" id="inclusionAlbumAmicorum-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svginclusionAlbumAmicorum"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="exchangeOccasionalVerse">
+                                 <legend>Exchange of Occasional Verse</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphexchangeOccasionalVerse()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgexchangeOccasionalVerse", "context-exchangeOccasionalVerse"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p></p>
+                                 <div class="form-group">
+                                    <label for="exchangeOccasionalVerse-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-exchangeOccasionalVerse-date',  'context-exchangeOccasionalVerse', 'date')" id="exchangeOccasionalVerse-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="exchangeOccasionalVerse-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-exchangeOccasionalVerse-location',  'context-exchangeOccasionalVerse', 'location')" id="exchangeOccasionalVerse-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgexchangeOccasionalVerse"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="collaboration">
+                                 <legend>Collaboration</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphcollaboration()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgcollaboration", "context-collaboration"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p></p>
+                                 <div class="form-group">
+                                    <label for="collaboration-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-collaboration-date',  'context-collaboration', 'date')" id="collaboration-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="collaboration-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-collaboration-location',  'context-collaboration', 'location')" id="collaboration-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgcollaboration"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="socialVisit">
+                                 <legend>Social Visit</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphsocialVisit()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgsocialVisit", "context-socialVisit"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p></p>
+                                 <div class="form-group">
+                                    <label for="socialVisit-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-socialVisit-date',  'context-socialVisit', 'date')" id="socialVisit-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="socialVisit-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-socialVisit-location',  'context-socialVisit', 'location')" id="socialVisit-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgsocialVisit"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="meeting">
+                                 <legend>Meeting</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphmeeting()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgmeeting", "context-meeting"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p></p>
+                                 <div class="form-group">
+                                    <label for="meeting-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-meeting-date',  'context-meeting', 'date')" id="meeting-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="meeting-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-meeting-location',  'context-meeting', 'location')" id="meeting-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgmeeting"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="introduction">
+                                 <legend>Introduction</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphintroduction()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgintroduction", "context-introduction"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p></p>
+                                 <div class="form-group">
+                                    <label for="introduction-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-introduction-date',  'context-introduction', 'date')" id="introduction-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="introduction-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-introduction-location',  'context-introduction', 'location')" id="introduction-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgintroduction"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="acquaintance">
+                                 <legend>Acquaintance</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphacquaintance()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgacquaintance", "context-acquaintance"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p></p>
+                                 <div class="form-group">
+                                    <label for="acquaintance-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-acquaintance-date',  'context-acquaintance', 'date')" id="acquaintance-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="acquaintance-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-acquaintance-location',  'context-acquaintance', 'location')" id="acquaintance-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgacquaintance"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="correspondence">
+                                 <legend>Correspondence</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphcorrespondence()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgcorrespondence", "context-correspondence"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p></p>
+                                 <div class="form-group">
+                                    <label for="correspondence-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-correspondence-date',  'context-correspondence', 'date')" id="correspondence-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="correspondence-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-correspondence-location',  'context-correspondence', 'location')" id="correspondence-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgcorrespondence"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="friendship">
+                                 <legend>Friendship</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphfriendship()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgfriendship", "context-friendship"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p></p>
+                                 <div class="form-group">
+                                    <label for="friendship-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-friendship-date',  'context-friendship', 'date')" id="friendship-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="friendship-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-friendship-location',  'context-friendship', 'location')" id="friendship-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgfriendship"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                           </div>
+                           <div class="content " id="statusChange">
+                              <dl class="sub-nav">
+                                 <dt>Context:</dt>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#ennoble')">Ennoblement</a>
+                                 </dd>
+                              </dl>
+                              <fieldset id="ennoble">
+                                 <legend>Ennoblement</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphennoble()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgennoble", "context-ennoble"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    graph.addNode('ennoblement');
+                                     graph.addLink('ennoblement','date','');
+                                     graph.addLink('ennoblement','location','');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p>Description of a person's change in social status through ennoblement.</p>
+                                 <div class="form-group">
+                                    <label for="ennoble-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-ennoble-date',  'context-ennoble', 'date')" id="ennoble-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="ennoble-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-ennoble-location',  'context-ennoble', 'location')" id="ennoble-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="ennoble-"></label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-ennoble-',  'context-ennoble', '')" id="ennoble-" placeholder=""></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgennoble"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul>
+                                    <li>ennoblement  
+                                       <span class="assertion a-ennoble-ennoblement"></span>    
+                                       <span class="assertion a-ennoble-date"></span>
+                                    </li>
+                                    <li>ennoblement  
+                                       <span class="assertion a-ennoble-ennoblement"></span>    
+                                       <span class="assertion a-ennoble-location"></span>
+                                    </li>
+                                 </ul>
+                              </fieldset>
+                           </div>
+                           <div class="content " id="learnedProduction">
+                              <dl class="sub-nav">
+                                 <dt>Context:</dt>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#createWork')">Creation of a Creative Work</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#authorWork')">Authoring of a Creative Work</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#contributeWork')">Contribution to a Creative Work</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#dedicateWork')">Dedication of a Creative Work</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#dedicateItem')">Dedication of an Item</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#printWork')">Printing of a Creative Work</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#publishWork')">Publishing of a Creative Work</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#research')">Research</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#salon')">Salon</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#holdOfficeLearnedOrganisation')">Hold Office in a Learned Organisation</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#membershipLearnedOrganisation')">Membership of a Learned Organisation</a>
+                                 </dd>
+                              </dl>
+                              <fieldset id="createWork">
+                                 <legend>Creation of a Creative Work</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphcreateWork()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgcreateWork", "context-createWork"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p></p>
+                                 <div class="form-group">
+                                    <label for="createWork-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-createWork-date',  'context-createWork', 'date')" id="createWork-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="createWork-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-createWork-location',  'context-createWork', 'location')" id="createWork-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgcreateWork"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="authorWork">
+                                 <legend>Authoring of a Creative Work</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphauthorWork()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgauthorWork", "context-authorWork"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p></p>
+                                 <div class="form-group">
+                                    <label for="authorWork-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-authorWork-date',  'context-authorWork', 'date')" id="authorWork-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="authorWork-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-authorWork-location',  'context-authorWork', 'location')" id="authorWork-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgauthorWork"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="contributeWork">
+                                 <legend>Contribution to a Creative Work</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphcontributeWork()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgcontributeWork", "context-contributeWork"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p></p>
+                                 <div class="form-group">
+                                    <label for="contributeWork-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-contributeWork-date',  'context-contributeWork', 'date')" id="contributeWork-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="contributeWork-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-contributeWork-location',  'context-contributeWork', 'location')" id="contributeWork-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgcontributeWork"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="dedicateWork">
+                                 <legend>Dedication of a Creative Work</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphdedicateWork()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgdedicateWork", "context-dedicateWork"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p></p>
+                                 <div class="form-group">
+                                    <label for="dedicateWork-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-dedicateWork-date',  'context-dedicateWork', 'date')" id="dedicateWork-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="dedicateWork-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-dedicateWork-location',  'context-dedicateWork', 'location')" id="dedicateWork-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgdedicateWork"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="dedicateItem">
+                                 <legend>Dedication of an Item</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphdedicateItem()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgdedicateItem", "context-dedicateItem"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p></p>
+                                 <div class="form-group">
+                                    <label for="dedicateItem-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-dedicateItem-date',  'context-dedicateItem', 'date')" id="dedicateItem-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="dedicateItem-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-dedicateItem-location',  'context-dedicateItem', 'location')" id="dedicateItem-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgdedicateItem"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="printWork">
+                                 <legend>Printing of a Creative Work</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphprintWork()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgprintWork", "context-printWork"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p></p>
+                                 <div class="form-group">
+                                    <label for="printWork-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-printWork-date',  'context-printWork', 'date')" id="printWork-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="printWork-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-printWork-location',  'context-printWork', 'location')" id="printWork-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgprintWork"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="publishWork">
+                                 <legend>Publishing of a Creative Work</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphpublishWork()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgpublishWork", "context-publishWork"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p></p>
+                                 <div class="form-group">
+                                    <label for="publishWork-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-publishWork-date',  'context-publishWork', 'date')" id="publishWork-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="publishWork-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-publishWork-location',  'context-publishWork', 'location')" id="publishWork-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgpublishWork"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="research">
+                                 <legend>Research</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphresearch()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgresearch", "context-research"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p></p>
+                                 <div class="form-group">
+                                    <label for="research-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-research-date',  'context-research', 'date')" id="research-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="research-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-research-location',  'context-research', 'location')" id="research-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgresearch"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="salon">
+                                 <legend>Salon</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphsalon()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgsalon", "context-salon"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p></p>
+                                 <div class="form-group">
+                                    <label for="salon-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-salon-date',  'context-salon', 'date')" id="salon-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="salon-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-salon-location',  'context-salon', 'location')" id="salon-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgsalon"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="holdOfficeLearnedOrganisation">
+                                 <legend>Hold Office in a Learned Organisation</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphholdOfficeLearnedOrganisation()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgholdOfficeLearnedOrganisation", "context-holdOfficeLearnedOrganisation"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p></p>
+                                 <div class="form-group">
+                                    <label for="holdOfficeLearnedOrganisation-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-holdOfficeLearnedOrganisation-date',  'context-holdOfficeLearnedOrganisation', 'date')" id="holdOfficeLearnedOrganisation-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="holdOfficeLearnedOrganisation-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-holdOfficeLearnedOrganisation-location',  'context-holdOfficeLearnedOrganisation', 'location')" id="holdOfficeLearnedOrganisation-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgholdOfficeLearnedOrganisation"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="membershipLearnedOrganisation">
+                                 <legend>Membership of a Learned Organisation</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphmembershipLearnedOrganisation()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgmembershipLearnedOrganisation", "context-membershipLearnedOrganisation"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p></p>
+                                 <div class="form-group">
+                                    <label for="membershipLearnedOrganisation-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-membershipLearnedOrganisation-date',  'context-membershipLearnedOrganisation', 'date')" id="membershipLearnedOrganisation-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="membershipLearnedOrganisation-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-membershipLearnedOrganisation-location',  'context-membershipLearnedOrganisation', 'location')" id="membershipLearnedOrganisation-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgmembershipLearnedOrganisation"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                           </div>
+                           <div class="content " id="career">
+                              <dl class="sub-nav">
+                                 <dt>Context:</dt>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#employmentLegalProfession')">Employment in Legal Profession</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#employmentMedicalProfession')">Employment in Medical Profession</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#employment')">Employment</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#membershipProfessionalBody')">Membership of Professional Body</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#disqualification')">Disqualification</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#holdOffice')">Hold Office</a>
+                                 </dd>
+                              </dl>
+                              <fieldset id="employmentLegalProfession">
+                                 <legend>Employment in Legal Profession</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphemploymentLegalProfession()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgemploymentLegalProfession", "context-employmentLegalProfession"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p></p>
+                                 <div class="form-group">
+                                    <label for="employmentLegalProfession-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-employmentLegalProfession-date',  'context-employmentLegalProfession', 'date')" id="employmentLegalProfession-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="employmentLegalProfession-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-employmentLegalProfession-location',  'context-employmentLegalProfession', 'location')" id="employmentLegalProfession-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgemploymentLegalProfession"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="employmentMedicalProfession">
+                                 <legend>Employment in Medical Profession</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphemploymentMedicalProfession()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgemploymentMedicalProfession", "context-employmentMedicalProfession"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p></p>
+                                 <div class="form-group">
+                                    <label for="employmentMedicalProfession-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-employmentMedicalProfession-date',  'context-employmentMedicalProfession', 'date')" id="employmentMedicalProfession-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="employmentMedicalProfession-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-employmentMedicalProfession-location',  'context-employmentMedicalProfession', 'location')" id="employmentMedicalProfession-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgemploymentMedicalProfession"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="employment">
+                                 <legend>Employment</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphemployment()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgemployment", "context-employment"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p></p>
+                                 <div class="form-group">
+                                    <label for="employment-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-employment-date',  'context-employment', 'date')" id="employment-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="employment-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-employment-location',  'context-employment', 'location')" id="employment-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgemployment"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="membershipProfessionalBody">
+                                 <legend>Membership of Professional Body</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphmembershipProfessionalBody()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgmembershipProfessionalBody", "context-membershipProfessionalBody"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p></p>
+                                 <div class="form-group">
+                                    <label for="membershipProfessionalBody-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-membershipProfessionalBody-date',  'context-membershipProfessionalBody', 'date')" id="membershipProfessionalBody-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="membershipProfessionalBody-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-membershipProfessionalBody-location',  'context-membershipProfessionalBody', 'location')" id="membershipProfessionalBody-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgmembershipProfessionalBody"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="disqualification">
+                                 <legend>Disqualification</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphdisqualification()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgdisqualification", "context-disqualification"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p></p>
+                                 <div class="form-group">
+                                    <label for="disqualification-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-disqualification-date',  'context-disqualification', 'date')" id="disqualification-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="disqualification-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-disqualification-location',  'context-disqualification', 'location')" id="disqualification-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgdisqualification"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="holdOffice">
+                                 <legend>Hold Office</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphholdOffice()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgholdOffice", "context-holdOffice"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p>Description of a person holding office. </p>
+                                 <div class="form-group">
+                                    <label for="holdOffice-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-holdOffice-date',  'context-holdOffice', 'date')" id="holdOffice-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="holdOffice-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-holdOffice-location',  'context-holdOffice', 'location')" id="holdOffice-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="holdOffice-"></label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-holdOffice-',  'context-holdOffice', '')" id="holdOffice-" placeholder=""></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgholdOffice"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                           </div>
+                           <div class="content " id="ecclesiastic">
+                              <dl class="sub-nav">
+                                 <dt>Context:</dt>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#HoldEcclesiasticOffice')">Hold Ecclesiastic Office</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#MembershipEcclesiasticBody')">Membership Ecclesiastic Body</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#DisqualifiedFromEcclesiasticOffice')">Disqualified From Ecclesiastic Office</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#Baptism')">Baptism</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#Ordination')">Ordination</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#Preach')">Preach</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#ReligiousConfirmation')">Religious Confirmation</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#ReligiousConversion')">Religious Conversion</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#ReligiousConfession')">Religious Confession</a>
+                                 </dd>
+                              </dl>
+                              <fieldset id="HoldEcclesiasticOffice">
+                                 <legend>Hold Ecclesiastic Office</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphHoldEcclesiasticOffice()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgHoldEcclesiasticOffice", "context-HoldEcclesiasticOffice"); 
+                                    
+                                    
+                                    graph.addNode('holdoffice');
+                                    graph.addNode('office');
+                                    graph.addNode('officeholder');
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                     graph.addLink('holdoffice','date','');
+                                     graph.addLink('holdoffice','location','');
+                                     graph.addLink('holdoffice','office','');
+                                     graph.addLink('holdoffice','officeholder','');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p>Description of a person holding office in an ecclesiastical
+                                    			organisation.
+                                 </p>
+                                 <div class="form-group">
+                                    <label for="HoldEcclesiasticOffice-date">Date </label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-HoldEcclesiasticOffice-date',  'context-HoldEcclesiasticOffice', 'date')" id="HoldEcclesiasticOffice-date" placeholder="Enter date "></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="HoldEcclesiasticOffice-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-HoldEcclesiasticOffice-location',  'context-HoldEcclesiasticOffice', 'location')" id="HoldEcclesiasticOffice-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="HoldEcclesiasticOffice-office">Office</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-HoldEcclesiasticOffice-office',  'context-HoldEcclesiasticOffice', 'office')" id="HoldEcclesiasticOffice-office" placeholder=""></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="HoldEcclesiasticOffice-officeHolder">Holder of the Office</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-HoldEcclesiasticOffice-officeHolder',  'context-HoldEcclesiasticOffice', 'officeHolder')" id="HoldEcclesiasticOffice-officeHolder" placeholder=""></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgHoldEcclesiasticOffice"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul>
+                                    <li>holdoffice  
+                                       <span class="assertion a-HoldEcclesiasticOffice-holdoffice"></span>    
+                                       <span class="assertion a-HoldEcclesiasticOffice-date"></span>
+                                    </li>
+                                    <li>holdoffice  
+                                       <span class="assertion a-HoldEcclesiasticOffice-holdoffice"></span>    
+                                       <span class="assertion a-HoldEcclesiasticOffice-location"></span>
+                                    </li>
+                                    <li>holdoffice  
+                                       <span class="assertion a-HoldEcclesiasticOffice-holdoffice"></span>    
+                                       <span class="assertion a-HoldEcclesiasticOffice-office"></span>
+                                    </li>
+                                    <li>holdoffice  
+                                       <span class="assertion a-HoldEcclesiasticOffice-holdoffice"></span>    
+                                       <span class="assertion a-HoldEcclesiasticOffice-officeholder"></span>
+                                    </li>
+                                 </ul>
+                              </fieldset>
+                              <fieldset id="MembershipEcclesiasticBody">
+                                 <legend>Membership Ecclesiastic Body</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphMembershipEcclesiasticBody()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgMembershipEcclesiasticBody", "context-MembershipEcclesiasticBody"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p>Description of </p>
+                                 <div class="form-group">
+                                    <label for="MembershipEcclesiasticBody-"></label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-MembershipEcclesiasticBody-',  'context-MembershipEcclesiasticBody', '')" id="MembershipEcclesiasticBody-" placeholder=""></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgMembershipEcclesiasticBody"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="DisqualifiedFromEcclesiasticOffice">
+                                 <legend>Disqualified From Ecclesiastic Office</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphDisqualifiedFromEcclesiasticOffice()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgDisqualifiedFromEcclesiasticOffice", "context-DisqualifiedFromEcclesiasticOffice"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p>Description of </p>
+                                 <div class="form-group">
+                                    <label for="DisqualifiedFromEcclesiasticOffice-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-DisqualifiedFromEcclesiasticOffice-date',  'context-DisqualifiedFromEcclesiasticOffice', 'date')" id="DisqualifiedFromEcclesiasticOffice-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="DisqualifiedFromEcclesiasticOffice-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-DisqualifiedFromEcclesiasticOffice-location',  'context-DisqualifiedFromEcclesiasticOffice', 'location')" id="DisqualifiedFromEcclesiasticOffice-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="DisqualifiedFromEcclesiasticOffice-"></label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-DisqualifiedFromEcclesiasticOffice-',  'context-DisqualifiedFromEcclesiasticOffice', '')" id="DisqualifiedFromEcclesiasticOffice-" placeholder=""></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgDisqualifiedFromEcclesiasticOffice"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="Baptism">
+                                 <legend>Baptism</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphBaptism()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgBaptism", "context-Baptism"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    graph.addNode('baptism');
+                                    graph.addNode('baptismalcandidate');
+                                    graph.addNode('godparent');
+                                    graph.addNode('officiant');
+                                     graph.addLink('baptism','date','');
+                                     graph.addLink('baptism','location','');
+                                     graph.addLink('baptism','baptismalcandidate','');
+                                     graph.addLink('baptism','godparent','');
+                                     graph.addLink('baptism','officiant','');
+                                     graph.addLink('baptismalcandidate','godparent','');
+                                     graph.addLink('baptismalcandidate','officiant','');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p>Description of </p>
+                                 <div class="form-group">
+                                    <label for="Baptism-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Baptism-date',  'context-Baptism', 'date')" id="Baptism-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="Baptism-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Baptism-location',  'context-Baptism', 'location')" id="Baptism-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="Baptism-"></label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Baptism-',  'context-Baptism', '')" id="Baptism-" placeholder=""></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgBaptism"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul>
+                                    <li>baptism  
+                                       <span class="assertion a-Baptism-baptism"></span>    
+                                       <span class="assertion a-Baptism-date"></span>
+                                    </li>
+                                    <li>baptism  
+                                       <span class="assertion a-Baptism-baptism"></span>    
+                                       <span class="assertion a-Baptism-location"></span>
+                                    </li>
+                                    <li>baptism  
+                                       <span class="assertion a-Baptism-baptism"></span>    
+                                       <span class="assertion a-Baptism-baptismalcandidate"></span>
+                                    </li>
+                                    <li>baptism  
+                                       <span class="assertion a-Baptism-baptism"></span>    
+                                       <span class="assertion a-Baptism-godparent"></span>
+                                    </li>
+                                    <li>baptism  
+                                       <span class="assertion a-Baptism-baptism"></span>    
+                                       <span class="assertion a-Baptism-officiant"></span>
+                                    </li>
+                                    <li>baptismalcandidate  
+                                       <span class="assertion a-Baptism-baptismalcandidate"></span>    
+                                       <span class="assertion a-Baptism-godparent"></span>
+                                    </li>
+                                    <li>baptismalcandidate  
+                                       <span class="assertion a-Baptism-baptismalcandidate"></span>    
+                                       <span class="assertion a-Baptism-officiant"></span>
+                                    </li>
+                                 </ul>
+                              </fieldset>
+                              <fieldset id="Ordination">
+                                 <legend>Ordination</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphOrdination()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgOrdination", "context-Ordination"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p>Description of </p>
+                                 <div class="form-group">
+                                    <label for="Ordination-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Ordination-date',  'context-Ordination', 'date')" id="Ordination-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="Ordination-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Ordination-location',  'context-Ordination', 'location')" id="Ordination-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="Ordination-"></label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Ordination-',  'context-Ordination', '')" id="Ordination-" placeholder=""></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgOrdination"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="Preach">
+                                 <legend>Preach</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphPreach()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgPreach", "context-Preach"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p>Description of </p>
+                                 <div class="form-group">
+                                    <label for="Preach-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Preach-date',  'context-Preach', 'date')" id="Preach-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="Preach-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Preach-location',  'context-Preach', 'location')" id="Preach-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="Preach-"></label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-Preach-',  'context-Preach', '')" id="Preach-" placeholder=""></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgPreach"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="ReligiousConfirmation">
+                                 <legend>Religious Confirmation</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphReligiousConfirmation()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgReligiousConfirmation", "context-ReligiousConfirmation"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p>Description of </p>
+                                 <div class="form-group">
+                                    <label for="ReligiousConfirmation-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-ReligiousConfirmation-date',  'context-ReligiousConfirmation', 'date')" id="ReligiousConfirmation-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="ReligiousConfirmation-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-ReligiousConfirmation-location',  'context-ReligiousConfirmation', 'location')" id="ReligiousConfirmation-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="ReligiousConfirmation-"></label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-ReligiousConfirmation-',  'context-ReligiousConfirmation', '')" id="ReligiousConfirmation-" placeholder=""></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgReligiousConfirmation"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="ReligiousConversion">
+                                 <legend>Religious Conversion</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphReligiousConversion()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgReligiousConversion", "context-ReligiousConversion"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p>Description of </p>
+                                 <div class="form-group">
+                                    <label for="ReligiousConversion-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-ReligiousConversion-date',  'context-ReligiousConversion', 'date')" id="ReligiousConversion-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="ReligiousConversion-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-ReligiousConversion-location',  'context-ReligiousConversion', 'location')" id="ReligiousConversion-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="ReligiousConversion-"></label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-ReligiousConversion-',  'context-ReligiousConversion', '')" id="ReligiousConversion-" placeholder=""></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgReligiousConversion"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                              <fieldset id="ReligiousConfession">
+                                 <legend>Religious Confession</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphReligiousConfession()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgReligiousConfession", "context-ReligiousConfession"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p>Description of </p>
+                                 <div class="form-group">
+                                    <label for="ReligiousConfession-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-ReligiousConfession-date',  'context-ReligiousConfession', 'date')" id="ReligiousConfession-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="ReligiousConfession-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-ReligiousConfession-location',  'context-ReligiousConfession', 'location')" id="ReligiousConfession-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="ReligiousConfession-"></label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-ReligiousConfession-',  'context-ReligiousConfession', '')" id="ReligiousConfession-" placeholder=""></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgReligiousConfession"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                           </div>
+                           <div class="content " id="political">
+                              <dl class="sub-nav">
+                                 <dt>Context:</dt>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#membershipPoliticalGroup')">Membership of a Political Group</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#HoldPoliticalOffice')">Hold Political Office</a>
+                                 </dd>
+                                 <dd class="active">
+                                    <a href="javascript:showContext('#RepresentativeAssembly')">Representative at Assembly</a>
+                                 </dd>
+                              </dl>
+                              <fieldset id="membershipPoliticalGroup">
+                                 <legend>Membership of a Political Group</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphmembershipPoliticalGroup()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgmembershipPoliticalGroup", "context-membershipPoliticalGroup"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    graph.addNode('MembershipActivity');
+                                     graph.addLink('MembershipActivity','date','');
+                                     graph.addLink('MembershipActivity','location','');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p>Description of membership of a political group.</p>
+                                 <div class="form-group">
+                                    <label for="membershipPoliticalGroup-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-membershipPoliticalGroup-date',  'context-membershipPoliticalGroup', 'date')" id="membershipPoliticalGroup-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="membershipPoliticalGroup-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-membershipPoliticalGroup-location',  'context-membershipPoliticalGroup', 'location')" id="membershipPoliticalGroup-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="membershipPoliticalGroup-"></label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-membershipPoliticalGroup-',  'context-membershipPoliticalGroup', '')" id="membershipPoliticalGroup-" placeholder=""></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgmembershipPoliticalGroup"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul>
+                                    <li>MembershipActivity  
+                                       <span class="assertion a-membershipPoliticalGroup-MembershipActivity"></span>    
+                                       <span class="assertion a-membershipPoliticalGroup-date"></span>
+                                    </li>
+                                    <li>MembershipActivity  
+                                       <span class="assertion a-membershipPoliticalGroup-MembershipActivity"></span>    
+                                       <span class="assertion a-membershipPoliticalGroup-location"></span>
+                                    </li>
+                                 </ul>
+                              </fieldset>
+                              <fieldset id="HoldPoliticalOffice">
+                                 <legend>Hold Political Office</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphHoldPoliticalOffice()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgHoldPoliticalOffice", "context-HoldPoliticalOffice"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    graph.addNode('holdpoliticaloffice');
+                                    graph.addNode('office');
+                                    graph.addNode('officeholder');
+                                     graph.addLink('holdpoliticaloffice','date','');
+                                     graph.addLink('holdpoliticaloffice','location','');
+                                     graph.addLink('holdpoliticaloffice','office','');
+                                     graph.addLink('holdpoliticaloffice','officeholder','');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p>Description of a person holiding a political office</p>
+                                 <div class="form-group">
+                                    <label for="HoldPoliticalOffice-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-HoldPoliticalOffice-date',  'context-HoldPoliticalOffice', 'date')" id="HoldPoliticalOffice-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="HoldPoliticalOffice-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-HoldPoliticalOffice-location',  'context-HoldPoliticalOffice', 'location')" id="HoldPoliticalOffice-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="HoldPoliticalOffice-"></label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-HoldPoliticalOffice-',  'context-HoldPoliticalOffice', '')" id="HoldPoliticalOffice-" placeholder=""></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgHoldPoliticalOffice"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul>
+                                    <li>holdpoliticaloffice  
+                                       <span class="assertion a-HoldPoliticalOffice-holdpoliticaloffice"></span>    
+                                       <span class="assertion a-HoldPoliticalOffice-date"></span>
+                                    </li>
+                                    <li>holdpoliticaloffice  
+                                       <span class="assertion a-HoldPoliticalOffice-holdpoliticaloffice"></span>    
+                                       <span class="assertion a-HoldPoliticalOffice-location"></span>
+                                    </li>
+                                    <li>holdpoliticaloffice  
+                                       <span class="assertion a-HoldPoliticalOffice-holdpoliticaloffice"></span>    
+                                       <span class="assertion a-HoldPoliticalOffice-office"></span>
+                                    </li>
+                                    <li>holdpoliticaloffice  
+                                       <span class="assertion a-HoldPoliticalOffice-holdpoliticaloffice"></span>    
+                                       <span class="assertion a-HoldPoliticalOffice-officeholder"></span>
+                                    </li>
+                                 </ul>
+                              </fieldset>
+                              <fieldset id="RepresentativeAssembly">
+                                 <legend>Representative at Assembly</legend>
+                                 <script language="javascript">
+                                    
+                                    
+                                    
+                                    function drawGraphRepresentativeAssembly()
+                                    {
+                                    
+                                    
+                                    graph = new myGraph("#svgRepresentativeAssembly", "context-RepresentativeAssembly"); 
+                                    
+                                    
+                                    graph.addNode('date');
+                                    graph.addNode('location');
+                                    
+                                    
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                 </script>
+                                 <p>Description of </p>
+                                 <div class="form-group">
+                                    <label for="RepresentativeAssembly-date">Date</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-RepresentativeAssembly-date',  'context-RepresentativeAssembly', 'date')" id="RepresentativeAssembly-date" placeholder="Enter date"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="RepresentativeAssembly-location">Location</label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-RepresentativeAssembly-location',  'context-RepresentativeAssembly', 'location')" id="RepresentativeAssembly-location" placeholder="Enter location"></input>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="RepresentativeAssembly-"></label>
+                                    <input type="text" onChange="updateAssertion(this.value, '.a-RepresentativeAssembly-',  'context-RepresentativeAssembly', '')" id="RepresentativeAssembly-" placeholder=""></input>
+                                 </div>
+                                 <h4>Graph</h4>
+                                 <svg id="svgRepresentativeAssembly"></svg>
+                                 <h4>Assertions</h4>
+                                 <ul></ul>
+                              </fieldset>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="content" id="panel2a">
+                     <div class="row">
+                        <h3>Load Data</h3>
+                     </div>
+                  </div>
+                  <div class="content" id="panel3a">
+                     <div class="row">
+                        <h3>Save Report</h3>
+                        <p>Save your report</p>
+                        <input type="submit" value="Save Report"></input>
+                     </div>
+                  </div>
+                  <div class="content" id="panel4a">
+                     <div class="row">
+                        <h3>Validate Form</h3>
+                     </div>
+                  </div>
+                  <div class="content" id="panel5a">
+                     <div class="row">
+                        <h3>Help</h3>
+                     </div>
+                  </div>
+               </div>
+               <a class="exit-off-canvas"></a>
+            </div>
+         </div>
+      </form>
+      <div id="myModal" class="reveal-modal" data-reveal="">
+         <p>A graphical representation of the relationships defined for this context.</p>
+         <a class="close-reveal-modal">×</a>
+         <svg id="mySVG"></svg>
+      </div>
+      <script src="http://code.jquery.com/jquery.js"></script>
+      <script src="../f5/js/foundation.min.js"></script>
+      <script>
+         $(document).foundation();
+         
+      </script>
+      <script src="js/graph.js"></script>
+      <script language="javascript">
+         drawGraphpersonalName();    
+         
+         drawGraphbirth();    
+         
+         drawGraphdeath();    
+         
+         drawGraphfamilyRelationships();    
+         
+         drawGraphDisplacement();    
+         
+         drawGraphEmmigration();    
+         
+         drawGraphExile();    
+         
+         drawGraphImmigration();    
+         
+         drawGraphResidence();    
+         
+         drawGraphTravel();    
+         
+         drawGraphVisit();    
+         
+         drawGraphUniversityMatriculation();    
+         
+         drawGraphInclusionClassList();    
+         
+         drawGraphDisputation();    
+         
+         drawGraphPersonalTestimony();    
+         
+         drawGraphPromotionToDegree();    
+         
+         drawGraphStudy();    
+         
+         drawGraphTeaching();    
+         
+         drawGraphgift();    
+         
+         drawGraphtrade();    
+         
+         drawGraphcontract();    
+         
+         drawGraphdedication();    
+         
+         drawGraphinclusionAlbumAmicorum();    
+         
+         drawGraphexchangeOccasionalVerse();    
+         
+         drawGraphcollaboration();    
+         
+         drawGraphsocialVisit();    
+         
+         drawGraphmeeting();    
+         
+         drawGraphintroduction();    
+         
+         drawGraphacquaintance();    
+         
+         drawGraphcorrespondence();    
+         
+         drawGraphfriendship();    
+         
+         drawGraphennoble();    
+         
+         drawGraphcreateWork();    
+         
+         drawGraphauthorWork();    
+         
+         drawGraphcontributeWork();    
+         
+         drawGraphdedicateWork();    
+         
+         drawGraphdedicateItem();    
+         
+         drawGraphprintWork();    
+         
+         drawGraphpublishWork();    
+         
+         drawGraphresearch();    
+         
+         drawGraphsalon();    
+         
+         drawGraphholdOfficeLearnedOrganisation();    
+         
+         drawGraphmembershipLearnedOrganisation();    
+         
+         drawGraphemploymentLegalProfession();    
+         
+         drawGraphemploymentMedicalProfession();    
+         
+         drawGraphemployment();    
+         
+         drawGraphmembershipProfessionalBody();    
+         
+         drawGraphdisqualification();    
+         
+         drawGraphholdOffice();    
+         
+         drawGraphHoldEcclesiasticOffice();    
+         
+         drawGraphMembershipEcclesiasticBody();    
+         
+         drawGraphDisqualifiedFromEcclesiasticOffice();    
+         
+         drawGraphBaptism();    
+         
+         drawGraphOrdination();    
+         
+         drawGraphPreach();    
+         
+         drawGraphReligiousConfirmation();    
+         
+         drawGraphReligiousConversion();    
+         
+         drawGraphReligiousConfession();    
+         
+         drawGraphmembershipPoliticalGroup();    
+         
+         drawGraphHoldPoliticalOffice();    
+         
+         drawGraphRepresentativeAssembly();    
+         
+      </script>
+   </body>
+</html>
