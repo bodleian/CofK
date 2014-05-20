@@ -1,957 +1,1086 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form>
-   <section id="personalLife" title="Basic Data">
-      <group id="personalName" title="Personal Name">
-		       <description>A person's name.</description>
-
-		       <graph>
-			         <node id="Name">
-				           <link>NameComponent</link>
-				           <link>DatabaseSystem</link>
-			         </node>
-
-			         <node id="NameComponent"/>
-
-			         <node id="DatabaseSystem"/>
-		       </graph>
-
-		       <field id="nameComponent"
-                type=""
-                title="Name Component"
-                placeHolder=""/>
-		       <field id=""
-                type="DatabaseSystem"
-                title="Database System"
-                placeHolder=""/>
-	     </group>
-      <group id="birth" title="Birth">
-		       <description>Description of a human birth.</description>
-	
-
-
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-			         <node id="birth">
-				
-				           <link rel="has date">date</link>
-				           <link rel="has location">location</link>
-				           <link rel="associated with">mother</link>
-				           <link rel="associated with">child</link>
-				           <link rel="associated with">father</link>
-				
-			         </node>
-			         <node id="mother">
-				           <link rel="mother of">child</link>
-				
-			         </node>
-			         <node id="child">
-				           <link rel="has mother">mother</link>
-				           <link rel="has father">father</link>
-			         </node>
-			
-			         <node id="father">
-				           <link rel="father of" objp="fatherOf">child</link>
-			         </node>
-			
-			
-			
-		       </graph>
-
-
-		       <field id="date" type="date" title="Date " placeHolder="Enter date "/>
-		       <field id="location"
+   <section id="PersonalLife" title="Basic Data">
+      <group id="Birth" title="Birth">
+         <description>The emergence of a baby or other young from the body of its mother and the start of life as a physically separate being.</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-
-		       <field id="child" type="person" title="Child"/>
-		       <field id="mother" type="person" title="Mother"/>
-		       <field id="father" type="person" title="Father"/>
-	     </group>
-      <group id="death" title="Death">
-		       <description>Description of the death of a person.</description>
-
-		       <graph>
-
-			         <node id="death">
-				           <link rel="has date">date</link>
-				           <link rel="has location">location</link>
-				           <link rel="associated with">deceased</link>
-				           <link rel="has cause">causeOfDeath</link>
-			         </node>
-			         <node id="deceased">
-				           <link rel="has cause of death">causeOfDeath</link>
-			         </node>
-			         <node id="date"/>
-			         <node id="location"/>
-			         <node id="causeOfDeath"/>
-
-
-		       </graph>
-
-		       <field id="date" type="date" title="Date"/>
-		       <field id="location" type="location" title="Location"/>
-		       <field id="causeOfDeath" type="" title="Cause of Death"/>
-		       <field id="deceased" type="" title="Person Deceased"/>
-	     </group>
-      <group id="familyRelationships" title="Family Relationships">
-		       <description>This context describes relationships of a person to family
-			members.</description>
-	     </group>
+                placeHolder="Enter details of location"/>
+         <field id="Child"
+                help="A young human being below the age of puberty or below the legal age of majority. The role of a person in relation to his/her parents."
+                title="Child"
+                placeHolder="Enter details of Child"/>
+         <field id="Mother"
+                help="a woman in relation to a child or children to whom she has given birth, or adopted. The family role of a woman in relation to her child or children"
+                title="Mother"
+                placeHolder="Enter details of Mother"/>
+         <field id="Father"
+                help="A man in relation to his child or children. The family role of a man in relation to his child or children"
+                title="Father"
+                placeHolder="Enter details of Father"/>
+      </group>
+      <group id="Death" title="Death">
+         <description>The activity of dying or being killed; the end of the life of a person or organism.</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
+                type="location"
+                title="Location"
+                placeHolder="Enter details of location"/>
+         <field id="Deceased"
+                help="A person who is recently dead."
+                title="Deceased"
+                placeHolder="Enter details of Deceased"/>
+      </group>
    </section>
-   <section id="locationHistory" title="Location">
+   <section id="LocationHistory" title="Location">
       <group id="Displacement" title="Displacement">
-		       <description>Description of </description>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+         <description>The enforced departure of people from their homes, typically because of war, persecution, or natural disaster.</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-		       <field id="" type="" title="" placeHolder=""/>
-	     </group>
+                placeHolder="Enter details of location"/>
+         <field id="DisplacedPerson"
+                help=""
+                title="DisplacedPerson"
+                placeHolder="Enter details of DisplacedPerson"/>
+      </group>
       <group id="Emmigration" title="Emmigration">
-		       <description>Description of </description>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+         <description>The activity of leaving one's own country to settle permanently in another; moving abroad.</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-		       <field id="" type="" title="" placeHolder=""/>
-	     </group>
+                placeHolder="Enter details of location"/>
+         <field id="Emmigrant"
+                help=""
+                title="Emmigrant"
+                placeHolder="Enter details of Emmigrant"/>
+      </group>
       <group id="Exile" title="Exile">
-		       <description>Description of </description>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+         <description>The state of being barred from one's native country, typically for political or punitive reasons.</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-		       <field id="" type="" title="" placeHolder=""/>
-	     </group>
+                placeHolder="Enter details of location"/>
+         <field id="ExiledPerson"
+                help="a person who lives away from their native country, either from choice or compulsion."
+                title="ExiledPerson"
+                placeHolder="Enter details of ExiledPerson"/>
+      </group>
       <group id="Immigration" title="Immigration">
-		       <description>Description of </description>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+         <description>The activity of of coming to live permanently in a foreign country.</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-		       <field id="" type="" title="" placeHolder=""/>
-	     </group>
+                placeHolder="Enter details of location"/>
+         <field id="Immigrant"
+                help="A person who comes to live permanently in a country that is not the person's native country."
+                title="Immigrant"
+                placeHolder="Enter details of Immigrant"/>
+      </group>
       <group id="Residence" title="Residence">
-		       <description>Description of </description>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+         <description>The activity of living in a particular place.</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-		       <field id="" type="" title="" placeHolder=""/>
-	     </group>
+                placeHolder="Enter details of location"/>
+         <field id="Resident"
+                help="A person who lives somewhere permanently or on a long-term basis."
+                title="Resident"
+                placeHolder="Enter details of Resident"/>
+      </group>
       <group id="Travel" title="Travel">
-		       <description>Description of </description>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+         <description>The activity of making a journey, typically of some length.</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-		       <field id="" type="" title="" placeHolder=""/>
-	     </group>
+                placeHolder="Enter details of location"/>
+         <field id="Traveller"
+                help="A person who is travelling or who often travels."
+                title="Traveller"
+                placeHolder="Enter details of Traveller"/>
+      </group>
       <group id="Visit" title="Visit">
-		       <description>Description of </description>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+         <description>The activity of going to see a person or place as a guest, tourist, etc.</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-		       <field id="" type="" title="" placeHolder=""/>
-	     </group>
+                placeHolder="Enter details of location"/>
+         <field id="Visitor"
+                help="The role of a person visiting someone or somewhere, especially socially or as a tourist."
+                title="Visitor"
+                placeHolder="Enter details of Visitor"/>
+      </group>
    </section>
-   <section id="education" title="Education">
-      <group id="UniversityMatriculation" title="University Matriculation">
-		       <description>This context is concerned with the formal process of entering a university or
-			of becoming eligible to enter by fulfilling certain academic requirements.</description>
-
-
-		       <graph>
-
-			         <node id="universityMatriculation">
-				           <link rel="has date">date</link>
-				           <link rel="associated with">matriculant</link>
-				           <link rel="used">matriculationRegister</link>
-				           <link rel="generated">Entry</link>
-			         </node>
-			         <node id="date"/>
-			         <node id="matriculant">
-				           <link rel="has location">location</link>
-				           <link rel="has name">Name</link>
-				           <link rel="has entry in">matriculationRegister</link>
-			         </node>
-			         <node id="location"/>
-
-			         <node id="matriculationRegister">
-				           <link rel="has entry">Entry</link>
-			         </node>
-
-			         <node id="Entry">
-				           <link rel="is entry for">matriculant</link>
-				
-			         </node>
-			
-			         <node id="Name"/>
-
-		       </graph>
-
-
-
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+   <section id="Education" title="Education">
+      <group id="UniversityMatriculation" title="UniversityMatriculation">
+         <description>The formal process of entering a university or of becoming eligible to enter by fulfilling certain academic requirements.</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-		       <field id="matriculant"
-                type="person"
+                placeHolder="Enter details of location"/>
+         <field id="Matriculant"
+                help="A person who has matriculated or been registered on a list or roll, usually at a school."
                 title="Matriculant"
-                placeHolder=""/>
-
-		       <field id="matriculationRegister"
+                placeHolder="Enter details of Matriculant"/>
+         <field id="MatriculationRegister"
+                help="An official list or record of names of people who have participated in the activity of matriculation at a university, the formal process of entering a university or of becoming eligible to enter by fulfilling certain academic requirements.&#xA;&#xA;source: https://en.wikipedia.org/wiki/Matriculation"
                 title="MatriculationRegister"
-                placeHolder="Enter matriculation register"/>
-		       <field id="Entry"
-                title="Personal Name as Entered"
-                placeHolder="Enter the personal name as entered in the matriculation register"/>
-
-
-
-	     </group>
-      <group id="InclusionClassList" title="Inclusion in Class List">
-		       <description>This context is concerned with the inclusion of a person's name in a class
-			list. </description>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-			
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+                placeHolder="Enter details of MatriculationRegister"/>
+         <field id="Entry"
+                help="An item written or printed in a diary, list, account book, or reference book."
+                title="Entry"
+                placeHolder="Enter details of Entry"/>
+      </group>
+      <group id="InclusionClassList" title="InclusionClassList">
+         <description/>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-		       <field id="student" type="person" title="Student" placeHolder=""/>
-		       <field id="entry" type="" title="Entry" placeHolder=""/>
-		       <field id="classlist" type="" title="Class List" placeHolder=""/>
-	     </group>
+                placeHolder="Enter details of location"/>
+         <field id="Student"
+                help="A person who is studying at a university or other place of higher education. A person who is studying at a university or other place of higher education."
+                title="Student"
+                placeHolder="Enter details of Student"/>
+         <field id="Entry"
+                help="An item written or printed in a diary, list, account book, or reference book."
+                title="Entry"
+                placeHolder="Enter details of Entry"/>
+         <field id="Classlist"
+                help=""
+                title="Classlist"
+                placeHolder="Enter details of Classlist"/>
+      </group>
       <group id="Disputation" title="Disputation">
-		       <description> This context describes a disputation. From
-			https://en.wikipedia.org/wiki/Disputation: In the scholastic system of education of the
-			Middle Ages, disputations (in Latin: disputationes, singular: disputatio) offered a
-			formalized method of debate designed to uncover and establish truths in theology and in
-			sciences. Fixed rules governed the process: they demanded dependence on traditional
-			written authorities and the thorough understanding of each argument on each side. </description>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-			
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
-                type="location"
-                title="Location"
-                placeHolder="Enter location"/>
-		       <field id="respondent" type="person" title="Respondent"/>
-		       <field id="praeses" type="person" title="Praeses"/>
-		       <field id="thesis" type="" title="Thesis"/>
-	     </group>
-      <group id="PersonalTestimony" title="PersonalTestimony">
-		       <description/>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-			
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
-                type="location"
-                title="Location"
-                placeHolder="Enter location"/>
-		       <field id="testifier" type="person" title="Testifier"/>
-	     </group>
-      <group id="PromotionToDegree" title="Promotion to Degree">
-		       <description/>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-			      </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
-                type="location"
-                title="Location"
-                placeHolder="Enter location"/>
-		       <field id="awardingBody" type="organisation" title="Awarding Body"/>
-		       <field id="graduate" type="person" title="Graduate"/>
+         <description>Formal academic debate  
+source: http://www.oxforddictionaries.com/definition/english/disputation
 
-	     </group>
+In the scholastic system of education of the Middle Ages, disputations (in Latin: disputationes, singular: disputatio) offered a formalized method of debate designed to uncover and establish truths in theology and in sciences. Fixed rules governed the process: they demanded dependence on traditional written authorities and the thorough understanding of each argument on each side.
+source https://en.wikipedia.org/wiki/Disputation
+
+Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
+                type="location"
+                title="Location"
+                placeHolder="Enter details of location"/>
+         <field id="Respondent"
+                help="A person or organization who makes an answer to the courts pursuant to an application for redress (usually in an equity proceeding) or a candidate for a degree who defends or opposes a thesis provided by the praeses in an academic disputation"
+                title="Respondent"
+                placeHolder="Enter details of Respondent"/>
+         <field id="Praeses"
+                help="A person who is the faculty moderator of an academic disputation, normally proposing a thesis and participating in the ensuing disputation"
+                title="Praeses"
+                placeHolder="Enter details of Praeses"/>
+         <field id="Thesis"
+                help=""
+                title="Thesis"
+                placeHolder="Enter details of Thesis"/>
+      </group>
+      <group id="PersonalTestimony" title="PersonalTestimony">
+         <description>A solemn written or oral statement as to the truth of a matter.</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
+                type="location"
+                title="Location"
+                placeHolder="Enter details of location"/>
+         <field id="Testifier"
+                help="A person who gives a testimony, a solemn written or oral statement as to the truth of a matter."
+                title="Testifier"
+                placeHolder="Enter details of Testifier"/>
+      </group>
+      <group id="PromotionToDegree" title="PromotionToDegree">
+         <description>The receiving or conferring of an academic degree.</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
+                type="location"
+                title="Location"
+                placeHolder="Enter details of location"/>
+         <field id="AwardingBody"
+                help="The role of an agent that gives an award."
+                title="AwardingBody"
+                placeHolder="Enter details of AwardingBody"/>
+         <field id="Graduate"
+                help="A person who has successfully completed a course of study or training, especially a person who has been awarded an undergraduate or first academic degree."
+                title="Graduate"
+                placeHolder="Enter details of Graduate"/>
+      </group>
       <group id="Study" title="Study">
-		       <description/>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-			      </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+         <description>The devotion of time and attention to acquiring knowledge on an academic subject, especially by means of books.</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-		       <field id="teachingInstitution"
-                type="organisation"
-                title="Teaching Institution"/>
-		       <field id="student" type="person" title="Student"/>
-		       <field id="teacher" type="person" title="Teacher"/>
-	     </group>
+                placeHolder="Enter details of location"/>
+         <field id="TeachingInstitution"
+                help="An organisation where the activity of imparting knowledge to or instructing (someone) as to how to do something is conducted."
+                title="TeachingInstitution"
+                placeHolder="Enter details of TeachingInstitution"/>
+         <field id="Student"
+                help="A person who is studying at a university or other place of higher education. A person who is studying at a university or other place of higher education."
+                title="Student"
+                placeHolder="Enter details of Student"/>
+         <field id="Teacher"
+                help="The role of a person who imparts knowledge to or instructs someone as to how to do something."
+                title="Teacher"
+                placeHolder="Enter details of Teacher"/>
+      </group>
       <group id="Teaching" title="Teaching">
-		       <description/>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+         <description>The activity of giving instruction, especially in an elementary or secondary school or a university.</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-		       <field id="teachingInstitution"
-                type="organisation"
-                title="Teaching Institution"/>
-		       <field id="student" type="person" title="Student"/>
-		       <field id="teacher" type="person" title="Teacher"/>
-	     </group>
+                placeHolder="Enter details of location"/>
+         <field id="TeachingInstitution"
+                help="An organisation where the activity of imparting knowledge to or instructing (someone) as to how to do something is conducted."
+                title="TeachingInstitution"
+                placeHolder="Enter details of TeachingInstitution"/>
+         <field id="Student"
+                help="A person who is studying at a university or other place of higher education. A person who is studying at a university or other place of higher education."
+                title="Student"
+                placeHolder="Enter details of Student"/>
+         <field id="Teacher"
+                help="The role of a person who imparts knowledge to or instructs someone as to how to do something."
+                title="Teacher"
+                placeHolder="Enter details of Teacher"/>
+      </group>
    </section>
-   <section id="socialContacts" title="Contacts">
-      <group id="gift" title="Gift Giving">
-		       <description/>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+   <section id="SocialContacts" title="Contacts">
+      <group id="Trade" title="Trade">
+         <description>Trade is to transfer the ownership of goods from one person or entity to another by getting something in exchange from the buyer.</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-	     </group>
-      <group id="trade" title="Trade">
-		       <description/>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+                placeHolder="Enter details of location"/>
+         <field id="Buyer"
+                help=" The role of a person who makes a purchase."
+                title="Buyer"
+                placeHolder="Enter details of Buyer"/>
+         <field id="Seller"
+                help=" The role of a person who sells something."
+                title="Seller"
+                placeHolder="Enter details of Seller"/>
+         <field id="Item"
+                help=""
+                title="Item"
+                placeHolder="Enter details of Item"/>
+      </group>
+      <group id="Contract" title="Contract">
+         <description>A written or spoken agreement, especially one concerning employment, sales, or tenancy, that is intended to be enforceable by law.</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-	     </group>
-      <group id="contract" title="Contract">
-		       <description/>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+                placeHolder="Enter details of location"/>
+         <field id="Contractee"
+                help="A party to a contract"
+                title="Contractee"
+                placeHolder="Enter details of Contractee"/>
+         <field id="ContractDocument"
+                help="A document containing a written representation of a contract"
+                title="ContractDocument"
+                placeHolder="Enter details of ContractDocument"/>
+      </group>
+      <group id="InclusionAlbumAmicorum" title="InclusionAlbumAmicorum">
+         <description>An activity where a personl includes a creative work in an Album Amicorum</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-	     </group>
-      <group id="dedication" title="Dedication of Work">
-		       <description/>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+                placeHolder="Enter details of location"/>
+         <field id="AlbumAmicorum"
+                help="The first true autograph books that appeared in German and Dutch linguistic regions (possibly originating in Wittenberg) by the mid-16th century. Known as an album amicorum (&#34;book of friends&#34;) or stammbuch (&#34;friendship book&#34;).http://en.wikipedia.org/wiki/Autograph_book"
+                title="AlbumAmicorum"
+                placeHolder="Enter details of AlbumAmicorum"/>
+         <field id="CreativeWork"
+                help="A work that is a distinct intellectual or artistic creation and is the product of creative effort."
+                title="CreativeWork"
+                placeHolder="Enter details of CreativeWork"/>
+         <field id="Contributor"
+                help="A person or thing that contributes something, in particular."
+                title="Contributor"
+                placeHolder="Enter details of Contributor"/>
+         <field id="Owner"
+                help="The role of a person who owns something, ie that someone or something belongs or relates to the person mentioned. The role of a person who owns something."
+                title="Owner"
+                placeHolder="Enter details of Owner"/>
+      </group>
+      <group id="ExchangeOccasionalVerse" title="ExchangeOccasionalVerse">
+         <description>An activity where one person authors verse and sends it to another person. </description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-	     </group>
-      <group id="inclusionAlbumAmicorum" title="Inclusion in Album Amicorum">
-		       <description/>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+                placeHolder="Enter details of location"/>
+         <field id="Verse"
+                help="Writing arranged with a metrical rhythm, typically having a rhyme."
+                title="Verse"
+                placeHolder="Enter details of Verse"/>
+         <field id="Transmitter"
+                help=""
+                title="Transmitter"
+                placeHolder="Enter details of Transmitter"/>
+         <field id="Sender"
+                help="The role of a person who sends something, especially a letter by post"
+                title="Sender"
+                placeHolder="Enter details of Sender"/>
+         <field id="Recipient"
+                help="The role of a person or thing that receives or is awarded something."
+                title="Recipient"
+                placeHolder="Enter details of Recipient"/>
+      </group>
+      <group id="Collaboration" title="Collaboration">
+         <description>Activity of working together to do a task and to achieve shared goals</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-	     </group>
-      <group id="exchangeOccasionalVerse" title="Exchange of Occasional Verse">
-		       <description/>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+                placeHolder="Enter details of location"/>
+         <field id="Collaborator"
+                help="The role of a person who works jointly on an activity or project; an associate."
+                title="Collaborator"
+                placeHolder="Enter details of Collaborator"/>
+      </group>
+      <group id="Travel" title="Travel">
+         <description>The activity of making a journey, typically of some length.</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-	     </group>
-      <group id="collaboration" title="Collaboration">
-		       <description/>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+                placeHolder="Enter details of location"/>
+         <field id="Traveller"
+                help="A person who is travelling or who often travels."
+                title="Traveller"
+                placeHolder="Enter details of Traveller"/>
+      </group>
+      <group id="SocialVisit" title="SocialVisit">
+         <description>The activity of going to see and spend time with (someone) socially</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-	     </group>
-      <group id="socialVisit" title="Social Visit">
-		       <description/>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+                placeHolder="Enter details of location"/>
+         <field id="Visitor"
+                help="The role of a person visiting someone or somewhere, especially socially or as a tourist."
+                title="Visitor"
+                placeHolder="Enter details of Visitor"/>
+         <field id="Host"
+                help="The role of a person who receives or entertains other people as guests."
+                title="Host"
+                placeHolder="Enter details of Host"/>
+      </group>
+      <group id="Meeting" title="Meeting">
+         <description>Activity when two or more people meet, by chance or arrangement</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-	     </group>
-      <group id="meeting" title="Meeting">
-		       <description/>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+                placeHolder="Enter details of location"/>
+         <field id="Attendee"
+                help="The role of a person who participates and is present at a conference or other gathering."
+                title="Attendee"
+                placeHolder="Enter details of Attendee"/>
+      </group>
+      <group id="Introduction" title="Introduction">
+         <description>The context of one person being introduced to another person by way of a third person who acts as an intermediary. </description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-	     </group>
-      <group id="introduction" title="Introduction">
-		       <description/>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+                placeHolder="Enter details of location"/>
+         <field id="Intermediary"
+                help="The role of a person who acts as a link between people."
+                title="Intermediary"
+                placeHolder="Enter details of Intermediary"/>
+         <field id="Participant"
+                help="The role of a person who takes part in something"
+                title="Participant"
+                placeHolder="Enter details of Participant"/>
+      </group>
+      <group id="Acquaintanceship" title="Acquaintanceship">
+         <description>The context in which two people know each other slightly, but who are not  close friends</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-	     </group>
-      <group id="acquaintance" title="Acquaintance">
-		       <description/>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+                placeHolder="Enter details of location"/>
+         <field id="Acquaintance"
+                help="The role of a person one knows slightly, but who is not a close friend."
+                title="Acquaintance"
+                placeHolder="Enter details of Acquaintance"/>
+      </group>
+      <group id="Correspondence" title="Correspondence">
+         <description>an activity where one person writes a letter to another person.</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-	     </group>
-      <group id="correspondence" title="Correspondence">
-		       <description/>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+                placeHolder="Enter details of location"/>
+         <field id="Correspondent"
+                help="The role of a person who writes letters on a regular basis."
+                title="Correspondent"
+                placeHolder="Enter details of Correspondent"/>
+         <field id="LetterSender"
+                help="A person that sends a letter"
+                title="LetterSender"
+                placeHolder="Enter details of LetterSender"/>
+         <field id="LetterRecipient"
+                help="The role of a person or thing that receives a letter."
+                title="LetterRecipient"
+                placeHolder="Enter details of LetterRecipient"/>
+      </group>
+      <group id="Friendship" title="Friendship">
+         <description> a relationship of mutual affection between two or more people. Friendship is a stronger form of interpersonal bond than an association. </description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-	     </group>
-      <group id="friendship" title="Friendship">
-		       <description/>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
-                type="location"
-                title="Location"
-                placeHolder="Enter location"/>
-	     </group>
+                placeHolder="Enter details of location"/>
+         <field id="Friend"
+                help="A person with whom one has a bond of mutual affection, typically one exclusive of sexual or family relations."
+                title="Friend"
+                placeHolder="Enter details of Friend"/>
+      </group>
    </section>
-   <section id="statusChange" title="Social Status Change">
-      <group id="ennoble" title="Ennoblement">
-		       <description>Description of a person's change in social status through ennoblement.</description>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-			         <node id="ennoblement">
-				           <link>date</link>
-				           <link>location</link>
-			         </node>
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+   <section id="StatusChange" title="Social Status Change">
+      <group id="Ennoble" title="Ennoble">
+         <description>The activity of making someone a member of the nobility.</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-		       <field id="" type="" title="" placeHolder=""/>
-	     </group>
+                placeHolder="Enter details of location"/>
+      </group>
    </section>
    <section id="learnedProduction" title="Learned Activity">
-      <group id="createWork" title="Creation of a Creative Work">
-		       <description/>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+      <group id="CreationActivity" title="CreationActivity">
+         <description>Activity that brings something into existence.</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-	     </group>
-      <group id="authorWork" title="Authoring of a Creative Work">
-		       <description/>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+                placeHolder="Enter details of location"/>
+         <field id="CreativeWork"
+                help="A work that is a distinct intellectual or artistic creation and is the product of creative effort."
+                title="CreativeWork"
+                placeHolder="Enter details of CreativeWork"/>
+         <field id="Creator"
+                help=" The role of a person or thing that brings something into existence."
+                title="Creator"
+                placeHolder="Enter details of Creator"/>
+      </group>
+      <group id="AuthoringActivity" title="AuthoringActivity">
+         <description>Activity that involves the writing of a book, article or document.</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-	     </group>
-      <group id="contributeWork" title="Contribution to a Creative Work">
-		       <description/>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+                placeHolder="Enter details of location"/>
+         <field id="CreativeWork"
+                help="A work that is a distinct intellectual or artistic creation and is the product of creative effort."
+                title="CreativeWork"
+                placeHolder="Enter details of CreativeWork"/>
+         <field id="Author"
+                help="A writer of a book, article, or document.  The role of someone who writes a book, article, or document."
+                title="Author"
+                placeHolder="Enter details of Author"/>
+      </group>
+      <group id="ContributionActivity" title="ContributionActivity">
+         <description>Activity that involves the contiribution of something by a person or thing</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-	     </group>
-      <group id="dedicateWork" title="Dedication of a Creative Work">
-		       <description/>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+                placeHolder="Enter details of location"/>
+         <field id="CreativeWork"
+                help="A work that is a distinct intellectual or artistic creation and is the product of creative effort."
+                title="CreativeWork"
+                placeHolder="Enter details of CreativeWork"/>
+         <field id="Contributor"
+                help="A person or thing that contributes something, in particular."
+                title="Contributor"
+                placeHolder="Enter details of Contributor"/>
+      </group>
+      <group id="DedicationActivity" title="DedicationActivity">
+         <description>An activity that involves an address or inscription (of a literary work, for example) to another as a mark of respect or affection The activity of addressing or inscribing (a literary work, for example) to another as a mark of respect or affection.</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-	     </group>
-      <group id="dedicateItem" title="Dedication of an Item">
-		       <description/>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+                placeHolder="Enter details of location"/>
+         <field id="Dedicator"
+                help="The role of a person who dedicates something to someone or something"
+                title="Dedicator"
+                placeHolder="Enter details of Dedicator"/>
+         <field id="Dedicatee"
+                help="The role of an entity to whom something is dedicated"
+                title="Dedicatee"
+                placeHolder="Enter details of Dedicatee"/>
+         <field id="Item"
+                help=""
+                title="Item"
+                placeHolder="Enter details of Item"/>
+         <field id="CreativeWork"
+                help="A work that is a distinct intellectual or artistic creation and is the product of creative effort."
+                title="CreativeWork"
+                placeHolder="Enter details of CreativeWork"/>
+         <field id="Inscription"
+                help="Writing or carving (words or symbols) on something, especially as a formal or permanent record., as on a monument or in a book"
+                title="Inscription"
+                placeHolder="Enter details of Inscription"/>
+      </group>
+      <group id="DedicationOfItem" title="DedicationOfItem">
+         <description>To address or inscribe an item to another as a mark of respect or affection.</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-	     </group>
-      <group id="printWork" title="Printing of a Creative Work">
-		       <description/>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+                placeHolder="Enter details of location"/>
+         <field id="Dedicator"
+                help="The role of a person who dedicates something to someone or something"
+                title="Dedicator"
+                placeHolder="Enter details of Dedicator"/>
+         <field id="Dedicatee"
+                help="The role of an entity to whom something is dedicated"
+                title="Dedicatee"
+                placeHolder="Enter details of Dedicatee"/>
+         <field id="Item"
+                help=""
+                title="Item"
+                placeHolder="Enter details of Item"/>
+         <field id="Inscription"
+                help="Writing or carving (words or symbols) on something, especially as a formal or permanent record., as on a monument or in a book"
+                title="Inscription"
+                placeHolder="Enter details of Inscription"/>
+      </group>
+      <group id="DedicationOfWork" title="DedicationOfWork">
+         <description>To address or inscribe a literary work to another as a mark of respect or affection.</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-	     </group>
-      <group id="publishWork" title="Publishing of a Creative Work">
-		       <description/>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+                placeHolder="Enter details of location"/>
+         <field id="Dedicator"
+                help="The role of a person who dedicates something to someone or something"
+                title="Dedicator"
+                placeHolder="Enter details of Dedicator"/>
+         <field id="Dedicatee"
+                help="The role of an entity to whom something is dedicated"
+                title="Dedicatee"
+                placeHolder="Enter details of Dedicatee"/>
+         <field id="CreativeWork"
+                help="A work that is a distinct intellectual or artistic creation and is the product of creative effort."
+                title="CreativeWork"
+                placeHolder="Enter details of CreativeWork"/>
+         <field id="Inscription"
+                help="Writing or carving (words or symbols) on something, especially as a formal or permanent record., as on a monument or in a book"
+                title="Inscription"
+                placeHolder="Enter details of Inscription"/>
+      </group>
+      <group id="PrintingActivity" title="PrintingActivity">
+         <description>Activity that involves the production of books, newspapers or other printed materials.</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-	     </group>
-      <group id="research" title="Research">
-		       <description/>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+                placeHolder="Enter details of location"/>
+         <field id="Printer"
+                help=" "
+                title="Printer"
+                placeHolder="Enter details of Printer"/>
+         <field id="CreativeWork"
+                help="A work that is a distinct intellectual or artistic creation and is the product of creative effort."
+                title="CreativeWork"
+                placeHolder="Enter details of CreativeWork"/>
+      </group>
+      <group id="PublishingActivity" title="PublishingActivity">
+         <description>The activity of preparing and issuing books, journals and other materials for sale.</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-	     </group>
-      <group id="salon" title="Salon">
-		       <description/>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+                placeHolder="Enter details of location"/>
+         <field id="Publisher"
+                help=" "
+                title="Publisher"
+                placeHolder="Enter details of Publisher"/>
+         <field id="CreativeWork"
+                help="A work that is a distinct intellectual or artistic creation and is the product of creative effort."
+                title="CreativeWork"
+                placeHolder="Enter details of CreativeWork"/>
+      </group>
+      <group id="Research" title="Research">
+         <description>An activity involving the systematic investigation into and study of materials and sources in order to establish facts and reach new conclusions.</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-	     </group>
-      <group id="holdOfficeLearnedOrganisation"
-             title="Hold Office in a Learned Organisation">
-		       <description/>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+                placeHolder="Enter details of location"/>
+         <field id="Researcher"
+                help="The role of a person who undertakes a systematic investigation into and study of materials and sources in order to establish facts and reach new conclusion."
+                title="Researcher"
+                placeHolder="Enter details of Researcher"/>
+      </group>
+      <group id="Salon" title="Salon">
+         <description>A regular social gathering, especially of writers and artists</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-	     </group>
-      <group id="membershipLearnedOrganisation"
-             title="Membership of a Learned Organisation">
-		       <description/>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
-                type="location"
-                title="Location"
-                placeHolder="Enter location"/>
-	     </group>
+                placeHolder="Enter details of location"/>
+         <field id="Saloniste"
+                help="The role of a person who attends a salon (social gathering)."
+                title="Saloniste"
+                placeHolder="Enter details of Saloniste"/>
+      </group>
    </section>
-   <section id="career" title="Career">
-      <group id="employmentLegalProfession" title="Employment in Legal Profession">
-		       <description/>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+   <section id="Career" title="Career">
+      <group id="Employment" title="Employment">
+         <description>The activity of having paid work.</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-	     </group>
-      <group id="employmentMedicalProfession"
-             title="Employment in Medical Profession">
-		       <description/>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+                placeHolder="Enter details of location"/>
+         <field id="Employer"
+                help="a person or organization that employs people."
+                title="Employer"
+                placeHolder="Enter details of Employer"/>
+         <field id="Employee"
+                help="a person employed for wages or salary, especially at non-executive level."
+                title="Employee"
+                placeHolder="Enter details of Employee"/>
+      </group>
+      <group id="MembershipProfessionalBody" title="MembershipProfessionalBody">
+         <description>Membership of a person to a professional body</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-	     </group>
-      <group id="employment" title="Employment">
-		       <description/>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+                placeHolder="Enter details of location"/>
+         <field id="Member"
+                help="The role of an agent belonging to a particular group The role of a person, country, or organization that has joined a group, society, or team."
+                title="Member"
+                placeHolder="Enter details of Member"/>
+         <field id="ProfessionalBody"
+                help="A nonprofit formal organization seeking to further a particular profession, the interests of individuals engaged in that profession, and the public interest."
+                title="ProfessionalBody"
+                placeHolder="Enter details of ProfessionalBody"/>
+      </group>
+      <group id="DisqualificationFromOffice" title="DisqualificationFromOffice">
+         <description>Activity declaring (someone) ineligible for an office because of an offence or infringement</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-	     </group>
-      <group id="membershipProfessionalBody" title="Membership of Professional Body">
-		       <description/>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+                placeHolder="Enter details of location"/>
+         <field id="Office"
+                help="A position of authority or service, typically one of a public nature A post that is a position of authority or service, typically one of a public nature."
+                title="Office"
+                placeHolder="Enter details of Office"/>
+         <field id="DisqualifiedFromOffice"
+                help="The role of a person who has been declared ineligible for an office because of an offence or infringement The role of a person that is declared ineligible for an office because of an offence or infringement"
+                title="DisqualifiedFromOffice"
+                placeHolder="Enter details of DisqualifiedFromOffice"/>
+         <field id="Organization"
+                help=""
+                title="Organization"
+                placeHolder="Enter details of Organization"/>
+      </group>
+      <group id="HoldOffice" title="HoldOffice">
+         <description/>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-	     </group>
-      <group id="disqualification" title="Disqualification">
-		       <description/>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
-                type="location"
-                title="Location"
-                placeHolder="Enter location"/>
-	     </group>
-      <group id="holdOffice" title="Hold Office">
-		       <description>Description of a person holding office. </description>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
-                type="location"
-                title="Location"
-                placeHolder="Enter location"/>
-		       <field id="" type="" title="" placeHolder=""/>
-	     </group>
+                placeHolder="Enter details of location"/>
+         <field id="Office"
+                help="A position of authority or service, typically one of a public nature A post that is a position of authority or service, typically one of a public nature."
+                title="Office"
+                placeHolder="Enter details of Office"/>
+         <field id="Organization"
+                help=""
+                title="Organization"
+                placeHolder="Enter details of Organization"/>
+         <field id="Person"
+                help=""
+                title="Person"
+                placeHolder="Enter details of Person"/>
+      </group>
    </section>
-   <section id="ecclesiastic" title="Ecclesiastic Activity">
-      <group id="HoldEcclesiasticOffice" title="Hold Ecclesiastic Office">
-		       <description>Description of a person holding office in an ecclesiastical
-			organisation.</description>
-		       <graph>
-			         <node id="holdoffice">
-				           <link>date</link>
-				           <link>location</link>
-				           <link>office</link>
-				           <link>officeholder</link>
-			         </node>
-			         <node id="office"/>
-			         <node id="officeholder"/>
-			         <node id="date"/>
-			         <node id="location"/>
-		       </graph>
-		       <field id="date" type="date" title="Date " placeHolder="Enter date "/>
-		       <field id="location"
+   <section id="Ecclesiastic" title="Ecclesiastic Activity">
+      <group id="MembershipProfessionalBody" title="MembershipProfessionalBody">
+         <description>Membership of a person to a professional body</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-		       <field id="office" type="" title="Office" placeHolder=""/>
-		       <field id="officeHolder"
-                type=""
-                title="Holder of the Office"
-                placeHolder=""/>
-
-
-	     </group>
-      <group id="MembershipEcclesiasticBody" title="Membership Ecclesiastic Body">
-		       <description>Description of </description>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-
-		       </graph>
-		       <field id="" type="" title="" placeHolder=""/>
-	     </group>
-      <group id="DisqualifiedFromEcclesiasticOffice"
-             title="Disqualified From Ecclesiastic Office">
-		       <description>Description of </description>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+                placeHolder="Enter details of location"/>
+         <field id="Member"
+                help="The role of an agent belonging to a particular group The role of a person, country, or organization that has joined a group, society, or team."
+                title="Member"
+                placeHolder="Enter details of Member"/>
+         <field id="ProfessionalBody"
+                help="A nonprofit formal organization seeking to further a particular profession, the interests of individuals engaged in that profession, and the public interest."
+                title="ProfessionalBody"
+                placeHolder="Enter details of ProfessionalBody"/>
+      </group>
+      <group id="HoldOffice" title="HoldOffice">
+         <description/>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-		       <field id="" type="" title="" placeHolder=""/>
-	     </group>
+                placeHolder="Enter details of location"/>
+         <field id="Office"
+                help="A position of authority or service, typically one of a public nature A post that is a position of authority or service, typically one of a public nature."
+                title="Office"
+                placeHolder="Enter details of Office"/>
+         <field id="Organization"
+                help=""
+                title="Organization"
+                placeHolder="Enter details of Organization"/>
+         <field id="Person"
+                help=""
+                title="Person"
+                placeHolder="Enter details of Person"/>
+      </group>
+      <group id="DisqualificationFromOffice" title="DisqualificationFromOffice">
+         <description>Activity declaring (someone) ineligible for an office because of an offence or infringement</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
+                type="location"
+                title="Location"
+                placeHolder="Enter details of location"/>
+         <field id="Office"
+                help="A position of authority or service, typically one of a public nature A post that is a position of authority or service, typically one of a public nature."
+                title="Office"
+                placeHolder="Enter details of Office"/>
+         <field id="DisqualifiedFromOffice"
+                help="The role of a person who has been declared ineligible for an office because of an offence or infringement The role of a person that is declared ineligible for an office because of an offence or infringement"
+                title="DisqualifiedFromOffice"
+                placeHolder="Enter details of DisqualifiedFromOffice"/>
+         <field id="Organization"
+                help=""
+                title="Organization"
+                placeHolder="Enter details of Organization"/>
+      </group>
       <group id="Baptism" title="Baptism">
-		       <description>Description of </description>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-			         <node id="baptism">
-				           <link>date</link>
-				           <link>location</link>
-				           <link>baptismalcandidate</link>
-				           <link>godparent</link>
-				           <link>officiant</link>
-			         </node>
-			         <node id="baptismalcandidate">
-				           <link>godparent</link>
-				           <link>officiant</link>
-			         </node>
-			         <node id="godparent"/>
-			         <node id="officiant"/>
-			
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+         <description>The Christian religious rite of sprinkling water on to a person’s forehead or of immersing them in water, symbolizing purification or regeneration and admission to the Christian Church. In many denominations, baptism is performed on young children and is accompanied by name-giving.</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-		       <field id="" type="" title="" placeHolder=""/>
-	     </group>
+                placeHolder="Enter details of location"/>
+         <field id="BaptismalCandidate"
+                help="The role of a person who is admitted to membership of a Christian church."
+                title="BaptismalCandidate"
+                placeHolder="Enter details of BaptismalCandidate"/>
+         <field id="Godparent"
+                help="The role of a person who presents a person at baptism and promises to take responsibility for their religious education."
+                title="Godparent"
+                placeHolder="Enter details of Godparent"/>
+         <field id="Godchild"
+                help="The role of a person who is presented at baptism by a godparent who promises to take responsibility for their religious education."
+                title="Godchild"
+                placeHolder="Enter details of Godchild"/>
+         <field id="Officiant"
+                help="The role of a person who performs a religious rite or presides over a religious service or ceremony."
+                title="Officiant"
+                placeHolder="Enter details of Officiant"/>
+      </group>
       <group id="Ordination" title="Ordination">
-		       <description>Description of </description>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+         <description>The action of making (someone) a priest or minister; confer holy orders.</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-		       <field id="" type="" title="" placeHolder=""/>
-	     </group>
+                placeHolder="Enter details of location"/>
+         <field id="Officiant"
+                help="The role of a person who performs a religious rite or presides over a religious service or ceremony."
+                title="Officiant"
+                placeHolder="Enter details of Officiant"/>
+      </group>
       <group id="Preach" title="Preach">
-		       <description>Description of </description>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+         <description>Deliver a sermon or religious address to an assembled group of people, typically in church.</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-		       <field id="" type="" title="" placeHolder=""/>
-	     </group>
-      <group id="ReligiousConfirmation" title="Religious Confirmation">
-		       <description>Description of </description>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+                placeHolder="Enter details of location"/>
+      </group>
+      <group id="ReligiousConfirmation" title="ReligiousConfirmation">
+         <description>Confirmation is a rite of initiation in several Christian denominations, normally carried out through anointing, the laying on of hands, and prayer, for the purpose of bestowing the Gift of the Holy Spirit.</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-		       <field id="" type="" title="" placeHolder=""/>
-	     </group>
-      <group id="ReligiousConversion" title="Religious Conversion">
-		       <description>Description of </description>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
+                placeHolder="Enter details of location"/>
+         <field id="Officiant"
+                help="The role of a person who performs a religious rite or presides over a religious service or ceremony."
+                title="Officiant"
+                placeHolder="Enter details of Officiant"/>
+         <field id="ConfirmationCandidate"
+                help="The role of a person who is confirmed during the religious rite or sacrament of confirmation"
+                title="ConfirmationCandidate"
+                placeHolder="Enter details of ConfirmationCandidate"/>
+      </group>
+      <group id="ReligiousConversion" title="ReligiousConversion">
+         <description>The adoption, wholesale, of a set of beliefs identified with one particular religious denomination to the exclusion of others. Religious conversion marks a transformation of religious identity and is symbolized by special rituals.
 
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+https://en.wikipedia.org/wiki/Religious_conversion</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-		       <field id="" type="" title="" placeHolder=""/>
-	     </group>
-      <group id="ReligiousConfession" title="Religious Confession">
-		       <description>Description of </description>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+                placeHolder="Enter details of location"/>
+         <field id="Officiant"
+                help="The role of a person who performs a religious rite or presides over a religious service or ceremony."
+                title="Officiant"
+                placeHolder="Enter details of Officiant"/>
+         <field id="ReligousConvert"
+                help=""
+                title="ReligousConvert"
+                placeHolder="Enter details of ReligousConvert"/>
+      </group>
+      <group id="ReligiousConfession" title="ReligiousConfession">
+         <description>Confession is the acknowledgment of sin (or one's sinfulness) or wrongs. It is a religious practice in a number of faith traditions.</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-		       <field id="" type="" title="" placeHolder=""/>
-	     </group>
+                placeHolder="Enter details of location"/>
+         <field id="Confessor"
+                help="The role of a priest who hears confessions and gives absolution and spiritual counsel"
+                title="Confessor"
+                placeHolder="Enter details of Confessor"/>
+         <field id="Confessee"
+                help="The role of a person who repents their sins and (in the Christian Church) seeks forgiveness from God."
+                title="Confessee"
+                placeHolder="Enter details of Confessee"/>
+      </group>
    </section>
-   <section id="political" title="Political Activity">
-      <group id="membershipPoliticalGroup" title="Membership of a Political Group">
-		       <description>Description of membership of a political group.</description>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-			         <node id="MembershipActivity">
-				           <link>date</link>
-				           <link>location</link>
-			         </node>
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+   <section id="Political" title="Political Activity">
+      <group id="MembershipProfessionalBody" title="MembershipProfessionalBody">
+         <description>Membership of a person to a professional body</description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-		       <field id="" type="" title="" placeHolder=""/>
-	     </group>
-      <group id="HoldPoliticalOffice" title="Hold Political Office">
-		       <description>Description of a person holiding a political office</description>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-			         <node id="holdpoliticaloffice">
-				           <link>date</link>
-				           <link>location</link>
-				           <link>office</link>
-				           <link>officeholder</link>
-			         </node>
-			         <node id="office"/>
-			         <node id="officeholder"/>
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+                placeHolder="Enter details of location"/>
+         <field id="Member"
+                help="The role of an agent belonging to a particular group The role of a person, country, or organization that has joined a group, society, or team."
+                title="Member"
+                placeHolder="Enter details of Member"/>
+         <field id="ProfessionalBody"
+                help="A nonprofit formal organization seeking to further a particular profession, the interests of individuals engaged in that profession, and the public interest."
+                title="ProfessionalBody"
+                placeHolder="Enter details of ProfessionalBody"/>
+      </group>
+      <group id="HoldOffice" title="HoldOffice">
+         <description/>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-		       <field id="" type="" title="" placeHolder=""/>
-	     </group>
-      <group id="RepresentativeAssembly" title="Representative at Assembly">
-		       <description>Description of </description>
-		       <graph>
-			         <node id="date"/>
-			         <node id="location"/>
-
-		       </graph>
-		       <field id="date" type="date" title="Date" placeHolder="Enter date"/>
-		       <field id="location"
+                placeHolder="Enter details of location"/>
+         <field id="Office"
+                help="A position of authority or service, typically one of a public nature A post that is a position of authority or service, typically one of a public nature."
+                title="Office"
+                placeHolder="Enter details of Office"/>
+         <field id="Organization"
+                help=""
+                title="Organization"
+                placeHolder="Enter details of Organization"/>
+         <field id="Person"
+                help=""
+                title="Person"
+                placeHolder="Enter details of Person"/>
+      </group>
+      <group id="RepresentativeAssembly" title="RepresentativeAssembly">
+         <description>A political institution in which a number of persons representing the population or privileged orders within the population of a state come together to debate, negotiate with the executive (originally the king or other ruler) and legislate. </description>
+         <field id="date"
+                type="date"
+                title="Date "
+                placeHolder="Enter details of date "/>
+         <field id="location"
                 type="location"
                 title="Location"
-                placeHolder="Enter location"/>
-		       <field id="" type="" title="" placeHolder=""/>
-	     </group>
+                placeHolder="Enter details of location"/>
+      </group>
    </section>
 </form>

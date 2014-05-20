@@ -1,15 +1,15 @@
 .link {
   
-  stroke: #666;
+  stroke: silver;
   stroke-width: 2.5px;
 }
 
 
 
 circle {
-  fill: #666;
-  stroke: #666;
-  stroke-width: 2.5px;
+  fill: silver;
+  stroke: slategray;
+  stroke-width: 1.5px;
 }
 
 
@@ -59,3 +59,54 @@ a:link,a:visited{color: !important;}
 
 
 
+
+  
+ dl.tabs dd a {
+    
+    background-color:whitesmoke;
+}
+
+.assertion {
+    
+    color:red;
+    font-weight:bold;
+    
+}
+  
+  
+  
+svg {
+    
+width: 1000px !important;
+height: 500px !important; 
+
+    
+}  
+
+
+.linklabel {
+    
+  font-size: 12px;  
+  font-family:courier, fixed, monospace;  
+    
+}
+
+.linklabelholder{
+fill:none; 
+stroke:blue; 
+
+ font-size: 14px;  
+  font-family:courier, fixed, monospace; 
+font-weight:200;
+}
+
+
+
+
+fieldset {
+	
+	width:100% !important;
+	
+}
+
+  
