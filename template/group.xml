@@ -30,7 +30,7 @@
 		<graph>
 			<node id="date"/>
 			<node id="location"/>
-			<node id="ennoblement">
+			<node id="Ennoblement">
 				<link>date</link>
 				<link>location</link>
 			</node>
@@ -272,7 +272,7 @@
 				
 			</node>
 			<node id="Mother">
-				<link rel="mother of">child</link>
+				<link rel="mother of">Child</link>
 				
 			</node>
 			<node id="Child">

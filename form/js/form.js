@@ -1,5 +1,17 @@
 
 
+ $(".date_is_range").click(function(){
+/*
+ add click event to add another set of date fields if this date to be captures is a range
+ */
+       $( ".date_is_range" ).change();
+    });
+
+$( ".date_is_range" ).change(function() {
+  alert( "Handler for .change() called." );
+});
+
+
 function showContext(context){
 	
 	
@@ -49,10 +61,106 @@ function updateAssertion(value, id, svgid, circleid){
 	
 	
 	
-	
-	
-	
-	
-	
-	
 }
+
+
+function addSection(sectionclass){
+    
+   var currentCount =  $(sectionclass).length;
+    var newCount = currentCount+1;
+    var lastRepeatingGroup = $(sectionclass).last();
+    var newSection = lastRepeatingGroup.clone();
+    newSection.insertAfter(lastRepeatingGroup);
+    
+    newSection.find("input").each(function (index, input) {
+        input.id = input.id.replace("_" + currentCount, "_" + newCount);
+        input.name = input.name.replace("_" + currentCount, "_" + newCount);
+    });
+    
+    newSection.find("textarea").each(function (index, input) {
+        input.id = input.id.replace("_" + currentCount, "_" + newCount);
+        input.name = input.name.replace("_" + currentCount, "_" + newCount);
+    });
+    
+    
+    newSection.find("label").each(function (index, label) {
+        var l = $(label);
+        l.attr('for', l.attr('for').replace("_" + currentCount, "_" + newCount));
+    });
+    return false; 
+    
+}
+
+
+function deleteSection(obj, sectionclass){
+    
+    var currentCount =  $(sectionclass).length;
+    // do not delete section if there is only one section
+    if (currentCount == 1){
+   
+        return false;
+    }
+    
+     $(obj).parent('p').parent('fieldset').remove();
+    return false;
+}
+
+
+
+
+function addField(fieldclass){
+    
+   var currentCount =  $(fieldclass).length;
+    var newCount = currentCount+1;
+    var lastRepeatingGroup = $(fieldclass).last();
+    var newField = lastRepeatingGroup.clone();
+    newField.insertAfter(lastRepeatingGroup);
+    
+    newField.find("input").each(function (index, input) {
+        input.id = input.id.replace("_" + currentCount, "_" + newCount);
+        input.name = input.name.replace("_" + currentCount, "_" + newCount);
+    });
+    
+    newField.find("textarea").each(function (index, input) {
+        input.id = input.id.replace("_" + currentCount, "_" + newCount);
+        input.name = input.name.replace("_" + currentCount, "_" + newCount);
+    });
+    
+    
+    newField.find("label").each(function (index, label) {
+        var l = $(label);
+        l.attr('for', l.attr('for').replace("_" + currentCount, "_" + newCount));
+    });
+    return false; 
+    
+}
+
+
+function deleteField(obj, fieldclass){
+    
+    var currentCount =  $(fieldclass).length;
+    // do not delete field if there is only one field
+    if (currentCount == 1){
+   
+        return false;
+    }
+    
+     $(obj).parent('label').parent('div').remove();
+    return false;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

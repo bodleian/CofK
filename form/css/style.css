@@ -1,5 +1,12 @@
+
+svg {
+    
+    background-color:whitesmoke;
+    
+}
+
 .link {
-  
+
   stroke: silver;
   stroke-width: 2.5px;
 }
@@ -7,15 +14,11 @@
 
 
 circle {
+fill-opacity:1;
   fill: silver;
   stroke: slategray;
   stroke-width: 1.5px;
 }
-
-
-
-
-
 
 
 html,body{background:white;font-size:12pt !important;}
@@ -74,21 +77,19 @@ a:link,a:visited{color: !important;}
 }
   
   
-  
-svg {
-    
-width: 1000px !important;
-height: 500px !important; 
+.svgmodal {
 
-    
-}  
+
+}
+  
+ 
 
 
 .linklabel {
     
   font-size: 12px;  
   font-family:courier, fixed, monospace;  
-    
+    color:black;
 }
 
 .linklabelholder{
@@ -98,15 +99,24 @@ stroke:blue;
  font-size: 14px;  
   font-family:courier, fixed, monospace; 
 font-weight:200;
+color:black;
 }
 
 
 
 
-fieldset {
-	
-	width:100% !important;
-	
+
+.addRemove {
+text-align:right;
+color:red;
+    
+    
 }
 
+
+.delete {
+    
+ margin-left: 20px;   
+    
+}
   

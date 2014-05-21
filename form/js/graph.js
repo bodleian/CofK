@@ -4,8 +4,8 @@
                     function myGraph(el, context) {
                     
                     // set up the D3 visualisation in the specified element
-                    var w = "1000",
-                    h = "500";
+                    var w = "800",
+                    h = "800";
                     
                     
                     var vis = d3.select(el)
@@ -14,11 +14,11 @@
                     // append svg elemnt with attributes eg weight and height
                     .append("svg")
                         .attr("width", w)
-                         .attr("height", h)
-                        
+                         .attr("height", h)                        
                         .attr("class", "graph-svg-component")
                         .attr("id",context)
                         .attr("fill-opacity", "0.0")
+                        
                         .attr("pointer-events", "all")
                         .attr("viewBox","0 0 "+w+" "+h)
                         .attr("perserveAspectRatio","xMinYMid")
@@ -54,7 +54,7 @@
                     };
                     
                     
-                    // remove link from the graph object
+                    // remove link from the graph object    
                     this.removeLink = function (source,target){
                     for(var i=0;i<links.length;i++)
                     {
@@ -82,7 +82,9 @@
                     
                     // add link to the graph object
                     this.addLink = function (source, target, value) {
+                    
                     links.push({"source":findNode(source),"target":findNode(target), "linktext": value});
+                    
                     update();
                     };
                     
@@ -173,8 +175,8 @@
                     .attr("r", 10)
                     .attr("id",function(d) { return "Node;"+d.id;})
                     .attr("class","nodeStrokeClass")
-                    .attr("fill-opacity", "1.0")
-                    .attr("fill", "black");
+                    .attr("fill-opacity", "0")
+                    
                     
                     // append a text element to the node
                     nodeEnter.append("text")
@@ -194,7 +196,7 @@
                     .attr("y", 20) 
                     
                     .style("fill", "red")
-                     .style("font-weight", "bold")
+                    .style("font-weight", "bold")
                     .attr("fill-opacity", "1.0");
                     
                     
