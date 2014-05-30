@@ -112,7 +112,7 @@
                                                         </script>
                                                        
                                                        
-                                                            <div class="content {$active2}" id="{$groupId}">
+                                                        <div class="content {$active2} {$groupId}" id="{$groupId}">
                                                         
                                                                 <div id="modalGraph{$groupId}" class="reveal-modal svgmodal" data-reveal="">
                                                                     <h2>Graph</h2>
@@ -381,7 +381,7 @@
            <span data-tooltip="" class="has-tip" title="{$help}"><i class="fi-magnifying-glass"></i></span>
        </xsl:if>
            <xsl:if test="@repeat = 'yes'">
-       <a href="#"  onClick="addField('.div{$groupId}-{$fieldId}')"><i class="fi-plus"></i></a><a href="#"  onClick="deleteField(this, '.div{$groupId}-{$fieldId}')"><i class="fi-minus"></i></a>
+       <a href="#"  onClick="addField(this, '.div{$groupId}-{$fieldId}')"><i class="fi-plus"></i></a><a href="#"  onClick="deleteField(this, '.div{$groupId}-{$fieldId}')"><i class="fi-minus"></i></a>
            </xsl:if>
        </label>
        

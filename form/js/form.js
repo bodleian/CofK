@@ -108,11 +108,18 @@ function deleteSection(obj, sectionclass){
 
 
 
-function addField(fieldclass){
+function addField(obj, fieldclass){
     
-   var currentCount =  $(fieldclass).length;
+	
+	// identify index of groupclass
+	
+	var group = $(obj).parent().parent().parent().parent();
+	var field = $(group).find(fieldclass)
+	
+	
+   var currentCount =  $(field).length;
     var newCount = currentCount+1;
-    var lastRepeatingGroup = $(fieldclass).last();
+    var lastRepeatingGroup = $(field).last();
     var newField = lastRepeatingGroup.clone();
     newField.insertAfter(lastRepeatingGroup);
     
