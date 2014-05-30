@@ -75,11 +75,16 @@ function addSection(sectionclass){
     newSection.find("input").each(function (index, input) {
         input.id = input.id.replace("_" + currentCount, "_" + newCount);
         input.name = input.name.replace("_" + currentCount, "_" + newCount);
+        
+        $(input).val("");
+       
+        
     });
     
     newSection.find("textarea").each(function (index, input) {
         input.id = input.id.replace("_" + currentCount, "_" + newCount);
         input.name = input.name.replace("_" + currentCount, "_" + newCount);
+        $(input).val("");
     });
     
     
@@ -126,11 +131,14 @@ function addField(obj, fieldclass){
     newField.find("input").each(function (index, input) {
         input.id = input.id.replace("_" + currentCount, "_" + newCount);
         input.name = input.name.replace("_" + currentCount, "_" + newCount);
+        $(input).prop("checked", false); // uncheck a checkbox
+        $(input).val("");
     });
     
     newField.find("textarea").each(function (index, input) {
         input.id = input.id.replace("_" + currentCount, "_" + newCount);
         input.name = input.name.replace("_" + currentCount, "_" + newCount);
+        $(input).val("");
     });
     
     
@@ -139,6 +147,10 @@ function addField(obj, fieldclass){
         l.attr('for', l.attr('for').replace("_" + currentCount, "_" + newCount));
     });
     return false; 
+    
+    
+    
+    
     
 }
 
@@ -158,7 +170,14 @@ function deleteField(obj, fieldclass){
         return false;
     }
     
+    
+    $(obj).parent('label').parent('div').prev().focus();
+    
      $(obj).parent('label').parent('div').remove();
+     
+     
+     
+     
     return false;
 }
 
@@ -177,12 +196,13 @@ function dateRange(obj, fieldId, groupId){
 	var approximate = $(fieldset).find(".div"+ groupId + '-date_approximate');
 	
 	var div1 = day.next('div');
-	var div2 = approximate.next('div');
+	var div2 = approximate.next('div'); // div that follows the approximate checkbox and where we want to insert new date fields
 	
 	var arrayFields = new Array(year, month, day, div1, inferred, uncertain, approximate);
 	
+	// if date range property is checked, and there are not already two sets of date fields, then insert new date fields
 	
-	if ($('#' + fieldId).prop("checked")) {
+	if ( ($('#' + fieldId).prop("checked")) && (year.length == 1)  ) {
 		
 		// insert date fields
 			for(i = (arrayFields.length - 1) ;i > -1 ;--i){		
@@ -191,7 +211,8 @@ function dateRange(obj, fieldId, groupId){
 			
 			newelem.find("input").each(function (index, input) {
 		        input.id = input.id + "_2";
-		        
+		        $(input).val(""); // set value to empty string
+		        $(input).prop("checked", false); // uncheck a checkbox
 		    });
 			
 			newelem.insertAfter(div2);
