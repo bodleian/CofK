@@ -73,13 +73,13 @@
                           
                           -->
                                <field id="date_is_range" position="start" type="checkbox" title="Is this a date range?" placeHolder=""/>
-                               <field id="date_year" position="start" type="" title="Year" placeHolder="Enter year"/>
+                               <field id="date_year"  group="start"  position="start" type="" title="Year" placeHolder="Enter year"/>
                                <field id="date_month" type="" title="Month" placeHolder="Enter month  "/>
                                <field id="date_day" type="" title="Day" placeHolder="Enter day  "/>
                                
                                <field id="date_inferred" position="start" type="checkbox" title="Inferred date" placeHolder=""/>
                                <field id="date_uncertain" type="checkbox" title="Uncertain date" placeHolder=""/>
-                               <field id="date_approximate"  position="end" type="checkbox" title="Approximate date" placeHolder=""/>
+                               <field id="date_approximate"  group="end" position="end" type="checkbox" title="Approximate date" placeHolder=""/>
                               
                               
                                

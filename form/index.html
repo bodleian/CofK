@@ -13,7 +13,7 @@
       <link rel="stylesheet" href="css/style.css"></link>
    </head>
    <body>
-      <form method="post" action="#" enctype="multipart/form-data">
+      <form method="post" action="formsave">
          <div class="off-canvas-wrap" data-offcanvas="">
             <div class="inner-wrap">
                <aside class="left-off-canvas-menu">
@@ -41,7 +41,9 @@
                <dl class="accordion" data-accordion="">
                   <dd>
                      <a href="#panelintroduction">Introduction</a>
-                     <div id="panelintroduction" class="content active"></div>
+                     <div id="panelintroduction" class="content active">
+                        <input type="submit" value="Submit Form"></input>
+                     </div>
                   </dd>
                   <dd>
                      <a href="#panelPersonalLife" class="active">Basic Data</a>
@@ -82,7 +84,7 @@
                               }   
                               
                            </script>
-                           <div class="content active Birth" id="Birth">
+                           <div class="content active" id="Birth">
                               <div id="modalGraphBirth" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -193,7 +195,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divBirth-date_is_range">
-                                       <input class="date_is_range" id="Birth-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="Birth-date_is_range" type="checkbox" onChange="dateRange(this, 'Birth-date_is_range', 'Birth')"></input>
                                        <label for="Birth-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -287,7 +289,7 @@
                               }   
                               
                            </script>
-                           <div class="content  Death" id="Death">
+                           <div class="content " id="Death">
                               <div id="modalGraphDeath" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -352,7 +354,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divDeath-date_is_range">
-                                       <input class="date_is_range" id="Death-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="Death-date_is_range" type="checkbox" onChange="dateRange(this, 'Death-date_is_range', 'Death')"></input>
                                        <label for="Death-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -468,7 +470,7 @@
                               }   
                               
                            </script>
-                           <div class="content active Displacement" id="Displacement">
+                           <div class="content active" id="Displacement">
                               <div id="modalGraphDisplacement" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -511,7 +513,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divDisplacement-date_is_range">
-                                       <input class="date_is_range" id="Displacement-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="Displacement-date_is_range" type="checkbox" onChange="dateRange(this, 'Displacement-date_is_range', 'Displacement')"></input>
                                        <label for="Displacement-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -597,7 +599,7 @@
                               }   
                               
                            </script>
-                           <div class="content  Emmigration" id="Emmigration">
+                           <div class="content " id="Emmigration">
                               <div id="modalGraphEmmigration" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -640,7 +642,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divEmmigration-date_is_range">
-                                       <input class="date_is_range" id="Emmigration-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="Emmigration-date_is_range" type="checkbox" onChange="dateRange(this, 'Emmigration-date_is_range', 'Emmigration')"></input>
                                        <label for="Emmigration-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -726,7 +728,7 @@
                               }   
                               
                            </script>
-                           <div class="content  Exile" id="Exile">
+                           <div class="content " id="Exile">
                               <div id="modalGraphExile" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -772,7 +774,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divExile-date_is_range">
-                                       <input class="date_is_range" id="Exile-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="Exile-date_is_range" type="checkbox" onChange="dateRange(this, 'Exile-date_is_range', 'Exile')"></input>
                                        <label for="Exile-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -858,7 +860,7 @@
                               }   
                               
                            </script>
-                           <div class="content  Immigration" id="Immigration">
+                           <div class="content " id="Immigration">
                               <div id="modalGraphImmigration" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -902,7 +904,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divImmigration-date_is_range">
-                                       <input class="date_is_range" id="Immigration-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="Immigration-date_is_range" type="checkbox" onChange="dateRange(this, 'Immigration-date_is_range', 'Immigration')"></input>
                                        <label for="Immigration-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -988,7 +990,7 @@
                               }   
                               
                            </script>
-                           <div class="content  Residence" id="Residence">
+                           <div class="content " id="Residence">
                               <div id="modalGraphResidence" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -1032,7 +1034,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divResidence-date_is_range">
-                                       <input class="date_is_range" id="Residence-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="Residence-date_is_range" type="checkbox" onChange="dateRange(this, 'Residence-date_is_range', 'Residence')"></input>
                                        <label for="Residence-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -1118,7 +1120,7 @@
                               }   
                               
                            </script>
-                           <div class="content  Travel" id="Travel">
+                           <div class="content " id="Travel">
                               <div id="modalGraphTravel" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -1162,7 +1164,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divTravel-date_is_range">
-                                       <input class="date_is_range" id="Travel-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="Travel-date_is_range" type="checkbox" onChange="dateRange(this, 'Travel-date_is_range', 'Travel')"></input>
                                        <label for="Travel-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -1248,7 +1250,7 @@
                               }   
                               
                            </script>
-                           <div class="content  Visit" id="Visit">
+                           <div class="content " id="Visit">
                               <div id="modalGraphVisit" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -1292,7 +1294,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divVisit-date_is_range">
-                                       <input class="date_is_range" id="Visit-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="Visit-date_is_range" type="checkbox" onChange="dateRange(this, 'Visit-date_is_range', 'Visit')"></input>
                                        <label for="Visit-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -1422,7 +1424,7 @@
                               }   
                               
                            </script>
-                           <div class="content active UniversityMatriculation" id="UniversityMatriculation">
+                           <div class="content active" id="UniversityMatriculation">
                               <div id="modalGraphUniversityMatriculation" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -1533,7 +1535,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divUniversityMatriculation-date_is_range">
-                                       <input class="date_is_range" id="UniversityMatriculation-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="UniversityMatriculation-date_is_range" type="checkbox" onChange="dateRange(this, 'UniversityMatriculation-date_is_range', 'UniversityMatriculation')"></input>
                                        <label for="UniversityMatriculation-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -1619,7 +1621,7 @@
                               }   
                               
                            </script>
-                           <div class="content  InclusionClassList" id="InclusionClassList">
+                           <div class="content " id="InclusionClassList">
                               <div id="modalGraphInclusionClassList" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -1688,7 +1690,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divInclusionClassList-date_is_range">
-                                       <input class="date_is_range" id="InclusionClassList-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="InclusionClassList-date_is_range" type="checkbox" onChange="dateRange(this, 'InclusionClassList-date_is_range', 'InclusionClassList')"></input>
                                        <label for="InclusionClassList-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -1774,7 +1776,7 @@
                               }   
                               
                            </script>
-                           <div class="content  Disputation" id="Disputation">
+                           <div class="content " id="Disputation">
                               <div id="modalGraphDisputation" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -1854,7 +1856,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divDisputation-date_is_range">
-                                       <input class="date_is_range" id="Disputation-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="Disputation-date_is_range" type="checkbox" onChange="dateRange(this, 'Disputation-date_is_range', 'Disputation')"></input>
                                        <label for="Disputation-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -1940,7 +1942,7 @@
                               }   
                               
                            </script>
-                           <div class="content  PersonalTestimony" id="PersonalTestimony">
+                           <div class="content " id="PersonalTestimony">
                               <div id="modalGraphPersonalTestimony" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -1984,7 +1986,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divPersonalTestimony-date_is_range">
-                                       <input class="date_is_range" id="PersonalTestimony-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="PersonalTestimony-date_is_range" type="checkbox" onChange="dateRange(this, 'PersonalTestimony-date_is_range', 'PersonalTestimony')"></input>
                                        <label for="PersonalTestimony-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -2070,7 +2072,7 @@
                               }   
                               
                            </script>
-                           <div class="content  PromotionToDegree" id="PromotionToDegree">
+                           <div class="content " id="PromotionToDegree">
                               <div id="modalGraphPromotionToDegree" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -2128,7 +2130,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divPromotionToDegree-date_is_range">
-                                       <input class="date_is_range" id="PromotionToDegree-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="PromotionToDegree-date_is_range" type="checkbox" onChange="dateRange(this, 'PromotionToDegree-date_is_range', 'PromotionToDegree')"></input>
                                        <label for="PromotionToDegree-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -2214,7 +2216,7 @@
                               }   
                               
                            </script>
-                           <div class="content  Study" id="Study">
+                           <div class="content " id="Study">
                               <div id="modalGraphStudy" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -2288,7 +2290,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divStudy-date_is_range">
-                                       <input class="date_is_range" id="Study-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="Study-date_is_range" type="checkbox" onChange="dateRange(this, 'Study-date_is_range', 'Study')"></input>
                                        <label for="Study-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -2374,7 +2376,7 @@
                               }   
                               
                            </script>
-                           <div class="content  Teaching" id="Teaching">
+                           <div class="content " id="Teaching">
                               <div id="modalGraphTeaching" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -2448,7 +2450,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divTeaching-date_is_range">
-                                       <input class="date_is_range" id="Teaching-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="Teaching-date_is_range" type="checkbox" onChange="dateRange(this, 'Teaching-date_is_range', 'Teaching')"></input>
                                        <label for="Teaching-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -2579,7 +2581,7 @@
                               }   
                               
                            </script>
-                           <div class="content active Trade" id="Trade">
+                           <div class="content active" id="Trade">
                               <div id="modalGraphTrade" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -2650,7 +2652,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divTrade-date_is_range">
-                                       <input class="date_is_range" id="Trade-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="Trade-date_is_range" type="checkbox" onChange="dateRange(this, 'Trade-date_is_range', 'Trade')"></input>
                                        <label for="Trade-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -2736,7 +2738,7 @@
                               }   
                               
                            </script>
-                           <div class="content  Contract" id="Contract">
+                           <div class="content " id="Contract">
                               <div id="modalGraphContract" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -2796,7 +2798,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divContract-date_is_range">
-                                       <input class="date_is_range" id="Contract-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="Contract-date_is_range" type="checkbox" onChange="dateRange(this, 'Contract-date_is_range', 'Contract')"></input>
                                        <label for="Contract-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -2882,7 +2884,7 @@
                               }   
                               
                            </script>
-                           <div class="content  InclusionAlbumAmicorum" id="InclusionAlbumAmicorum">
+                           <div class="content " id="InclusionAlbumAmicorum">
                               <div id="modalGraphInclusionAlbumAmicorum" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -2968,7 +2970,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divInclusionAlbumAmicorum-date_is_range">
-                                       <input class="date_is_range" id="InclusionAlbumAmicorum-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="InclusionAlbumAmicorum-date_is_range" type="checkbox" onChange="dateRange(this, 'InclusionAlbumAmicorum-date_is_range', 'InclusionAlbumAmicorum')"></input>
                                        <label for="InclusionAlbumAmicorum-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -3054,7 +3056,7 @@
                               }   
                               
                            </script>
-                           <div class="content  ExchangeOccasionalVerse" id="ExchangeOccasionalVerse">
+                           <div class="content " id="ExchangeOccasionalVerse">
                               <div id="modalGraphExchangeOccasionalVerse" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -3137,7 +3139,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divExchangeOccasionalVerse-date_is_range">
-                                       <input class="date_is_range" id="ExchangeOccasionalVerse-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="ExchangeOccasionalVerse-date_is_range" type="checkbox" onChange="dateRange(this, 'ExchangeOccasionalVerse-date_is_range', 'ExchangeOccasionalVerse')"></input>
                                        <label for="ExchangeOccasionalVerse-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -3223,7 +3225,7 @@
                               }   
                               
                            </script>
-                           <div class="content  Collaboration" id="Collaboration">
+                           <div class="content " id="Collaboration">
                               <div id="modalGraphCollaboration" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -3267,7 +3269,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divCollaboration-date_is_range">
-                                       <input class="date_is_range" id="Collaboration-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="Collaboration-date_is_range" type="checkbox" onChange="dateRange(this, 'Collaboration-date_is_range', 'Collaboration')"></input>
                                        <label for="Collaboration-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -3353,7 +3355,7 @@
                               }   
                               
                            </script>
-                           <div class="content  Travel" id="Travel">
+                           <div class="content " id="Travel">
                               <div id="modalGraphTravel" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -3397,7 +3399,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divTravel-date_is_range">
-                                       <input class="date_is_range" id="Travel-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="Travel-date_is_range" type="checkbox" onChange="dateRange(this, 'Travel-date_is_range', 'Travel')"></input>
                                        <label for="Travel-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -3483,7 +3485,7 @@
                               }   
                               
                            </script>
-                           <div class="content  SocialVisit" id="SocialVisit">
+                           <div class="content " id="SocialVisit">
                               <div id="modalGraphSocialVisit" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -3541,7 +3543,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divSocialVisit-date_is_range">
-                                       <input class="date_is_range" id="SocialVisit-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="SocialVisit-date_is_range" type="checkbox" onChange="dateRange(this, 'SocialVisit-date_is_range', 'SocialVisit')"></input>
                                        <label for="SocialVisit-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -3627,7 +3629,7 @@
                               }   
                               
                            </script>
-                           <div class="content  Meeting" id="Meeting">
+                           <div class="content " id="Meeting">
                               <div id="modalGraphMeeting" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -3671,7 +3673,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divMeeting-date_is_range">
-                                       <input class="date_is_range" id="Meeting-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="Meeting-date_is_range" type="checkbox" onChange="dateRange(this, 'Meeting-date_is_range', 'Meeting')"></input>
                                        <label for="Meeting-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -3757,7 +3759,7 @@
                               }   
                               
                            </script>
-                           <div class="content  Introduction" id="Introduction">
+                           <div class="content " id="Introduction">
                               <div id="modalGraphIntroduction" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -3817,7 +3819,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divIntroduction-date_is_range">
-                                       <input class="date_is_range" id="Introduction-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="Introduction-date_is_range" type="checkbox" onChange="dateRange(this, 'Introduction-date_is_range', 'Introduction')"></input>
                                        <label for="Introduction-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -3903,7 +3905,7 @@
                               }   
                               
                            </script>
-                           <div class="content  Acquaintanceship" id="Acquaintanceship">
+                           <div class="content " id="Acquaintanceship">
                               <div id="modalGraphAcquaintanceship" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -3947,7 +3949,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divAcquaintanceship-date_is_range">
-                                       <input class="date_is_range" id="Acquaintanceship-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="Acquaintanceship-date_is_range" type="checkbox" onChange="dateRange(this, 'Acquaintanceship-date_is_range', 'Acquaintanceship')"></input>
                                        <label for="Acquaintanceship-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -4033,7 +4035,7 @@
                               }   
                               
                            </script>
-                           <div class="content  Correspondence" id="Correspondence">
+                           <div class="content " id="Correspondence">
                               <div id="modalGraphCorrespondence" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -4105,7 +4107,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divCorrespondence-date_is_range">
-                                       <input class="date_is_range" id="Correspondence-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="Correspondence-date_is_range" type="checkbox" onChange="dateRange(this, 'Correspondence-date_is_range', 'Correspondence')"></input>
                                        <label for="Correspondence-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -4191,7 +4193,7 @@
                               }   
                               
                            </script>
-                           <div class="content  Friendship" id="Friendship">
+                           <div class="content " id="Friendship">
                               <div id="modalGraphFriendship" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -4237,7 +4239,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divFriendship-date_is_range">
-                                       <input class="date_is_range" id="Friendship-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="Friendship-date_is_range" type="checkbox" onChange="dateRange(this, 'Friendship-date_is_range', 'Friendship')"></input>
                                        <label for="Friendship-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -4338,7 +4340,7 @@
                               }   
                               
                            </script>
-                           <div class="content active Ennoble" id="Ennoble">
+                           <div class="content active" id="Ennoble">
                               <div id="modalGraphEnnoble" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -4377,7 +4379,7 @@
                                  <div class="row">
                                     <div class="row"></div>
                                     <div class="small-4 columns divEnnoble-date_is_range">
-                                       <input class="date_is_range" id="Ennoble-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="Ennoble-date_is_range" type="checkbox" onChange="dateRange(this, 'Ennoble-date_is_range', 'Ennoble')"></input>
                                        <label for="Ennoble-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -4502,7 +4504,7 @@
                               }   
                               
                            </script>
-                           <div class="content active CreationActivity" id="CreationActivity">
+                           <div class="content active" id="CreationActivity">
                               <div id="modalGraphCreationActivity" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -4560,7 +4562,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divCreationActivity-date_is_range">
-                                       <input class="date_is_range" id="CreationActivity-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="CreationActivity-date_is_range" type="checkbox" onChange="dateRange(this, 'CreationActivity-date_is_range', 'CreationActivity')"></input>
                                        <label for="CreationActivity-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -4646,7 +4648,7 @@
                               }   
                               
                            </script>
-                           <div class="content  AuthoringActivity" id="AuthoringActivity">
+                           <div class="content " id="AuthoringActivity">
                               <div id="modalGraphAuthoringActivity" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -4704,7 +4706,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divAuthoringActivity-date_is_range">
-                                       <input class="date_is_range" id="AuthoringActivity-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="AuthoringActivity-date_is_range" type="checkbox" onChange="dateRange(this, 'AuthoringActivity-date_is_range', 'AuthoringActivity')"></input>
                                        <label for="AuthoringActivity-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -4790,7 +4792,7 @@
                               }   
                               
                            </script>
-                           <div class="content  ContributionActivity" id="ContributionActivity">
+                           <div class="content " id="ContributionActivity">
                               <div id="modalGraphContributionActivity" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -4848,7 +4850,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divContributionActivity-date_is_range">
-                                       <input class="date_is_range" id="ContributionActivity-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="ContributionActivity-date_is_range" type="checkbox" onChange="dateRange(this, 'ContributionActivity-date_is_range', 'ContributionActivity')"></input>
                                        <label for="ContributionActivity-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -4934,7 +4936,7 @@
                               }   
                               
                            </script>
-                           <div class="content  DedicationActivity" id="DedicationActivity">
+                           <div class="content " id="DedicationActivity">
                               <div id="modalGraphDedicationActivity" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -5034,7 +5036,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divDedicationActivity-date_is_range">
-                                       <input class="date_is_range" id="DedicationActivity-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="DedicationActivity-date_is_range" type="checkbox" onChange="dateRange(this, 'DedicationActivity-date_is_range', 'DedicationActivity')"></input>
                                        <label for="DedicationActivity-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -5120,7 +5122,7 @@
                               }   
                               
                            </script>
-                           <div class="content  DedicationOfItem" id="DedicationOfItem">
+                           <div class="content " id="DedicationOfItem">
                               <div id="modalGraphDedicationOfItem" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -5203,7 +5205,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divDedicationOfItem-date_is_range">
-                                       <input class="date_is_range" id="DedicationOfItem-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="DedicationOfItem-date_is_range" type="checkbox" onChange="dateRange(this, 'DedicationOfItem-date_is_range', 'DedicationOfItem')"></input>
                                        <label for="DedicationOfItem-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -5289,7 +5291,7 @@
                               }   
                               
                            </script>
-                           <div class="content  DedicationOfWork" id="DedicationOfWork">
+                           <div class="content " id="DedicationOfWork">
                               <div id="modalGraphDedicationOfWork" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -5375,7 +5377,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divDedicationOfWork-date_is_range">
-                                       <input class="date_is_range" id="DedicationOfWork-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="DedicationOfWork-date_is_range" type="checkbox" onChange="dateRange(this, 'DedicationOfWork-date_is_range', 'DedicationOfWork')"></input>
                                        <label for="DedicationOfWork-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -5461,7 +5463,7 @@
                               }   
                               
                            </script>
-                           <div class="content  PrintingActivity" id="PrintingActivity">
+                           <div class="content " id="PrintingActivity">
                               <div id="modalGraphPrintingActivity" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -5519,7 +5521,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divPrintingActivity-date_is_range">
-                                       <input class="date_is_range" id="PrintingActivity-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="PrintingActivity-date_is_range" type="checkbox" onChange="dateRange(this, 'PrintingActivity-date_is_range', 'PrintingActivity')"></input>
                                        <label for="PrintingActivity-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -5605,7 +5607,7 @@
                               }   
                               
                            </script>
-                           <div class="content  PublishingActivity" id="PublishingActivity">
+                           <div class="content " id="PublishingActivity">
                               <div id="modalGraphPublishingActivity" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -5663,7 +5665,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divPublishingActivity-date_is_range">
-                                       <input class="date_is_range" id="PublishingActivity-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="PublishingActivity-date_is_range" type="checkbox" onChange="dateRange(this, 'PublishingActivity-date_is_range', 'PublishingActivity')"></input>
                                        <label for="PublishingActivity-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -5749,7 +5751,7 @@
                               }   
                               
                            </script>
-                           <div class="content  Research" id="Research">
+                           <div class="content " id="Research">
                               <div id="modalGraphResearch" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -5795,7 +5797,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divResearch-date_is_range">
-                                       <input class="date_is_range" id="Research-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="Research-date_is_range" type="checkbox" onChange="dateRange(this, 'Research-date_is_range', 'Research')"></input>
                                        <label for="Research-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -5881,7 +5883,7 @@
                               }   
                               
                            </script>
-                           <div class="content  Salon" id="Salon">
+                           <div class="content " id="Salon">
                               <div id="modalGraphSalon" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -5925,7 +5927,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divSalon-date_is_range">
-                                       <input class="date_is_range" id="Salon-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="Salon-date_is_range" type="checkbox" onChange="dateRange(this, 'Salon-date_is_range', 'Salon')"></input>
                                        <label for="Salon-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -6032,7 +6034,7 @@
                               }   
                               
                            </script>
-                           <div class="content active Employment" id="Employment">
+                           <div class="content active" id="Employment">
                               <div id="modalGraphEmployment" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -6090,7 +6092,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divEmployment-date_is_range">
-                                       <input class="date_is_range" id="Employment-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="Employment-date_is_range" type="checkbox" onChange="dateRange(this, 'Employment-date_is_range', 'Employment')"></input>
                                        <label for="Employment-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -6176,7 +6178,7 @@
                               }   
                               
                            </script>
-                           <div class="content  MembershipProfessionalBody" id="MembershipProfessionalBody">
+                           <div class="content " id="MembershipProfessionalBody">
                               <div id="modalGraphMembershipProfessionalBody" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -6234,7 +6236,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divMembershipProfessionalBody-date_is_range">
-                                       <input class="date_is_range" id="MembershipProfessionalBody-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="MembershipProfessionalBody-date_is_range" type="checkbox" onChange="dateRange(this, 'MembershipProfessionalBody-date_is_range', 'MembershipProfessionalBody')"></input>
                                        <label for="MembershipProfessionalBody-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -6320,7 +6322,7 @@
                               }   
                               
                            </script>
-                           <div class="content  DisqualificationFromOffice" id="DisqualificationFromOffice">
+                           <div class="content " id="DisqualificationFromOffice">
                               <div id="modalGraphDisqualificationFromOffice" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -6389,7 +6391,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divDisqualificationFromOffice-date_is_range">
-                                       <input class="date_is_range" id="DisqualificationFromOffice-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="DisqualificationFromOffice-date_is_range" type="checkbox" onChange="dateRange(this, 'DisqualificationFromOffice-date_is_range', 'DisqualificationFromOffice')"></input>
                                        <label for="DisqualificationFromOffice-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -6475,7 +6477,7 @@
                               }   
                               
                            </script>
-                           <div class="content  HoldOffice" id="HoldOffice">
+                           <div class="content " id="HoldOffice">
                               <div id="modalGraphHoldOffice" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -6541,7 +6543,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divHoldOffice-date_is_range">
-                                       <input class="date_is_range" id="HoldOffice-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="HoldOffice-date_is_range" type="checkbox" onChange="dateRange(this, 'HoldOffice-date_is_range', 'HoldOffice')"></input>
                                        <label for="HoldOffice-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -6663,7 +6665,7 @@
                               }   
                               
                            </script>
-                           <div class="content active MembershipProfessionalBody" id="MembershipProfessionalBody">
+                           <div class="content active" id="MembershipProfessionalBody">
                               <div id="modalGraphMembershipProfessionalBody" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -6721,7 +6723,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divMembershipProfessionalBody-date_is_range">
-                                       <input class="date_is_range" id="MembershipProfessionalBody-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="MembershipProfessionalBody-date_is_range" type="checkbox" onChange="dateRange(this, 'MembershipProfessionalBody-date_is_range', 'MembershipProfessionalBody')"></input>
                                        <label for="MembershipProfessionalBody-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -6807,7 +6809,7 @@
                               }   
                               
                            </script>
-                           <div class="content  HoldOffice" id="HoldOffice">
+                           <div class="content " id="HoldOffice">
                               <div id="modalGraphHoldOffice" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -6873,7 +6875,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divHoldOffice-date_is_range">
-                                       <input class="date_is_range" id="HoldOffice-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="HoldOffice-date_is_range" type="checkbox" onChange="dateRange(this, 'HoldOffice-date_is_range', 'HoldOffice')"></input>
                                        <label for="HoldOffice-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -6959,7 +6961,7 @@
                               }   
                               
                            </script>
-                           <div class="content  DisqualificationFromOffice" id="DisqualificationFromOffice">
+                           <div class="content " id="DisqualificationFromOffice">
                               <div id="modalGraphDisqualificationFromOffice" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -7028,7 +7030,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divDisqualificationFromOffice-date_is_range">
-                                       <input class="date_is_range" id="DisqualificationFromOffice-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="DisqualificationFromOffice-date_is_range" type="checkbox" onChange="dateRange(this, 'DisqualificationFromOffice-date_is_range', 'DisqualificationFromOffice')"></input>
                                        <label for="DisqualificationFromOffice-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -7125,7 +7127,7 @@
                               }   
                               
                            </script>
-                           <div class="content  Baptism" id="Baptism">
+                           <div class="content " id="Baptism">
                               <div id="modalGraphBaptism" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -7244,7 +7246,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divBaptism-date_is_range">
-                                       <input class="date_is_range" id="Baptism-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="Baptism-date_is_range" type="checkbox" onChange="dateRange(this, 'Baptism-date_is_range', 'Baptism')"></input>
                                        <label for="Baptism-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -7330,7 +7332,7 @@
                               }   
                               
                            </script>
-                           <div class="content  Ordination" id="Ordination">
+                           <div class="content " id="Ordination">
                               <div id="modalGraphOrdination" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -7374,7 +7376,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divOrdination-date_is_range">
-                                       <input class="date_is_range" id="Ordination-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="Ordination-date_is_range" type="checkbox" onChange="dateRange(this, 'Ordination-date_is_range', 'Ordination')"></input>
                                        <label for="Ordination-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -7460,7 +7462,7 @@
                               }   
                               
                            </script>
-                           <div class="content  Preach" id="Preach">
+                           <div class="content " id="Preach">
                               <div id="modalGraphPreach" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -7492,7 +7494,7 @@
                                  <div class="row">
                                     <div class="row"></div>
                                     <div class="small-4 columns divPreach-date_is_range">
-                                       <input class="date_is_range" id="Preach-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="Preach-date_is_range" type="checkbox" onChange="dateRange(this, 'Preach-date_is_range', 'Preach')"></input>
                                        <label for="Preach-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -7578,7 +7580,7 @@
                               }   
                               
                            </script>
-                           <div class="content  ReligiousConfirmation" id="ReligiousConfirmation">
+                           <div class="content " id="ReligiousConfirmation">
                               <div id="modalGraphReligiousConfirmation" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -7639,7 +7641,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divReligiousConfirmation-date_is_range">
-                                       <input class="date_is_range" id="ReligiousConfirmation-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="ReligiousConfirmation-date_is_range" type="checkbox" onChange="dateRange(this, 'ReligiousConfirmation-date_is_range', 'ReligiousConfirmation')"></input>
                                        <label for="ReligiousConfirmation-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -7725,7 +7727,7 @@
                               }   
                               
                            </script>
-                           <div class="content  ReligiousConversion" id="ReligiousConversion">
+                           <div class="content " id="ReligiousConversion">
                               <div id="modalGraphReligiousConversion" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -7785,7 +7787,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divReligiousConversion-date_is_range">
-                                       <input class="date_is_range" id="ReligiousConversion-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="ReligiousConversion-date_is_range" type="checkbox" onChange="dateRange(this, 'ReligiousConversion-date_is_range', 'ReligiousConversion')"></input>
                                        <label for="ReligiousConversion-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -7871,7 +7873,7 @@
                               }   
                               
                            </script>
-                           <div class="content  ReligiousConfession" id="ReligiousConfession">
+                           <div class="content " id="ReligiousConfession">
                               <div id="modalGraphReligiousConfession" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -7931,7 +7933,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divReligiousConfession-date_is_range">
-                                       <input class="date_is_range" id="ReligiousConfession-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="ReligiousConfession-date_is_range" type="checkbox" onChange="dateRange(this, 'ReligiousConfession-date_is_range', 'ReligiousConfession')"></input>
                                        <label for="ReligiousConfession-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -8035,7 +8037,7 @@
                               }   
                               
                            </script>
-                           <div class="content active MembershipProfessionalBody" id="MembershipProfessionalBody">
+                           <div class="content active" id="MembershipProfessionalBody">
                               <div id="modalGraphMembershipProfessionalBody" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -8093,7 +8095,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divMembershipProfessionalBody-date_is_range">
-                                       <input class="date_is_range" id="MembershipProfessionalBody-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="MembershipProfessionalBody-date_is_range" type="checkbox" onChange="dateRange(this, 'MembershipProfessionalBody-date_is_range', 'MembershipProfessionalBody')"></input>
                                        <label for="MembershipProfessionalBody-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -8179,7 +8181,7 @@
                               }   
                               
                            </script>
-                           <div class="content  HoldOffice" id="HoldOffice">
+                           <div class="content " id="HoldOffice">
                               <div id="modalGraphHoldOffice" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -8245,7 +8247,7 @@
                                     </div>
                                     <div class="row"></div>
                                     <div class="small-4 columns divHoldOffice-date_is_range">
-                                       <input class="date_is_range" id="HoldOffice-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="HoldOffice-date_is_range" type="checkbox" onChange="dateRange(this, 'HoldOffice-date_is_range', 'HoldOffice')"></input>
                                        <label for="HoldOffice-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>
@@ -8331,7 +8333,7 @@
                               }   
                               
                            </script>
-                           <div class="content  RepresentativeAssembly" id="RepresentativeAssembly">
+                           <div class="content " id="RepresentativeAssembly">
                               <div id="modalGraphRepresentativeAssembly" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -8364,7 +8366,7 @@
                                  <div class="row">
                                     <div class="row"></div>
                                     <div class="small-4 columns divRepresentativeAssembly-date_is_range">
-                                       <input class="date_is_range" id="RepresentativeAssembly-date_is_range" type="checkbox"></input>
+                                       <input class="date_is_range" id="RepresentativeAssembly-date_is_range" type="checkbox" onChange="dateRange(this, 'RepresentativeAssembly-date_is_range', 'RepresentativeAssembly')"></input>
                                        <label for="RepresentativeAssembly-date_is_range">Is this a date range?</label>
                                     </div>
                                     <div class="row"></div>

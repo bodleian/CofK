@@ -24,7 +24,7 @@
             </head>
             <body>
                 
-                <form method="post" action="#" enctype="multipart/form-data">
+                <form method="post" action="formsave">
                     
                     
                     <div class="off-canvas-wrap" data-offcanvas="">
@@ -61,141 +61,15 @@
                                 <dd>
                                     <a href="#panelintroduction">Introduction</a>
                                     <div id="panelintroduction" class="content active">
-                            
-                           
+                                        
+                                        <input type="submit" value="Submit Form"/>
+                                        
                                         
                                     </div>
+                            
                                 </dd>
                                 
-
-                                <xsl:for-each select="document('result.xml')/form/section">
-                                    <xsl:variable name="active" select="if (count(preceding-sibling::section) = 0) then 'active' else ''"/>
-                                    <xsl:variable name="sectionTitle" select="@title"/>
-                                    
-                                    <dd>
-                                        <a href="#panel{@id}" class="{$active}"><xsl:value-of select="@title"/></a>
-                                    
-                                        <div id="panel{@id}" class="content ">
-                   
-                                                    <dl class="tabs" data-tab="">
-                                                    <xsl:for-each select="group"> 
-                                                        <xsl:variable name="active2" select="if (count(preceding-sibling::group) = 0) then 'active' else ''"/>
-          
-                                                            <xsl:variable name="groupId" select="@id"/>
-                                                            <xsl:variable name="groupTitle" select="@title"/>
-                                                            <dd class="{$active2}"><a  href="#{$groupId}"><xsl:value-of select="$groupTitle"/></a></dd>
-                                                        </xsl:for-each>
-                                                        
-                                                    </dl>
-                                                    
-                                            <div class="tabs-content">
-                                                    <xsl:for-each select="group">
-                                                        <xsl:variable name="active2" select="if (count(preceding-sibling::group) = 0) then 'active' else ''"/>
-                                                        
-                                                        <xsl:variable name="groupId" select="@id"/>
-                                                        <xsl:variable name="groupTitle" select="@title"/>
-                                                        
-                                                       
-                                                        <script language="javascript">
-                                                            function drawGraph<xsl:value-of select="$groupId"/>()
-                                                            {
-                                                            
-                                                            d3.select("#context-<xsl:value-of select="$groupId"/>").remove();
-                                                            
-                                                            
-                                                            graph = new myGraph("#modalGraph<xsl:value-of select="$groupId"/>", "context-<xsl:value-of select="$groupId"/>"); 
-                                                            <xsl:for-each select="graph/node">graph.addNode('<xsl:value-of select="@id"/>');
-                                                            </xsl:for-each>
-                                                            <xsl:for-each select="graph/node/link"> graph.addLink('<xsl:value-of select="parent::node/@id"/>','<xsl:value-of select="text()"/>','<xsl:value-of select="@rel"/>');
-                                                            </xsl:for-each>
-                                                            }   
-                                                        </script>
-                                                       
-                                                       
-                                                        <div class="content {$active2} {$groupId}" id="{$groupId}">
-                                                        
-                                                                <div id="modalGraph{$groupId}" class="reveal-modal svgmodal" data-reveal="">
-                                                                    <h2>Graph</h2>
-                                                                    
-                                                                    <a class="close-reveal-modal">&#215;</a>
-                                                                </div>
-                                                                <div id="modalAssertions{$groupId}" class="reveal-modal svgmodal" data-reveal="">
-                                                                    <h2>Assertions</h2>
-                                                                    <ul>
-                                                                        <xsl:for-each select="graph/node">                         
-                                                                            <xsl:variable name="graphid" select="ancestor::group/@id"/>
-                                                                            
-                                                                            <xsl:variable name="subject" select="@id"/>
-                                                                            <xsl:for-each select="link">
-                                                                                <xsl:variable name="predicate" select="@rel"/>
-                                                                                <xsl:variable name="object" select="text()"/>                              
-                                                                                <li> <xsl:value-of select="$subject"/> <xsl:text>  </xsl:text><span class="assertion a-{$graphid}-{$subject}"/> <xsl:text>  </xsl:text> <xsl:value-of select="$predicate"/><xsl:text>  </xsl:text>  <span class="assertion a-{$graphid}-{$object}"></span></li>
-                                                                                
-                                                                            </xsl:for-each>
-                                                                        </xsl:for-each>
-                                                                        
-                                                                    </ul>
-                                                                    <a class="close-reveal-modal">&#215;</a>
-                                                                </div>
-                                                        
-                                                            <fieldset class="repeatSection{$groupId}">
-                                                           
-                                                                <p class="addRemove"><a href="#" class="button [radius round tiny ]" onClick="javascript:drawGraph{$groupId}()"  data-reveal-id="modalGraph{$groupId}">Show graph</a><a href="#" class="button [radius round tiny ]" data-reveal-id="modalAssertions{$groupId}">Show assertions</a><a href="#" class="add" onClick="addSection('.repeatSection{$groupId}')"><span data-tooltip="" class="has-tip" title="Add Section"><i class="fi-plus"></i></span></a>   <a href="#" class="delete" onClick="deleteSection(this, '.repeatSection{$groupId}')"><span data-tooltip="" class="has-tip" title="Delete this section"><i class="fi-minus"></i></span></a></p>
-                                                                
-                                                            
-                                                            <legend><xsl:value-of select="$groupTitle"/></legend>
-          
-                                                            <p><xsl:value-of select="description"/></p>
- <div class="row">
-                                                            <xsl:for-each select=".//field">
-                                                                
-                                                                <xsl:variable name="size" select="if (number(./@size) > 0) then @size else '4'"/>
-                                                                
-                                                                <xsl:if test="./@position = 'start'">
-                                                                  <div class="row"/>
-                                                                </xsl:if>
-                                                                
-                                                                <div class="small-{$size} columns div{$groupId}-{@id}">
-                                                                        
-                                                                    <xsl:apply-templates mode="input" select=".">
-                                                                        <xsl:with-param name="groupId" select="$groupId"/>
-                                                                        
-                                                                    </xsl:apply-templates>
-                                                                    
-                                                                    
-                                                                    
-                                                                </div>
- 
-                                                                <xsl:if test="@position = 'end'">
-                                                                    <div class="row"/>
-                                                                </xsl:if>
- 
-                                                            </xsl:for-each>
-                                                            <!--end for each field -->
- </div>
-                                                        </fieldset>
-                                                            
-                                                            
-                                                            </div>
-                                                                                                             
-                                                            
-                                                    </xsl:for-each>
-                                            <!-- end for each group -->
-                                            </div>
-                                            
-                                            
-                                        </div>
-                                    </dd>
-                                </xsl:for-each>      
-                                <!--  end for each section -->
-                                
-                                
-                               
-                            
-                                        
-                      
-                        
-                        
+                                <xsl:apply-templates mode="section" select="document('result.xml')/form/section"/>
                         <dd>
                             <a href="#panelprovenance" class="">Provenance</a>
                             <div id="panelprovenance" class="content">
@@ -203,52 +77,13 @@
                                     <legend>Provenance of this report</legend>
                                 </fieldset>
                                 
-                            </div>
-                            
+                            </div>               
                         </dd>
                         </dl>
-                            
-                            
-                            
-               
-                    
-      
-               
-           
-                
+                           
                         </div>
                     </div>
-               <!-- 
-                        <div class="content" id="panel2a">
-                            <div class="row">
-                                <h3>Load Data</h3>
-                            </div>
-                        </div>
-                        <div class="content" id="panel3a">
-                            <div class="row">
-                                <h3>Save Report</h3>
-                            
-                            <p>Save your report</p>
-                            <input type="submit" value="Save Report"/>
-                            
-                            </div>
-                        </div>
-                        <div class="content" id="panel4a">
-                            <div class="row">
-                                <h3>Validate Form</h3>
-                            </div>
-                        </div>
-                        <div class="content" id="panel5a">
-                            <div class="row">
-                                <h3>Help</h3>
-                            </div>
-                        </div>                 </div>
-             
-                            
-                            <a class="exit-off-canvas"></a>
-                            
-                        
-                        -->
+               
                 
                 </form>
                 
@@ -261,11 +96,7 @@
                     <svg id="mySVG"/>
                 </div>
                 
-                
-                
-                
-                
-                
+
                 <script src="http://code.jquery.com/jquery.js"></script>
                 <script src="../f5/js/foundation.min.js"></script>
                 <script>
@@ -287,6 +118,155 @@
         
     
     </xsl:template>
+   
+   
+   
+   
+   
+   
+   <!-- TEMPLATES -->
+   
+   
+   
+   <xsl:template mode="section" match="section">
+       
+       <xsl:variable name="active" select="if (count(preceding-sibling::section) = 0) then 'active' else ''"/>
+       <xsl:variable name="sectionTitle" select="@title"/>
+       
+       <dd>
+           <a href="#panel{@id}" class="{$active}"><xsl:value-of select="@title"/></a>
+           
+           <div id="panel{@id}" class="content ">
+               
+               <dl class="tabs" data-tab="">
+                   <xsl:for-each select="group"> 
+                       <xsl:variable name="active2" select="if (count(preceding-sibling::group) = 0) then 'active' else ''"/>
+                       
+                       <xsl:variable name="groupId" select="@id"/>
+                       <xsl:variable name="groupTitle" select="@title"/>
+                       <dd class="{$active2}"><a  href="#{$groupId}"><xsl:value-of select="$groupTitle"/></a></dd>
+                   </xsl:for-each>
+                   
+               </dl>
+               
+               <div class="tabs-content">
+                   <xsl:apply-templates mode="group" select="group"/>
+               </div>    
+           </div>
+       </dd>
+       
+   </xsl:template>
+   
+   
+   
+   <xsl:template mode="group" match="group">
+       
+       <xsl:variable name="active2" select="if (count(preceding-sibling::group) = 0) then 'active' else ''"/>
+       
+       <xsl:variable name="groupId" select="@id"/>
+       <xsl:variable name="groupTitle" select="@title"/>
+       
+       
+       <script language="javascript">
+           function drawGraph<xsl:value-of select="$groupId"/>()
+           {
+           
+           d3.select("#context-<xsl:value-of select="$groupId"/>").remove();
+           
+           
+           graph = new myGraph("#modalGraph<xsl:value-of select="$groupId"/>", "context-<xsl:value-of select="$groupId"/>"); 
+           <xsl:for-each select="graph/node">graph.addNode('<xsl:value-of select="@id"/>');
+           </xsl:for-each>
+           <xsl:for-each select="graph/node/link"> graph.addLink('<xsl:value-of select="parent::node/@id"/>','<xsl:value-of select="text()"/>','<xsl:value-of select="@rel"/>');
+           </xsl:for-each>
+           }   
+       </script>
+       
+       
+       <div class="content {$active2}" id="{$groupId}">
+           
+           <div id="modalGraph{$groupId}" class="reveal-modal svgmodal" data-reveal="">
+               <h2>Graph</h2>
+               
+               <a class="close-reveal-modal">&#215;</a>
+           </div>
+           <div id="modalAssertions{$groupId}" class="reveal-modal svgmodal" data-reveal="">
+               <h2>Assertions</h2>
+               <ul>
+                   <xsl:apply-templates mode="node" select="graph/node"/>
+                  
+                   
+               </ul>
+               <a class="close-reveal-modal">&#215;</a>
+           </div>
+           
+           <fieldset class="repeatSection{$groupId}">
+               
+               <p class="addRemove"><a href="#" class="button [radius round tiny ]" onClick="javascript:drawGraph{$groupId}()"  data-reveal-id="modalGraph{$groupId}">Show graph</a><a href="#" class="button [radius round tiny ]" data-reveal-id="modalAssertions{$groupId}">Show assertions</a><a href="#" class="add" onClick="addSection('.repeatSection{$groupId}')"><span data-tooltip="" class="has-tip" title="Add Section"><i class="fi-plus"></i></span></a>   <a href="#" class="delete" onClick="deleteSection(this, '.repeatSection{$groupId}')"><span data-tooltip="" class="has-tip" title="Delete this section"><i class="fi-minus"></i></span></a></p>
+               
+               
+               <legend><xsl:value-of select="$groupTitle"/></legend>
+               
+               <p><xsl:value-of select="description"/></p>
+               <div class="row">
+                   <xsl:apply-templates mode="field" select="field">
+                       <xsl:with-param name="groupId" select="$groupId"/>
+                       
+                   </xsl:apply-templates>
+               </div>
+           </fieldset>
+           
+           
+       </div>
+       
+       
+       
+       
+   </xsl:template>
+   
+   
+   <xsl:template mode="node" match="node">
+      
+      <xsl:apply-templates mode="link" select="link">
+          <xsl:with-param name="subject" select="@id"/>
+          <xsl:with-param name="graphid" select="ancestor::group/@id"/>    
+      </xsl:apply-templates>
+       
+   </xsl:template>
+   
+   
+   
+   <xsl:template mode="link" match="link">
+       <xsl:param name="subject"/>
+       <xsl:param name="graphid"/>
+          
+       <xsl:variable name="predicate" select="@rel"/>
+       <xsl:variable name="object" select="text()"/>                              
+       <li> <xsl:value-of select="$subject"/> <xsl:text>  </xsl:text><span class="assertion a-{$graphid}-{$subject}"/> <xsl:text>  </xsl:text> <xsl:value-of select="$predicate"/><xsl:text>  </xsl:text>  <span class="assertion a-{$graphid}-{$object}"></span></li>
+       
+   </xsl:template>
+   
+   
+   <xsl:template mode="field" match="field">
+       <xsl:param name="groupId"/>
+       <xsl:variable name="size" select="if (number(./@size) > 0) then @size else '4'"/>
+       
+       <xsl:if test="./@position = 'start'">
+           <div class="row"/>
+       </xsl:if>
+       
+       <div class="small-{$size} columns div{$groupId}-{@id}"> 
+           <xsl:apply-templates mode="input" select=".">
+               <xsl:with-param name="groupId" select="$groupId"/>
+           </xsl:apply-templates>   
+       </div>
+       
+       <xsl:if test="@position = 'end'">
+           <div class="row"/>
+       </xsl:if>
+           
+   </xsl:template>
+   
    
    
     <xsl:template mode="graphFunction" match="*">
@@ -332,7 +312,26 @@
            </xsl:when>
            <xsl:when test="@type='checkbox'">
                <!--  <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label> -->
-               <input class="{$fieldId}" id="{$groupId}-{$fieldId}" type="checkbox"/>
+               
+               
+               
+               <!-- if checkbox id = date_is_range then add javascript function to insert/delete additional date fields -->
+               
+               <xsl:choose>
+                   
+                   <xsl:when test="@id='date_is_range'">
+                       <input class="{$fieldId}" id="{$groupId}-{$fieldId}" type="checkbox" onChange="dateRange(this, '{$groupId}-{$fieldId}', '{$groupId}')"/> 
+                   </xsl:when>
+                   <xsl:otherwise>
+                       <input class="{$fieldId}" id="{$groupId}-{$fieldId}" type="checkbox"/>
+                       
+                       
+                   </xsl:otherwise>
+               </xsl:choose>
+              
+               
+               
+              
                
                <xsl:apply-templates mode='label' select=".">
                    <xsl:with-param name="groupId" select="$groupId"/>

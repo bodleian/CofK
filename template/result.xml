@@ -52,6 +52,7 @@
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -71,6 +72,7 @@
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -138,6 +140,7 @@
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -157,6 +160,7 @@
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -214,6 +218,7 @@
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -233,6 +238,7 @@
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -288,6 +294,7 @@
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -307,6 +314,7 @@
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -362,6 +370,7 @@
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -381,6 +390,7 @@
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -436,6 +446,7 @@
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -455,6 +466,7 @@
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -510,6 +522,7 @@
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -529,6 +542,7 @@
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -584,6 +598,7 @@
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -603,6 +618,7 @@
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -658,6 +674,7 @@
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -677,6 +694,7 @@
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -767,6 +785,7 @@
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -786,6 +805,7 @@
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -851,6 +871,7 @@
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -870,6 +891,7 @@
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -941,6 +963,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -960,6 +983,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -1015,6 +1039,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -1034,6 +1059,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -1093,6 +1119,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -1112,6 +1139,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -1176,6 +1204,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -1195,6 +1224,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -1259,6 +1289,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -1278,6 +1309,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -1344,6 +1376,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -1363,6 +1396,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -1422,6 +1456,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -1441,6 +1476,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -1510,6 +1546,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -1529,6 +1566,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -1598,6 +1636,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -1617,6 +1656,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -1671,6 +1711,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -1690,6 +1731,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -1745,6 +1787,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -1764,6 +1807,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -1823,6 +1867,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -1842,6 +1887,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -1896,6 +1942,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -1915,6 +1962,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -1974,6 +2022,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -1993,6 +2042,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -2047,6 +2097,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -2066,6 +2117,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -2130,6 +2182,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -2149,6 +2202,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -2203,6 +2257,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -2222,6 +2277,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -2277,6 +2333,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -2296,6 +2353,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -2357,6 +2415,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -2376,6 +2435,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -2435,6 +2495,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -2454,6 +2515,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -2513,6 +2575,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -2532,6 +2595,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -2606,6 +2670,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -2625,6 +2690,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -2694,6 +2760,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -2713,6 +2780,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -2782,6 +2850,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -2801,6 +2870,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -2860,6 +2930,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -2879,6 +2950,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -2938,6 +3010,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -2957,6 +3030,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -3011,6 +3085,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -3030,6 +3105,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -3084,6 +3160,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -3103,6 +3180,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -3164,6 +3242,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -3183,6 +3262,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -3242,6 +3322,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -3261,6 +3342,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -3325,6 +3407,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -3344,6 +3427,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -3409,6 +3493,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -3428,6 +3513,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -3489,6 +3575,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -3508,6 +3595,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -3573,6 +3661,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -3592,6 +3681,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -3656,6 +3746,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -3675,6 +3766,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -3758,6 +3850,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -3777,6 +3870,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -3832,6 +3926,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -3851,6 +3946,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -3901,6 +3997,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -3920,6 +4017,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -3980,6 +4078,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -3999,6 +4098,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -4061,6 +4161,7 @@ https://en.wikipedia.org/wiki/Religious_conversion</description>
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -4080,6 +4181,7 @@ https://en.wikipedia.org/wiki/Religious_conversion</description>
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -4140,6 +4242,7 @@ https://en.wikipedia.org/wiki/Religious_conversion</description>
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -4159,6 +4262,7 @@ https://en.wikipedia.org/wiki/Religious_conversion</description>
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -4220,6 +4324,7 @@ https://en.wikipedia.org/wiki/Religious_conversion</description>
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -4239,6 +4344,7 @@ https://en.wikipedia.org/wiki/Religious_conversion</description>
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -4304,6 +4410,7 @@ https://en.wikipedia.org/wiki/Religious_conversion</description>
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -4323,6 +4430,7 @@ https://en.wikipedia.org/wiki/Religious_conversion</description>
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"
@@ -4373,6 +4481,7 @@ https://en.wikipedia.org/wiki/Religious_conversion</description>
                 title="Is this a date range?"
                 placeHolder=""/>
          <field id="date_year"
+                group="start"
                 position="start"
                 type=""
                 title="Year"
@@ -4392,6 +4501,7 @@ https://en.wikipedia.org/wiki/Religious_conversion</description>
                 title="Uncertain date"
                 placeHolder=""/>
          <field id="date_approximate"
+                group="end"
                 position="end"
                 type="checkbox"
                 title="Approximate date"

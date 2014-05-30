@@ -114,7 +114,7 @@ function addField(obj, fieldclass){
 	// identify index of groupclass
 	
 	var group = $(obj).parent().parent().parent().parent();
-	var field = $(group).find(fieldclass)
+	var field = $(group).find(fieldclass);
 	
 	
    var currentCount =  $(field).length;
@@ -145,8 +145,14 @@ function addField(obj, fieldclass){
 
 function deleteField(obj, fieldclass){
     
-    var currentCount =  $(fieldclass).length;
-    // do not delete field if there is only one field
+	
+	// get section
+	var group = $(obj).parent().parent().parent().parent();
+	var field = $(group).find(fieldclass); // get field in this section
+	
+	// get number of fields in this section
+    var currentCount =  $(field).length;
+    // do not delete field if there is only one field in this section
     if (currentCount == 1){
    
         return false;
@@ -158,8 +164,61 @@ function deleteField(obj, fieldclass){
 
 
 
+function dateRange(obj, fieldId, groupId){
+	
+	var fieldset = $(obj).parent().parent();
+	
+	var year = $(fieldset).find(".div"+ groupId + '-date_year');
+	var month = $(fieldset).find(".div"+ groupId + '-date_month');
+	var day = $(fieldset).find(".div"+ groupId + '-date_day');
+	
+	var inferred = $(fieldset).find(".div"+ groupId + '-date_inferred');
+	var uncertain = $(fieldset).find(".div"+ groupId + '-date_uncertain');
+	var approximate = $(fieldset).find(".div"+ groupId + '-date_approximate');
+	
+	var div1 = day.next('div');
+	var div2 = approximate.next('div');
+	
+	var arrayFields = new Array(year, month, day, div1, inferred, uncertain, approximate);
+	
+	
+	if ($('#' + fieldId).prop("checked")) {
+		
+		// insert date fields
+			for(i = (arrayFields.length - 1) ;i > -1 ;--i){		
+			var elem = arrayFields[i];
+			var newelem = elem.clone();
+			
+			newelem.find("input").each(function (index, input) {
+		        input.id = input.id + "_2";
+		        
+		    });
+			
+			newelem.insertAfter(div2);
+		}
 
 
+
+		
+		
+		
+	} else {
+		
+		// checkbox is unchecked
+		// delete date fields added to record a date range
+		for(i = (arrayFields.length - 1) ;i > -1 ;--i){		
+			
+			var elem = arrayFields[i].get(1); // get second element in array of fields with same class name 
+		
+			$(elem).remove(); // remove second element
+		
+		 
+		
+	}
+			
+	}
+	
+}
 
 
 
