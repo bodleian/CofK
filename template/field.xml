@@ -1,5 +1,144 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fields >
+<fields xmlns:xd="http://www.pnp-software.com/XSLTdoc"
+        xmlns="http://www.w3.org/2002/07/owl#"
+        xmlns:owl="http://www.w3.org/2002/07/owl#"
+        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+   <field>
+      <id>Article</id>
+      <def>A written work published in a print or electronic medium. It may be for the purpose of propagating the news, research results, academic analysis or debate.</def>
+   </field>
+   <field>
+      <id>Book</id>
+      <def>A written or printed work consisting of pages glued or sewn together along one side and bound in covers.</def>
+   </field>
+   <field>
+      <id>BookChapter</id>
+      <def>One of the main divisions of a book. Chapters can be numbered or titled or both.
+
+source: https://en.wikipedia.org/wiki/Chapter_(books)</def>
+   </field>
+   <field>
+      <id>BookReview</id>
+      <def>A critical appraisal of a book published in a newspaper or magazine.</def>
+   </field>
+   <field>
+      <id>BookSection</id>
+      <def>Any of the more or less distinct parts into which a book is or may be divided or from which it is made up.</def>
+   </field>
+   <field>
+      <id>Booklet</id>
+      <def>A small, thin book with paper covers, typically giving information on a particular subject.</def>
+   </field>
+   <field>
+      <id>Chapter</id>
+      <def>One of the main divisions of a piece of writing of relative length, such as a book of prose, poetry, or law. </def>
+   </field>
+   <field>
+      <id>Dataset</id>
+      <def>A collection of related sets of information that is composed of separate elements but can be manipulated as a unit by a computer.</def>
+   </field>
+   <field>
+      <id>Dissertation</id>
+      <def>A long essay on a particular subject, especially one written for a university degree or diploma.</def>
+   </field>
+   <field>
+      <id>EditedBook</id>
+      <def>A book that features articles or other material on the same subject but by different authors collected together in one book by an editor.</def>
+   </field>
+   <field>
+      <id>EditedVolume</id>
+      <def>A collection of scholarly or scientific chapters written by different authors. The chapters in an edited volume are original works. Alternative terms for edited volume are contributed volume, edited collection and multiauthor volume.
+
+source: http://en.wikipedia.org/wiki/Edited_volume </def>
+   </field>
+   <field>
+      <id>Essay</id>
+      <def>A short piece of writing on a particular subject.</def>
+   </field>
+   <field>
+      <id>Image</id>
+      <def>A representation of a thing by a person in art or an impression obtained by a device</def>
+   </field>
+   <field>
+      <id>Journal</id>
+      <def>A newspaper or magazine that deals with a particular subject or professional activity.</def>
+   </field>
+   <field>
+      <id>Leaflet</id>
+      <def>A printed sheet of paper containing information or advertising and usually distributed free.</def>
+   </field>
+   <field>
+      <id>Letter</id>
+      <def>A written, typed, or printed communication, sent in an envelope by post or messenger.</def>
+   </field>
+   <field>
+      <id>Magazine</id>
+      <def>A periodical publication containing articles and illustrations, often on a particular subject or aimed at a particular readership.</def>
+   </field>
+   <field>
+      <id>Monograph</id>
+      <def>A detailed written study in the form of an essay or book, of a single specialized subject or an aspect of it, usually by a single author.
+
+Librarians consider a monograph to be a nonserial publication complete in one volume (book) or a finite number of volumes.
+
+source: https://en.wikipedia.org/wiki/Monograph</def>
+   </field>
+   <field>
+      <id>Newsletter</id>
+      <def>A regularly distributed publication that is generally about one main topic of interest to its subscribers</def>
+   </field>
+   <field>
+      <id>Newspaper</id>
+      <def>A printed publication (usually issued daily or weekly) consisting of folded unstapled sheets and containing news, articles, advertisements, and correspondence.</def>
+   </field>
+   <field>
+      <id>Pamphlet</id>
+      <def>A small booklet or leaflet containing information or arguments about a single subject.</def>
+   </field>
+   <field>
+      <id>Paper</id>
+      <def>An essay or dissertation, especially one read at an academic lecture or seminar or published in an academic journal.</def>
+   </field>
+   <field>
+      <id>Periodical</id>
+      <def>A magazine or newspaper published at regular intervals.</def>
+   </field>
+   <field>
+      <id>PolicyBrief</id>
+      <def>A concise summary of a particular issue, the policy options to deal with it, and some recommendations on the best option. 
+
+It is aimed at government policymakers and others who are interested in formulating or influencing policy.
+
+Policy briefs can take different formats. A typical format is a single A4 sheet (210 x 297 mm), containing perhaps 700 words. It has an attractive design, and may have one or more photograph. Longer briefs (up to 8 pages, or 3,000 words) and other formats are also possible.
+
+source: http://www.fao.org/docrep/014/i2195e/i2195e03.pdf</def>
+   </field>
+   <field>
+      <id>Publication</id>
+      <def>A book or journal issued for public sale.</def>
+   </field>
+   <field>
+      <id>Report</id>
+      <def>An account given of a particular matter, especially in the form of an official document, after thorough investigation or consideration by an appointed person or body.
+
+source: http://www.oxforddictionaries.com/definition/english/report</def>
+   </field>
+   <field>
+      <id>Review</id>
+      <def>A critical appraisal of a book, play, film, etc. published in a newspaper or magazine.</def>
+   </field>
+   <field>
+      <id>Series</id>
+      <def>A set of books, periodicals, or other documents published in a common format or under a common title.</def>
+   </field>
+   <field>
+      <id>Thesis</id>
+      <def>A dissertation involving personal research, written by a candidate for a university degree.</def>
+   </field>
+   <field>
+      <id>WrittenWork</id>
+      <def>A creative work in the written form.</def>
+   </field>
    <field>
       <id>CreativeWork</id>
       <def>A work that is a distinct intellectual or artistic creation and is the product of creative effort.</def>
@@ -891,8 +1030,72 @@ the shape, size, and presentation of a book or periodical</def>
       <def/>
    </field>
    <field>
+      <id>HoldOffice</id>
+      <def>The activity of a person holding a public office.</def>
+   </field>
+   <field>
+      <id>Conference</id>
+      <def>A formal meeting of people with a shared interest, typically one that takes place over several days.</def>
+   </field>
+   <field>
+      <id>ConferenceItem</id>
+      <def>A digital object that has been produced for, or as a result of, a conference.</def>
+   </field>
+   <field>
+      <id>ConferencePaper</id>
+      <def>A paper presented at an academic conference for researchers to present and discuss their work.</def>
+   </field>
+   <field>
+      <id>ConferencePoster</id>
+      <def>A poster that has the purpose of presenting research information by an individual or representatives of research teams at a conference with an academic or professional focus. </def>
+   </field>
+   <field>
+      <id>DiscussionPaper</id>
+      <def>A paper that includes research but tend to be shorter and more selective in its approach, and more analytical and critical, than a research paper.http://en.wikipedia.org/wiki/Essay</def>
+   </field>
+   <field>
+      <id>JournalArticle</id>
+      <def>An article that is published in a journal.</def>
+   </field>
+   <field>
+      <id>Patent</id>
+      <def>A patent protects new inventions and covers how things work, what they do, how they do it, what they are made of and how they are made.</def>
+   </field>
+   <field>
+      <id>PatentApplication</id>
+      <def>A request pending at a patent office for the grant of a patent for the invention described and claimed by that application.</def>
+   </field>
+   <field>
+      <id>PostPrintArticle</id>
+      <def>An article that is in the final form post printing of the publication in which it is published.</def>
+   </field>
+   <field>
+      <id>PrePrintArticle</id>
+      <def>An article in the form before it is published.</def>
+   </field>
+   <field>
+      <id>PressArticle</id>
+      <def>A written or recorded communication directed at members of the news media for the purpose of announcing something ostensibly newsworthy.</def>
+   </field>
+   <field>
+      <id>ResearchPaper</id>
+      <def>A paper that is intended to uncover a wide variety of sources on a given topic.http://en.wikipedia.org/wiki/Essay</def>
+   </field>
+   <field>
+      <id>TechnicalReport</id>
+      <def>A report that describes the process, progress, or results of technical or scientific research or the state of a technical or scientific research problem. It might also include recommendations and conclusions of the research.</def>
+   </field>
+   <field>
+      <id>WorkingPaper</id>
+      <def>A preliminary scientific or technical paper. Often, authors will release working papers to share ideas about a topic or to elicit feedback before submitting to a peer reviewed conference or academic journal. Working papers are often the basis for related works, and may in themselves be cited by peer-review papers.</def>
+   </field>
+   <field>
       <id>Adult</id>
       <def>A person who is fully grown or developed.</def>
+   </field>
+   <field>
+      <id>BiologicalSex</id>
+      <def>Reproductive function of humans and most other living things.</def>
    </field>
    <field>
       <id>Child</id>
@@ -915,12 +1118,56 @@ the shape, size, and presentation of a book or periodical</def>
       <def>An adult human female.</def>
    </field>
    <field>
+      <id>Adoption</id>
+      <def>A process whereby a person assumes the parenting for another and, in so doing, permanently transfers all rights and responsibilities, along with filiation, from the biological parent or parents.</def>
+   </field>
+   <field>
+      <id>AdoptiveFather</id>
+      <def/>
+   </field>
+   <field>
+      <id>AdoptiveMother</id>
+      <def/>
+   </field>
+   <field>
+      <id>Ancestor</id>
+      <def/>
+   </field>
+   <field>
+      <id>Aunt</id>
+      <def/>
+   </field>
+   <field>
       <id>Birth</id>
-      <def>The emergence of a baby or other young from the body of its mother and the start of life as a physically separate being.</def>
+      <def>The start of life as a physically separate being.</def>
+   </field>
+   <field>
+      <id>BirthFather</id>
+      <def/>
    </field>
    <field>
       <id>BirthMother</id>
-      <def>A woman in relation to a child or children to whom she has given birth.</def>
+      <def/>
+   </field>
+   <field>
+      <id>Brother</id>
+      <def>Definition: A man or boy in relation to other sons and daughters of his parents</def>
+   </field>
+   <field>
+      <id>BrotherInLaw</id>
+      <def/>
+   </field>
+   <field>
+      <id>Cousin</id>
+      <def/>
+   </field>
+   <field>
+      <id>CousinInLaw</id>
+      <def>A cousin-in-law is the spouse of an individual's cousin or the cousin of one's spouse.</def>
+   </field>
+   <field>
+      <id>Daughter</id>
+      <def/>
    </field>
    <field>
       <id>Death</id>
@@ -931,28 +1178,182 @@ the shape, size, and presentation of a book or periodical</def>
       <def>A person who is recently dead.</def>
    </field>
    <field>
+      <id>Descendent</id>
+      <def/>
+   </field>
+   <field>
+      <id>DoubleCousin</id>
+      <def>Double cousins arise when two siblings of one family reproduce with two siblings of another family. The resulting children are related to each other through both of their parents and are thus doubly related. Double first cousins share both sets of grandparents in common and have twice the degree of consanguinity of ordinary first cousins. </def>
+   </field>
+   <field>
+      <id>FamilyRole</id>
+      <def>Role of an individual within a family unit. </def>
+   </field>
+   <field>
       <id>Father</id>
-      <def>A man in relation to his child or children.</def>
+      <def>Definition: The family role of a man in relation to his child or children</def>
+   </field>
+   <field>
+      <id>FatherInLaw</id>
+      <def/>
+   </field>
+   <field>
+      <id>FirstCousin</id>
+      <def>The children of two siblings.</def>
+   </field>
+   <field>
+      <id>FirstCousinOnceRemoved</id>
+      <def>Two people for whom a first cousin relationship is one generation removed.
+The child of one's first cousin; also the first cousin of one's parent.</def>
+   </field>
+   <field>
+      <id>FirstCousinTwiceRemoved</id>
+      <def>Two people for whom a first cousin relationship is two generations removed.
+The grandchild of one's first cousin; also the first cousin of one's grandparent.</def>
+   </field>
+   <field>
+      <id>GrandParent</id>
+      <def>A parent of one's father or mother; a grandmother or grandfather.</def>
+   </field>
+   <field>
+      <id>Grandchild</id>
+      <def/>
+   </field>
+   <field>
+      <id>Granddaughter</id>
+      <def>A daughter of one's son or daughter.</def>
+   </field>
+   <field>
+      <id>Grandfather</id>
+      <def/>
+   </field>
+   <field>
+      <id>Grandmother</id>
+      <def/>
+   </field>
+   <field>
+      <id>Grandson</id>
+      <def/>
+   </field>
+   <field>
+      <id>GreatAunt</id>
+      <def/>
+   </field>
+   <field>
+      <id>GreatGrandParent</id>
+      <def/>
+   </field>
+   <field>
+      <id>GreatGrandchild</id>
+      <def/>
+   </field>
+   <field>
+      <id>GreatGranddaughter</id>
+      <def/>
+   </field>
+   <field>
+      <id>GreatGrandfather</id>
+      <def/>
+   </field>
+   <field>
+      <id>GreatGrandmother</id>
+      <def/>
+   </field>
+   <field>
+      <id>GreatGrandson</id>
+      <def/>
+   </field>
+   <field>
+      <id>GreatUncle</id>
+      <def/>
+   </field>
+   <field>
+      <id>HalfCousin</id>
+      <def>Half cousins are the children of two half siblings.</def>
    </field>
    <field>
       <id>Husband</id>
-      <def>A married man considered in relation to his wife.</def>
+      <def>Definition: The role of a married man in relation to his wife.</def>
+   </field>
+   <field>
+      <id>InLaw</id>
+      <def/>
    </field>
    <field>
       <id>Marriage</id>
       <def>The formal union of a man and a woman, typically as recognized by law, by which they become husband and wife.</def>
    </field>
    <field>
+      <id>MaternalCousin</id>
+      <def>specifies whether one individual is a cousin of another through the mother's side of the family </def>
+   </field>
+   <field>
       <id>Mother</id>
-      <def>a woman in relation to a child or children to whom she has given birth, or adopted.</def>
+      <def>Definition: The family role of a woman in relation to her child or children</def>
+   </field>
+   <field>
+      <id>MotherInLaw</id>
+      <def/>
+   </field>
+   <field>
+      <id>Nephew</id>
+      <def/>
+   </field>
+   <field>
+      <id>Niece</id>
+      <def/>
+   </field>
+   <field>
+      <id>Parent</id>
+      <def>Definition: A person’s father or mother</def>
+   </field>
+   <field>
+      <id>PaternalCousin</id>
+      <def>specifies whether one individual is a cousin of another through the father's side of the family </def>
+   </field>
+   <field>
+      <id>SecondCousin</id>
+      <def>The children of two first cousins.</def>
+   </field>
+   <field>
+      <id>SecondCousinOnceRemoved</id>
+      <def>Two people for whom a second cousin relationship is one generation removed.</def>
+   </field>
+   <field>
+      <id>Sibling</id>
+      <def>Definition: Each of two or more children or offspring having one or both parents in common</def>
+   </field>
+   <field>
+      <id>Sister</id>
+      <def>Definition: A woman or girl in relation to other daughters and sons of her parents</def>
+   </field>
+   <field>
+      <id>SisterInLaw</id>
+      <def/>
+   </field>
+   <field>
+      <id>Son</id>
+      <def/>
    </field>
    <field>
       <id>Spouse</id>
-      <def>A husband or wife, considered in relation to their partner.</def>
+      <def>BDLSS System: EMLODefinition: The role of a husband or wife, considered in relation to their partner.</def>
+   </field>
+   <field>
+      <id>StepCousin</id>
+      <def>Step-cousins are either stepchildren of an individual's aunt or uncle or nieces and nephews of one's step-parent.</def>
+   </field>
+   <field>
+      <id>ThirdCousin</id>
+      <def>The grandchildren of two first cousins; also the children of two second cousins.</def>
+   </field>
+   <field>
+      <id>Uncle</id>
+      <def/>
    </field>
    <field>
       <id>Wife</id>
-      <def>A married woman considered in relation to her husband.</def>
+      <def>Definition: Definition: The role of a married woman in relation to her husband.</def>
    </field>
    <field>
       <id>HoldPoliticalOffice</id>
@@ -1069,6 +1470,10 @@ the shape, size, and presentation of a book or periodical</def>
       <def/>
    </field>
    <field>
+      <id>DisplacedPerson</id>
+      <def>A person that participated in the enforced departure from his/her home, typically because of war, persecution, or natural disaster.</def>
+   </field>
+   <field>
       <id>Disqualified</id>
       <def>The role of a person that is declared ineligible for an office, activity or competition because of an offence or infringement.</def>
    </field>
@@ -1098,7 +1503,7 @@ the shape, size, and presentation of a book or periodical</def>
    </field>
    <field>
       <id>ExiledPerson</id>
-      <def>a person who lives away from their native country, either from choice or compulsion.</def>
+      <def>A person who lives away from their native country, either from choice or compulsion.</def>
    </field>
    <field>
       <id>Father</id>

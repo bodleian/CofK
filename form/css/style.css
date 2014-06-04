@@ -120,3 +120,30 @@ color:red;
     
 }
   
+
+
+/* autocomplete style  */
+.ui-helper-hidden-accessible{display:none}  
+
+.ui-menu {
+    background-color:whitesmoke;
+    border: 1px;
+    width:100px;
+}
+
+.ui-menu .ui-menu-item {
+     list-style-type: none;
+    background: whitesmoke;
+padding-left:10px;
+}
+
+.ui-menu .ui-menu-item a:hover{
+    
+   color:red;
+  background-color:white;
+   
+}
+
+
+
+

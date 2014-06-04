@@ -5,10 +5,21 @@
       <title>Prosopography Input Form</title>
       <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
       <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+      <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+      <script>
+         
+         $('.ui-autocomplete').addClass('f-dropdown');
+         
+         
+         
+         
+      </script>
       <link rel="stylesheet" href="../f5/css/foundation.css"></link>
       <link rel="stylesheet" href="../f5/css/foundation-icons.css"></link>
       <script src="../f5/js/vendor/modernizr.js"></script>
       <script src="./js/form.js"></script>
+      <script language="javascript" src="./js/typeahead.bundle.js"></script>
+      <script language="javascript" src="./js/family.js"></script>
       <script src="http://d3js.org/d3.v3.min.js"></script>
       <link rel="stylesheet" href="css/style.css"></link>
    </head>
@@ -50,13 +61,43 @@
                      <div id="panelPersonalLife" class="content ">
                         <dl class="tabs" data-tab="">
                            <dd class="active">
+                              <a href="#PersonalName">PersonalName</a>
+                           </dd>
+                           <dd class="">
                               <a href="#Birth">Birth</a>
                            </dd>
                            <dd class="">
                               <a href="#Death">Death</a>
                            </dd>
+                           <dd class="">
+                              <a href="#FamilyRelationships">FamilyRelationships</a>
+                           </dd>
                         </dl>
                         <div class="tabs-content">
+                           <div class="content active" id="PersonalName">
+                              <fieldset class="repeatSectionPersonalName">
+                                 <p class="addRemove">
+                                    <a href="#" class="add" onClick="addSection('.repeatSectionPersonalName')">
+                                       <span data-tooltip="" class="has-tip" title="Add Section">
+                                          <i class="fi-plus"></i>
+                                       </span>
+                                    </a>
+                                    <a href="#" class="delete" onClick="deleteSection(this, '.repeatSectionPersonalName')">
+                                       <span data-tooltip="" class="has-tip" title="Delete this section">
+                                          <i class="fi-minus"></i>
+                                       </span>
+                                    </a>
+                                 </p>
+                                 <legend>PersonalName</legend>
+                                 <p></p>
+                                 <div class="row">
+                                    <div class="small-4 columns divPersonalName-Name">
+                                       <label for="PersonalName-Name">Name</label>
+                                       <input type="text" id="PersonalName-Name" placeholder="Enter Person's Name "></input>
+                                    </div>
+                                 </div>
+                              </fieldset>
+                           </div>
                            <script language="javascript">
                               function drawGraphBirth()
                               {
@@ -84,7 +125,7 @@
                               }   
                               
                            </script>
-                           <div class="content active" id="Birth">
+                           <div class="content " id="Birth">
                               <div id="modalGraphBirth" class="reveal-modal svgmodal" data-reveal="">
                                  <h2>Graph</h2>
                                  <a class="close-reveal-modal">×</a>
@@ -147,15 +188,10 @@
                                     </a>
                                  </p>
                                  <legend>Birth</legend>
-                                 <p>The emergence of a baby or other young from the body of its mother and the start of
-                                    life as a physically separate being.
-                                 </p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divBirth-Child">
                                        <label for="Birth-Child">Child
-                                          <span data-tooltip="" class="has-tip" title="A young human being below the age of puberty or below the legal age of majority. The role of a person in relation to his/her parents.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divBirth-Child')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -167,9 +203,6 @@
                                     </div>
                                     <div class="small-4 columns divBirth-Mother">
                                        <label for="Birth-Mother">Mother
-                                          <span data-tooltip="" class="has-tip" title="a woman in relation to a child or children to whom she has given birth, or adopted. The family role of a woman in relation to her child or children">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divBirth-Mother')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -181,9 +214,6 @@
                                     </div>
                                     <div class="small-4 columns divBirth-Father">
                                        <label for="Birth-Father">Father
-                                          <span data-tooltip="" class="has-tip" title="A man in relation to his child or children. The family role of a man in relation to his child or children">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divBirth-Father')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -336,13 +366,10 @@
                                     </a>
                                  </p>
                                  <legend>Death</legend>
-                                 <p>The activity of dying or being killed; the end of the life of a person or organism.</p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divDeath-Deceased">
                                        <label for="Death-Deceased">Deceased
-                                          <span data-tooltip="" class="has-tip" title="A person who is recently dead.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divDeath-Deceased')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -426,6 +453,38 @@
                                  </div>
                               </fieldset>
                            </div>
+                           <div class="content " id="FamilyRelationships">
+                              <fieldset class="repeatSectionFamilyRelationships">
+                                 <p class="addRemove">
+                                    <a href="#" class="add" onClick="addSection('.repeatSectionFamilyRelationships')">
+                                       <span data-tooltip="" class="has-tip" title="Add Section">
+                                          <i class="fi-plus"></i>
+                                       </span>
+                                    </a>
+                                    <a href="#" class="delete" onClick="deleteSection(this, '.repeatSectionFamilyRelationships')">
+                                       <span data-tooltip="" class="has-tip" title="Delete this section">
+                                          <i class="fi-minus"></i>
+                                       </span>
+                                    </a>
+                                 </p>
+                                 <legend>FamilyRelationships</legend>
+                                 <p></p>
+                                 <div class="row">
+                                    <div class="small-4 columns divFamilyRelationships-Person">
+                                       <label for="FamilyRelationships-Person">Person A</label>
+                                       <input type="text" id="FamilyRelationships-Person" placeholder="Enter Person's Name "></input>
+                                    </div>
+                                    <div class="small-4 columns divFamilyRelationships-FamilyRole">
+                                       <label for="FamilyRelationships-FamilyRole">Relationship</label>
+                                       <input type="text" class="FamilyRelationships-FamilyRole" id="FamilyRelationships-FamilyRole" placeholder="Enter relationship of Person A to Person B "></input>
+                                    </div>
+                                    <div class="small-4 columns divFamilyRelationships-PersonB">
+                                       <label for="FamilyRelationships-PersonB">Person B</label>
+                                       <input type="text" id="FamilyRelationships-PersonB" placeholder="Enter Person's Name "></input>
+                                    </div>
+                                 </div>
+                              </fieldset>
+                           </div>
                         </div>
                      </div>
                   </dd>
@@ -496,9 +555,7 @@
                                     </a>
                                  </p>
                                  <legend>Displacement</legend>
-                                 <p>The enforced departure of people from their homes, typically because of war, persecution,
-                                    or natural disaster.
-                                 </p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divDisplacement-DisplacedPerson">
                                        <label for="Displacement-DisplacedPerson">DisplacedPerson
@@ -625,9 +682,7 @@
                                     </a>
                                  </p>
                                  <legend>Emmigration</legend>
-                                 <p>The activity of leaving one's own country to settle permanently in another; moving
-                                    abroad.
-                                 </p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divEmmigration-Emmigrant">
                                        <label for="Emmigration-Emmigrant">Emmigrant
@@ -754,15 +809,10 @@
                                     </a>
                                  </p>
                                  <legend>Exile</legend>
-                                 <p>The state of being barred from one's native country, typically for political or punitive
-                                    reasons.
-                                 </p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divExile-ExiledPerson">
                                        <label for="Exile-ExiledPerson">ExiledPerson
-                                          <span data-tooltip="" class="has-tip" title="a person who lives away from their native country, either from choice or compulsion.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divExile-ExiledPerson')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -886,13 +936,10 @@
                                     </a>
                                  </p>
                                  <legend>Immigration</legend>
-                                 <p>The activity of of coming to live permanently in a foreign country.</p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divImmigration-Immigrant">
                                        <label for="Immigration-Immigrant">Immigrant
-                                          <span data-tooltip="" class="has-tip" title="A person who comes to live permanently in a country that is not the person's native country.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divImmigration-Immigrant')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -1016,13 +1063,10 @@
                                     </a>
                                  </p>
                                  <legend>Residence</legend>
-                                 <p>The activity of living in a particular place.</p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divResidence-Resident">
                                        <label for="Residence-Resident">Resident
-                                          <span data-tooltip="" class="has-tip" title="A person who lives somewhere permanently or on a long-term basis.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divResidence-Resident')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -1146,13 +1190,10 @@
                                     </a>
                                  </p>
                                  <legend>Travel</legend>
-                                 <p>The activity of making a journey, typically of some length.</p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divTravel-Traveller">
                                        <label for="Travel-Traveller">Traveller
-                                          <span data-tooltip="" class="has-tip" title="A person who is travelling or who often travels.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divTravel-Traveller')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -1276,13 +1317,10 @@
                                     </a>
                                  </p>
                                  <legend>Visit</legend>
-                                 <p>The activity of going to see a person or place as a guest, tourist, etc.</p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divVisit-Visitor">
                                        <label for="Visit-Visitor">Visitor
-                                          <span data-tooltip="" class="has-tip" title="The role of a person visiting someone or somewhere, especially socially or as a tourist.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divVisit-Visitor')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -1487,15 +1525,10 @@
                                     </a>
                                  </p>
                                  <legend>UniversityMatriculation</legend>
-                                 <p>The formal process of entering a university or of becoming eligible to enter by fulfilling
-                                    certain academic requirements.
-                                 </p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divUniversityMatriculation-Matriculant">
                                        <label for="UniversityMatriculation-Matriculant">Matriculant
-                                          <span data-tooltip="" class="has-tip" title="A person who has matriculated or been registered on a list or roll, usually at a school.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divUniversityMatriculation-Matriculant')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -1507,9 +1540,6 @@
                                     </div>
                                     <div class="small-4 columns divUniversityMatriculation-MatriculationRegister">
                                        <label for="UniversityMatriculation-MatriculationRegister">MatriculationRegister
-                                          <span data-tooltip="" class="has-tip" title="An official list or record of names of people who have participated in the activity of matriculation at a university, the formal process of entering a university or of becoming eligible to enter by fulfilling certain academic requirements.&#xA;&#xA;source: https://en.wikipedia.org/wiki/Matriculation">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divUniversityMatriculation-MatriculationRegister')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -1521,9 +1551,6 @@
                                     </div>
                                     <div class="small-4 columns divUniversityMatriculation-Entry">
                                        <label for="UniversityMatriculation-Entry">Entry
-                                          <span data-tooltip="" class="has-tip" title="An item written or printed in a diary, list, account book, or reference book.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divUniversityMatriculation-Entry')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -1651,9 +1678,6 @@
                                  <div class="row">
                                     <div class="small-4 columns divInclusionClassList-Student">
                                        <label for="InclusionClassList-Student">Student
-                                          <span data-tooltip="" class="has-tip" title="A person who is studying at a university or other place of higher education. A person who is studying at a university or other place of higher education.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divInclusionClassList-Student')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -1665,9 +1689,6 @@
                                     </div>
                                     <div class="small-4 columns divInclusionClassList-Entry">
                                        <label for="InclusionClassList-Entry">Entry
-                                          <span data-tooltip="" class="has-tip" title="An item written or printed in a diary, list, account book, or reference book.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divInclusionClassList-Entry')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -1802,24 +1823,10 @@
                                     </a>
                                  </p>
                                  <legend>Disputation</legend>
-                                 <p>Formal academic debate  
-                                    source: http://www.oxforddictionaries.com/definition/english/disputation
-                                    
-                                    In the scholastic system of education of the Middle Ages, disputations (in Latin:
-                                    disputationes, singular: disputatio) offered a formalized method of debate designed
-                                    to uncover and establish truths in theology and in sciences. Fixed rules governed
-                                    the process: they demanded dependence on traditional written authorities and the thorough
-                                    understanding of each argument on each side.
-                                    source https://en.wikipedia.org/wiki/Disputation
-                                    
-                                    Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use 
-                                 </p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divDisputation-Respondent">
                                        <label for="Disputation-Respondent">Respondent
-                                          <span data-tooltip="" class="has-tip" title="A person or organization who makes an answer to the courts pursuant to an application for redress (usually in an equity proceeding) or a candidate for a degree who defends or opposes a thesis provided by the praeses in an academic disputation">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divDisputation-Respondent')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -1831,9 +1838,6 @@
                                     </div>
                                     <div class="small-4 columns divDisputation-Praeses">
                                        <label for="Disputation-Praeses">Praeses
-                                          <span data-tooltip="" class="has-tip" title="A person who is the faculty moderator of an academic disputation, normally proposing a thesis and participating in the ensuing disputation">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divDisputation-Praeses')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -1968,13 +1972,10 @@
                                     </a>
                                  </p>
                                  <legend>PersonalTestimony</legend>
-                                 <p>A solemn written or oral statement as to the truth of a matter.</p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divPersonalTestimony-Testifier">
                                        <label for="PersonalTestimony-Testifier">Testifier
-                                          <span data-tooltip="" class="has-tip" title="A person who gives a testimony, a solemn written or oral statement as to the truth of a matter.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divPersonalTestimony-Testifier')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -2098,13 +2099,10 @@
                                     </a>
                                  </p>
                                  <legend>PromotionToDegree</legend>
-                                 <p>The receiving or conferring of an academic degree.</p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divPromotionToDegree-AwardingBody">
                                        <label for="PromotionToDegree-AwardingBody">AwardingBody
-                                          <span data-tooltip="" class="has-tip" title="The role of an agent that gives an award.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divPromotionToDegree-AwardingBody')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -2116,9 +2114,6 @@
                                     </div>
                                     <div class="small-4 columns divPromotionToDegree-Graduate">
                                        <label for="PromotionToDegree-Graduate">Graduate
-                                          <span data-tooltip="" class="has-tip" title="A person who has successfully completed a course of study or training, especially a person who has been awarded an undergraduate or first academic degree.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divPromotionToDegree-Graduate')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -2242,15 +2237,10 @@
                                     </a>
                                  </p>
                                  <legend>Study</legend>
-                                 <p>The devotion of time and attention to acquiring knowledge on an academic subject,
-                                    especially by means of books.
-                                 </p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divStudy-TeachingInstitution">
                                        <label for="Study-TeachingInstitution">TeachingInstitution
-                                          <span data-tooltip="" class="has-tip" title="An organisation where the activity of imparting knowledge to or instructing (someone) as to how to do something is conducted.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divStudy-TeachingInstitution')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -2262,9 +2252,6 @@
                                     </div>
                                     <div class="small-4 columns divStudy-Student">
                                        <label for="Study-Student">Student
-                                          <span data-tooltip="" class="has-tip" title="A person who is studying at a university or other place of higher education. A person who is studying at a university or other place of higher education.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divStudy-Student')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -2276,9 +2263,6 @@
                                     </div>
                                     <div class="small-4 columns divStudy-Teacher">
                                        <label for="Study-Teacher">Teacher
-                                          <span data-tooltip="" class="has-tip" title="The role of a person who imparts knowledge to or instructs someone as to how to do something.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divStudy-Teacher')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -2402,15 +2386,10 @@
                                     </a>
                                  </p>
                                  <legend>Teaching</legend>
-                                 <p>The activity of giving instruction, especially in an elementary or secondary school
-                                    or a university.
-                                 </p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divTeaching-TeachingInstitution">
                                        <label for="Teaching-TeachingInstitution">TeachingInstitution
-                                          <span data-tooltip="" class="has-tip" title="An organisation where the activity of imparting knowledge to or instructing (someone) as to how to do something is conducted.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divTeaching-TeachingInstitution')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -2422,9 +2401,6 @@
                                     </div>
                                     <div class="small-4 columns divTeaching-Student">
                                        <label for="Teaching-Student">Student
-                                          <span data-tooltip="" class="has-tip" title="A person who is studying at a university or other place of higher education. A person who is studying at a university or other place of higher education.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divTeaching-Student')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -2436,9 +2412,6 @@
                                     </div>
                                     <div class="small-4 columns divTeaching-Teacher">
                                        <label for="Teaching-Teacher">Teacher
-                                          <span data-tooltip="" class="has-tip" title="The role of a person who imparts knowledge to or instructs someone as to how to do something.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divTeaching-Teacher')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -2607,15 +2580,10 @@
                                     </a>
                                  </p>
                                  <legend>Trade</legend>
-                                 <p>Trade is to transfer the ownership of goods from one person or entity to another by
-                                    getting something in exchange from the buyer.
-                                 </p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divTrade-Buyer">
                                        <label for="Trade-Buyer">Buyer
-                                          <span data-tooltip="" class="has-tip" title=" The role of a person who makes a purchase.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divTrade-Buyer')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -2627,9 +2595,6 @@
                                     </div>
                                     <div class="small-4 columns divTrade-Seller">
                                        <label for="Trade-Seller">Seller
-                                          <span data-tooltip="" class="has-tip" title=" The role of a person who sells something.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divTrade-Seller')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -2764,15 +2729,10 @@
                                     </a>
                                  </p>
                                  <legend>Contract</legend>
-                                 <p>A written or spoken agreement, especially one concerning employment, sales, or tenancy,
-                                    that is intended to be enforceable by law.
-                                 </p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divContract-Contractee">
                                        <label for="Contract-Contractee">Contractee
-                                          <span data-tooltip="" class="has-tip" title="A party to a contract">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divContract-Contractee')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -2784,9 +2744,6 @@
                                     </div>
                                     <div class="small-4 columns divContract-ContractDocument">
                                        <label for="Contract-ContractDocument">ContractDocument
-                                          <span data-tooltip="" class="has-tip" title="A document containing a written representation of a contract">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divContract-ContractDocument')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -2910,13 +2867,10 @@
                                     </a>
                                  </p>
                                  <legend>InclusionAlbumAmicorum</legend>
-                                 <p>An activity where a personl includes a creative work in an Album Amicorum</p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divInclusionAlbumAmicorum-AlbumAmicorum">
                                        <label for="InclusionAlbumAmicorum-AlbumAmicorum">AlbumAmicorum
-                                          <span data-tooltip="" class="has-tip" title="The first true autograph books that appeared in German and Dutch linguistic regions (possibly originating in Wittenberg) by the mid-16th century. Known as an album amicorum (&#34;book of friends&#34;) or stammbuch (&#34;friendship book&#34;).http://en.wikipedia.org/wiki/Autograph_book">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divInclusionAlbumAmicorum-AlbumAmicorum')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -2928,9 +2882,6 @@
                                     </div>
                                     <div class="small-4 columns divInclusionAlbumAmicorum-CreativeWork">
                                        <label for="InclusionAlbumAmicorum-CreativeWork">CreativeWork
-                                          <span data-tooltip="" class="has-tip" title="A work that is a distinct intellectual or artistic creation and is the product of creative effort.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divInclusionAlbumAmicorum-CreativeWork')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -2942,9 +2893,6 @@
                                     </div>
                                     <div class="small-4 columns divInclusionAlbumAmicorum-Contributor">
                                        <label for="InclusionAlbumAmicorum-Contributor">Contributor
-                                          <span data-tooltip="" class="has-tip" title="A person or thing that contributes something, in particular.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divInclusionAlbumAmicorum-Contributor')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -2956,9 +2904,6 @@
                                     </div>
                                     <div class="small-4 columns divInclusionAlbumAmicorum-Owner">
                                        <label for="InclusionAlbumAmicorum-Owner">Owner
-                                          <span data-tooltip="" class="has-tip" title="The role of a person who owns something, ie that someone or something belongs or relates to the person mentioned. The role of a person who owns something.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divInclusionAlbumAmicorum-Owner')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -3082,13 +3027,10 @@
                                     </a>
                                  </p>
                                  <legend>ExchangeOccasionalVerse</legend>
-                                 <p>An activity where one person authors verse and sends it to another person. </p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divExchangeOccasionalVerse-Verse">
                                        <label for="ExchangeOccasionalVerse-Verse">Verse
-                                          <span data-tooltip="" class="has-tip" title="Writing arranged with a metrical rhythm, typically having a rhyme.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divExchangeOccasionalVerse-Verse')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -3111,9 +3053,6 @@
                                     </div>
                                     <div class="small-4 columns divExchangeOccasionalVerse-Sender">
                                        <label for="ExchangeOccasionalVerse-Sender">Sender
-                                          <span data-tooltip="" class="has-tip" title="The role of a person who sends something, especially a letter by post">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divExchangeOccasionalVerse-Sender')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -3125,9 +3064,6 @@
                                     </div>
                                     <div class="small-4 columns divExchangeOccasionalVerse-Recipient">
                                        <label for="ExchangeOccasionalVerse-Recipient">Recipient
-                                          <span data-tooltip="" class="has-tip" title="The role of a person or thing that receives or is awarded something.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divExchangeOccasionalVerse-Recipient')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -3251,13 +3187,10 @@
                                     </a>
                                  </p>
                                  <legend>Collaboration</legend>
-                                 <p>Activity of working together to do a task and to achieve shared goals</p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divCollaboration-Collaborator">
                                        <label for="Collaboration-Collaborator">Collaborator
-                                          <span data-tooltip="" class="has-tip" title="The role of a person who works jointly on an activity or project; an associate.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divCollaboration-Collaborator')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -3381,13 +3314,10 @@
                                     </a>
                                  </p>
                                  <legend>Travel</legend>
-                                 <p>The activity of making a journey, typically of some length.</p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divTravel-Traveller">
                                        <label for="Travel-Traveller">Traveller
-                                          <span data-tooltip="" class="has-tip" title="A person who is travelling or who often travels.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divTravel-Traveller')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -3511,13 +3441,10 @@
                                     </a>
                                  </p>
                                  <legend>SocialVisit</legend>
-                                 <p>The activity of going to see and spend time with (someone) socially</p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divSocialVisit-Visitor">
                                        <label for="SocialVisit-Visitor">Visitor
-                                          <span data-tooltip="" class="has-tip" title="The role of a person visiting someone or somewhere, especially socially or as a tourist.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divSocialVisit-Visitor')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -3529,9 +3456,6 @@
                                     </div>
                                     <div class="small-4 columns divSocialVisit-Host">
                                        <label for="SocialVisit-Host">Host
-                                          <span data-tooltip="" class="has-tip" title="The role of a person who receives or entertains other people as guests.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divSocialVisit-Host')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -3655,13 +3579,10 @@
                                     </a>
                                  </p>
                                  <legend>Meeting</legend>
-                                 <p>Activity when two or more people meet, by chance or arrangement</p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divMeeting-Attendee">
                                        <label for="Meeting-Attendee">Attendee
-                                          <span data-tooltip="" class="has-tip" title="The role of a person who participates and is present at a conference or other gathering.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divMeeting-Attendee')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -3785,15 +3706,10 @@
                                     </a>
                                  </p>
                                  <legend>Introduction</legend>
-                                 <p>The context of one person being introduced to another person by way of a third person
-                                    who acts as an intermediary. 
-                                 </p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divIntroduction-Intermediary">
                                        <label for="Introduction-Intermediary">Intermediary
-                                          <span data-tooltip="" class="has-tip" title="The role of a person who acts as a link between people.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divIntroduction-Intermediary')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -3805,9 +3721,6 @@
                                     </div>
                                     <div class="small-4 columns divIntroduction-Participant">
                                        <label for="Introduction-Participant">Participant
-                                          <span data-tooltip="" class="has-tip" title="The role of a person who takes part in something">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divIntroduction-Participant')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -3931,13 +3844,10 @@
                                     </a>
                                  </p>
                                  <legend>Acquaintanceship</legend>
-                                 <p>The context in which two people know each other slightly, but who are not  close friends</p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divAcquaintanceship-Acquaintance">
                                        <label for="Acquaintanceship-Acquaintance">Acquaintance
-                                          <span data-tooltip="" class="has-tip" title="The role of a person one knows slightly, but who is not a close friend.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divAcquaintanceship-Acquaintance')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -4061,13 +3971,10 @@
                                     </a>
                                  </p>
                                  <legend>Correspondence</legend>
-                                 <p>an activity where one person writes a letter to another person.</p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divCorrespondence-Correspondent">
                                        <label for="Correspondence-Correspondent">Correspondent
-                                          <span data-tooltip="" class="has-tip" title="The role of a person who writes letters on a regular basis.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divCorrespondence-Correspondent')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -4079,9 +3986,6 @@
                                     </div>
                                     <div class="small-4 columns divCorrespondence-LetterSender">
                                        <label for="Correspondence-LetterSender">LetterSender
-                                          <span data-tooltip="" class="has-tip" title="A person that sends a letter">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divCorrespondence-LetterSender')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -4093,9 +3997,6 @@
                                     </div>
                                     <div class="small-4 columns divCorrespondence-LetterRecipient">
                                        <label for="Correspondence-LetterRecipient">LetterRecipient
-                                          <span data-tooltip="" class="has-tip" title="The role of a person or thing that receives a letter.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divCorrespondence-LetterRecipient')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -4219,15 +4120,10 @@
                                     </a>
                                  </p>
                                  <legend>Friendship</legend>
-                                 <p> a relationship of mutual affection between two or more people. Friendship is a stronger
-                                    form of interpersonal bond than an association. 
-                                 </p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divFriendship-Friend">
                                        <label for="Friendship-Friend">Friend
-                                          <span data-tooltip="" class="has-tip" title="A person with whom one has a bond of mutual affection, typically one exclusive of sexual or family relations.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divFriendship-Friend')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -4375,7 +4271,7 @@
                                     </a>
                                  </p>
                                  <legend>Ennoble</legend>
-                                 <p>The activity of making someone a member of the nobility.</p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="row"></div>
                                     <div class="small-4 columns divEnnoble-date_is_range">
@@ -4530,13 +4426,10 @@
                                     </a>
                                  </p>
                                  <legend>CreationActivity</legend>
-                                 <p>Activity that brings something into existence.</p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divCreationActivity-CreativeWork">
                                        <label for="CreationActivity-CreativeWork">CreativeWork
-                                          <span data-tooltip="" class="has-tip" title="A work that is a distinct intellectual or artistic creation and is the product of creative effort.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divCreationActivity-CreativeWork')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -4548,9 +4441,6 @@
                                     </div>
                                     <div class="small-4 columns divCreationActivity-Creator">
                                        <label for="CreationActivity-Creator">Creator
-                                          <span data-tooltip="" class="has-tip" title=" The role of a person or thing that brings something into existence.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divCreationActivity-Creator')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -4674,13 +4564,10 @@
                                     </a>
                                  </p>
                                  <legend>AuthoringActivity</legend>
-                                 <p>Activity that involves the writing of a book, article or document.</p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divAuthoringActivity-CreativeWork">
                                        <label for="AuthoringActivity-CreativeWork">CreativeWork
-                                          <span data-tooltip="" class="has-tip" title="A work that is a distinct intellectual or artistic creation and is the product of creative effort.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divAuthoringActivity-CreativeWork')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -4692,9 +4579,6 @@
                                     </div>
                                     <div class="small-4 columns divAuthoringActivity-Author">
                                        <label for="AuthoringActivity-Author">Author
-                                          <span data-tooltip="" class="has-tip" title="A writer of a book, article, or document.  The role of someone who writes a book, article, or document.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divAuthoringActivity-Author')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -4818,13 +4702,10 @@
                                     </a>
                                  </p>
                                  <legend>ContributionActivity</legend>
-                                 <p>Activity that involves the contiribution of something by a person or thing</p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divContributionActivity-CreativeWork">
                                        <label for="ContributionActivity-CreativeWork">CreativeWork
-                                          <span data-tooltip="" class="has-tip" title="A work that is a distinct intellectual or artistic creation and is the product of creative effort.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divContributionActivity-CreativeWork')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -4836,9 +4717,6 @@
                                     </div>
                                     <div class="small-4 columns divContributionActivity-Contributor">
                                        <label for="ContributionActivity-Contributor">Contributor
-                                          <span data-tooltip="" class="has-tip" title="A person or thing that contributes something, in particular.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divContributionActivity-Contributor')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -4962,16 +4840,10 @@
                                     </a>
                                  </p>
                                  <legend>DedicationActivity</legend>
-                                 <p>An activity that involves an address or inscription (of a literary work, for example)
-                                    to another as a mark of respect or affection The activity of addressing or inscribing
-                                    (a literary work, for example) to another as a mark of respect or affection.
-                                 </p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divDedicationActivity-Dedicator">
                                        <label for="DedicationActivity-Dedicator">Dedicator
-                                          <span data-tooltip="" class="has-tip" title="The role of a person who dedicates something to someone or something">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divDedicationActivity-Dedicator')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -4983,9 +4855,6 @@
                                     </div>
                                     <div class="small-4 columns divDedicationActivity-Dedicatee">
                                        <label for="DedicationActivity-Dedicatee">Dedicatee
-                                          <span data-tooltip="" class="has-tip" title="The role of an entity to whom something is dedicated">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divDedicationActivity-Dedicatee')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -5008,9 +4877,6 @@
                                     </div>
                                     <div class="small-4 columns divDedicationActivity-CreativeWork">
                                        <label for="DedicationActivity-CreativeWork">CreativeWork
-                                          <span data-tooltip="" class="has-tip" title="A work that is a distinct intellectual or artistic creation and is the product of creative effort.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divDedicationActivity-CreativeWork')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -5022,9 +4888,6 @@
                                     </div>
                                     <div class="small-4 columns divDedicationActivity-Inscription">
                                        <label for="DedicationActivity-Inscription">Inscription
-                                          <span data-tooltip="" class="has-tip" title="Writing or carving (words or symbols) on something, especially as a formal or permanent record., as on a monument or in a book">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divDedicationActivity-Inscription')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -5148,13 +5011,10 @@
                                     </a>
                                  </p>
                                  <legend>DedicationOfItem</legend>
-                                 <p>To address or inscribe an item to another as a mark of respect or affection.</p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divDedicationOfItem-Dedicator">
                                        <label for="DedicationOfItem-Dedicator">Dedicator
-                                          <span data-tooltip="" class="has-tip" title="The role of a person who dedicates something to someone or something">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divDedicationOfItem-Dedicator')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -5166,9 +5026,6 @@
                                     </div>
                                     <div class="small-4 columns divDedicationOfItem-Dedicatee">
                                        <label for="DedicationOfItem-Dedicatee">Dedicatee
-                                          <span data-tooltip="" class="has-tip" title="The role of an entity to whom something is dedicated">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divDedicationOfItem-Dedicatee')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -5191,9 +5048,6 @@
                                     </div>
                                     <div class="small-4 columns divDedicationOfItem-Inscription">
                                        <label for="DedicationOfItem-Inscription">Inscription
-                                          <span data-tooltip="" class="has-tip" title="Writing or carving (words or symbols) on something, especially as a formal or permanent record., as on a monument or in a book">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divDedicationOfItem-Inscription')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -5317,13 +5171,10 @@
                                     </a>
                                  </p>
                                  <legend>DedicationOfWork</legend>
-                                 <p>To address or inscribe a literary work to another as a mark of respect or affection.</p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divDedicationOfWork-Dedicator">
                                        <label for="DedicationOfWork-Dedicator">Dedicator
-                                          <span data-tooltip="" class="has-tip" title="The role of a person who dedicates something to someone or something">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divDedicationOfWork-Dedicator')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -5335,9 +5186,6 @@
                                     </div>
                                     <div class="small-4 columns divDedicationOfWork-Dedicatee">
                                        <label for="DedicationOfWork-Dedicatee">Dedicatee
-                                          <span data-tooltip="" class="has-tip" title="The role of an entity to whom something is dedicated">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divDedicationOfWork-Dedicatee')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -5349,9 +5197,6 @@
                                     </div>
                                     <div class="small-4 columns divDedicationOfWork-CreativeWork">
                                        <label for="DedicationOfWork-CreativeWork">CreativeWork
-                                          <span data-tooltip="" class="has-tip" title="A work that is a distinct intellectual or artistic creation and is the product of creative effort.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divDedicationOfWork-CreativeWork')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -5363,9 +5208,6 @@
                                     </div>
                                     <div class="small-4 columns divDedicationOfWork-Inscription">
                                        <label for="DedicationOfWork-Inscription">Inscription
-                                          <span data-tooltip="" class="has-tip" title="Writing or carving (words or symbols) on something, especially as a formal or permanent record., as on a monument or in a book">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divDedicationOfWork-Inscription')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -5489,13 +5331,10 @@
                                     </a>
                                  </p>
                                  <legend>PrintingActivity</legend>
-                                 <p>Activity that involves the production of books, newspapers or other printed materials.</p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divPrintingActivity-Printer">
                                        <label for="PrintingActivity-Printer">Printer
-                                          <span data-tooltip="" class="has-tip" title=" ">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divPrintingActivity-Printer')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -5507,9 +5346,6 @@
                                     </div>
                                     <div class="small-4 columns divPrintingActivity-CreativeWork">
                                        <label for="PrintingActivity-CreativeWork">CreativeWork
-                                          <span data-tooltip="" class="has-tip" title="A work that is a distinct intellectual or artistic creation and is the product of creative effort.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divPrintingActivity-CreativeWork')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -5633,13 +5469,10 @@
                                     </a>
                                  </p>
                                  <legend>PublishingActivity</legend>
-                                 <p>The activity of preparing and issuing books, journals and other materials for sale.</p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divPublishingActivity-Publisher">
                                        <label for="PublishingActivity-Publisher">Publisher
-                                          <span data-tooltip="" class="has-tip" title=" ">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divPublishingActivity-Publisher')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -5651,9 +5484,6 @@
                                     </div>
                                     <div class="small-4 columns divPublishingActivity-CreativeWork">
                                        <label for="PublishingActivity-CreativeWork">CreativeWork
-                                          <span data-tooltip="" class="has-tip" title="A work that is a distinct intellectual or artistic creation and is the product of creative effort.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divPublishingActivity-CreativeWork')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -5777,15 +5607,10 @@
                                     </a>
                                  </p>
                                  <legend>Research</legend>
-                                 <p>An activity involving the systematic investigation into and study of materials and
-                                    sources in order to establish facts and reach new conclusions.
-                                 </p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divResearch-Researcher">
                                        <label for="Research-Researcher">Researcher
-                                          <span data-tooltip="" class="has-tip" title="The role of a person who undertakes a systematic investigation into and study of materials and sources in order to establish facts and reach new conclusion.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divResearch-Researcher')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -5909,13 +5734,10 @@
                                     </a>
                                  </p>
                                  <legend>Salon</legend>
-                                 <p>A regular social gathering, especially of writers and artists</p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divSalon-Saloniste">
                                        <label for="Salon-Saloniste">Saloniste
-                                          <span data-tooltip="" class="has-tip" title="The role of a person who attends a salon (social gathering).">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divSalon-Saloniste')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -6060,13 +5882,10 @@
                                     </a>
                                  </p>
                                  <legend>Employment</legend>
-                                 <p>The activity of having paid work.</p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divEmployment-Employer">
                                        <label for="Employment-Employer">Employer
-                                          <span data-tooltip="" class="has-tip" title="a person or organization that employs people.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divEmployment-Employer')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -6078,9 +5897,6 @@
                                     </div>
                                     <div class="small-4 columns divEmployment-Employee">
                                        <label for="Employment-Employee">Employee
-                                          <span data-tooltip="" class="has-tip" title="a person employed for wages or salary, especially at non-executive level.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divEmployment-Employee')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -6204,13 +6020,10 @@
                                     </a>
                                  </p>
                                  <legend>MembershipProfessionalBody</legend>
-                                 <p>Membership of a person to a professional body</p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divMembershipProfessionalBody-Member">
                                        <label for="MembershipProfessionalBody-Member">Member
-                                          <span data-tooltip="" class="has-tip" title="The role of an agent belonging to a particular group The role of a person, country, or organization that has joined a group, society, or team.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divMembershipProfessionalBody-Member')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -6222,9 +6035,6 @@
                                     </div>
                                     <div class="small-4 columns divMembershipProfessionalBody-ProfessionalBody">
                                        <label for="MembershipProfessionalBody-ProfessionalBody">ProfessionalBody
-                                          <span data-tooltip="" class="has-tip" title="A nonprofit formal organization seeking to further a particular profession, the interests of individuals engaged in that profession, and the public interest.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divMembershipProfessionalBody-ProfessionalBody')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -6348,13 +6158,10 @@
                                     </a>
                                  </p>
                                  <legend>DisqualificationFromOffice</legend>
-                                 <p>Activity declaring (someone) ineligible for an office because of an offence or infringement</p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divDisqualificationFromOffice-Office">
                                        <label for="DisqualificationFromOffice-Office">Office
-                                          <span data-tooltip="" class="has-tip" title="A position of authority or service, typically one of a public nature A post that is a position of authority or service, typically one of a public nature.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divDisqualificationFromOffice-Office')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -6366,9 +6173,6 @@
                                     </div>
                                     <div class="small-4 columns divDisqualificationFromOffice-DisqualifiedFromOffice">
                                        <label for="DisqualificationFromOffice-DisqualifiedFromOffice">DisqualifiedFromOffice
-                                          <span data-tooltip="" class="has-tip" title="The role of a person who has been declared ineligible for an office because of an offence or infringement The role of a person that is declared ineligible for an office because of an offence or infringement">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divDisqualificationFromOffice-DisqualifiedFromOffice')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -6507,9 +6311,6 @@
                                  <div class="row">
                                     <div class="small-4 columns divHoldOffice-Office">
                                        <label for="HoldOffice-Office">Office
-                                          <span data-tooltip="" class="has-tip" title="A position of authority or service, typically one of a public nature A post that is a position of authority or service, typically one of a public nature.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divHoldOffice-Office')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -6691,13 +6492,10 @@
                                     </a>
                                  </p>
                                  <legend>MembershipProfessionalBody</legend>
-                                 <p>Membership of a person to a professional body</p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divMembershipProfessionalBody-Member">
                                        <label for="MembershipProfessionalBody-Member">Member
-                                          <span data-tooltip="" class="has-tip" title="The role of an agent belonging to a particular group The role of a person, country, or organization that has joined a group, society, or team.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divMembershipProfessionalBody-Member')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -6709,9 +6507,6 @@
                                     </div>
                                     <div class="small-4 columns divMembershipProfessionalBody-ProfessionalBody">
                                        <label for="MembershipProfessionalBody-ProfessionalBody">ProfessionalBody
-                                          <span data-tooltip="" class="has-tip" title="A nonprofit formal organization seeking to further a particular profession, the interests of individuals engaged in that profession, and the public interest.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divMembershipProfessionalBody-ProfessionalBody')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -6839,9 +6634,6 @@
                                  <div class="row">
                                     <div class="small-4 columns divHoldOffice-Office">
                                        <label for="HoldOffice-Office">Office
-                                          <span data-tooltip="" class="has-tip" title="A position of authority or service, typically one of a public nature A post that is a position of authority or service, typically one of a public nature.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divHoldOffice-Office')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -6987,13 +6779,10 @@
                                     </a>
                                  </p>
                                  <legend>DisqualificationFromOffice</legend>
-                                 <p>Activity declaring (someone) ineligible for an office because of an offence or infringement</p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divDisqualificationFromOffice-Office">
                                        <label for="DisqualificationFromOffice-Office">Office
-                                          <span data-tooltip="" class="has-tip" title="A position of authority or service, typically one of a public nature A post that is a position of authority or service, typically one of a public nature.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divDisqualificationFromOffice-Office')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -7005,9 +6794,6 @@
                                     </div>
                                     <div class="small-4 columns divDisqualificationFromOffice-DisqualifiedFromOffice">
                                        <label for="DisqualificationFromOffice-DisqualifiedFromOffice">DisqualifiedFromOffice
-                                          <span data-tooltip="" class="has-tip" title="The role of a person who has been declared ineligible for an office because of an offence or infringement The role of a person that is declared ineligible for an office because of an offence or infringement">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divDisqualificationFromOffice-DisqualifiedFromOffice')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -7182,17 +6968,10 @@
                                     </a>
                                  </p>
                                  <legend>Baptism</legend>
-                                 <p>The Christian religious rite of sprinkling water on to a person’s forehead or of immersing
-                                    them in water, symbolizing purification or regeneration and admission to the Christian
-                                    Church. In many denominations, baptism is performed on young children and is accompanied
-                                    by name-giving.
-                                 </p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divBaptism-BaptismalCandidate">
                                        <label for="Baptism-BaptismalCandidate">BaptismalCandidate
-                                          <span data-tooltip="" class="has-tip" title="The role of a person who is admitted to membership of a Christian church.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divBaptism-BaptismalCandidate')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -7204,9 +6983,6 @@
                                     </div>
                                     <div class="small-4 columns divBaptism-Godparent">
                                        <label for="Baptism-Godparent">Godparent
-                                          <span data-tooltip="" class="has-tip" title="The role of a person who presents a person at baptism and promises to take responsibility for their religious education.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divBaptism-Godparent')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -7218,9 +6994,6 @@
                                     </div>
                                     <div class="small-4 columns divBaptism-Godchild">
                                        <label for="Baptism-Godchild">Godchild
-                                          <span data-tooltip="" class="has-tip" title="The role of a person who is presented at baptism by a godparent who promises to take responsibility for their religious education.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divBaptism-Godchild')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -7232,9 +7005,6 @@
                                     </div>
                                     <div class="small-4 columns divBaptism-Officiant">
                                        <label for="Baptism-Officiant">Officiant
-                                          <span data-tooltip="" class="has-tip" title="The role of a person who performs a religious rite or presides over a religious service or ceremony.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divBaptism-Officiant')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -7358,13 +7128,10 @@
                                     </a>
                                  </p>
                                  <legend>Ordination</legend>
-                                 <p>The action of making (someone) a priest or minister; confer holy orders.</p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divOrdination-Officiant">
                                        <label for="Ordination-Officiant">Officiant
-                                          <span data-tooltip="" class="has-tip" title="The role of a person who performs a religious rite or presides over a religious service or ceremony.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divOrdination-Officiant')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -7488,9 +7255,7 @@
                                     </a>
                                  </p>
                                  <legend>Preach</legend>
-                                 <p>Deliver a sermon or religious address to an assembled group of people, typically in
-                                    church.
-                                 </p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="row"></div>
                                     <div class="small-4 columns divPreach-date_is_range">
@@ -7606,16 +7371,10 @@
                                     </a>
                                  </p>
                                  <legend>ReligiousConfirmation</legend>
-                                 <p>Confirmation is a rite of initiation in several Christian denominations, normally
-                                    carried out through anointing, the laying on of hands, and prayer, for the purpose
-                                    of bestowing the Gift of the Holy Spirit.
-                                 </p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divReligiousConfirmation-Officiant">
                                        <label for="ReligiousConfirmation-Officiant">Officiant
-                                          <span data-tooltip="" class="has-tip" title="The role of a person who performs a religious rite or presides over a religious service or ceremony.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divReligiousConfirmation-Officiant')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -7627,9 +7386,6 @@
                                     </div>
                                     <div class="small-4 columns divReligiousConfirmation-ConfirmationCandidate">
                                        <label for="ReligiousConfirmation-ConfirmationCandidate">ConfirmationCandidate
-                                          <span data-tooltip="" class="has-tip" title="The role of a person who is confirmed during the religious rite or sacrament of confirmation">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divReligiousConfirmation-ConfirmationCandidate')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -7753,18 +7509,10 @@
                                     </a>
                                  </p>
                                  <legend>ReligiousConversion</legend>
-                                 <p>The adoption, wholesale, of a set of beliefs identified with one particular religious
-                                    denomination to the exclusion of others. Religious conversion marks a transformation
-                                    of religious identity and is symbolized by special rituals.
-                                    
-                                    https://en.wikipedia.org/wiki/Religious_conversion
-                                 </p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divReligiousConversion-Officiant">
                                        <label for="ReligiousConversion-Officiant">Officiant
-                                          <span data-tooltip="" class="has-tip" title="The role of a person who performs a religious rite or presides over a religious service or ceremony.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divReligiousConversion-Officiant')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -7899,15 +7647,10 @@
                                     </a>
                                  </p>
                                  <legend>ReligiousConfession</legend>
-                                 <p>Confession is the acknowledgment of sin (or one's sinfulness) or wrongs. It is a religious
-                                    practice in a number of faith traditions.
-                                 </p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divReligiousConfession-Confessor">
                                        <label for="ReligiousConfession-Confessor">Confessor
-                                          <span data-tooltip="" class="has-tip" title="The role of a priest who hears confessions and gives absolution and spiritual counsel">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divReligiousConfession-Confessor')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -7919,9 +7662,6 @@
                                     </div>
                                     <div class="small-4 columns divReligiousConfession-Confessee">
                                        <label for="ReligiousConfession-Confessee">Confessee
-                                          <span data-tooltip="" class="has-tip" title="The role of a person who repents their sins and (in the Christian Church) seeks forgiveness from God.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divReligiousConfession-Confessee')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -8063,13 +7803,10 @@
                                     </a>
                                  </p>
                                  <legend>MembershipProfessionalBody</legend>
-                                 <p>Membership of a person to a professional body</p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="small-4 columns divMembershipProfessionalBody-Member">
                                        <label for="MembershipProfessionalBody-Member">Member
-                                          <span data-tooltip="" class="has-tip" title="The role of an agent belonging to a particular group The role of a person, country, or organization that has joined a group, society, or team.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divMembershipProfessionalBody-Member')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -8081,9 +7818,6 @@
                                     </div>
                                     <div class="small-4 columns divMembershipProfessionalBody-ProfessionalBody">
                                        <label for="MembershipProfessionalBody-ProfessionalBody">ProfessionalBody
-                                          <span data-tooltip="" class="has-tip" title="A nonprofit formal organization seeking to further a particular profession, the interests of individuals engaged in that profession, and the public interest.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divMembershipProfessionalBody-ProfessionalBody')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -8211,9 +7945,6 @@
                                  <div class="row">
                                     <div class="small-4 columns divHoldOffice-Office">
                                        <label for="HoldOffice-Office">Office
-                                          <span data-tooltip="" class="has-tip" title="A position of authority or service, typically one of a public nature A post that is a position of authority or service, typically one of a public nature.">
-                                             <i class="fi-magnifying-glass"></i>
-                                          </span>
                                           <a href="#" onClick="addField(this, '.divHoldOffice-Office')">
                                              <i class="fi-plus"></i>
                                           </a>
@@ -8359,10 +8090,7 @@
                                     </a>
                                  </p>
                                  <legend>RepresentativeAssembly</legend>
-                                 <p>A political institution in which a number of persons representing the population or
-                                    privileged orders within the population of a state come together to debate, negotiate
-                                    with the executive (originally the king or other ruler) and legislate. 
-                                 </p>
+                                 <p></p>
                                  <div class="row">
                                     <div class="row"></div>
                                     <div class="small-4 columns divRepresentativeAssembly-date_is_range">
@@ -8458,7 +8186,6 @@
          <a class="close-reveal-modal">×</a>
          <svg id="mySVG"></svg>
       </div>
-      <script src="http://code.jquery.com/jquery.js"></script>
       <script src="../f5/js/foundation.min.js"></script>
       <script>
          $(document).foundation();

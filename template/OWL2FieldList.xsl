@@ -21,9 +21,9 @@
     <xsl:template match="/">
         <fields>
             
-            <xsl:for-each select="collection('../../../../GitHub/CAMELOT/DataModel/OWL?select=*.owl')" >
+            <xsl:for-each select="collection('../../CAMELOT/DataModel/OWL?select=*.owl')" >
             
-                <xsl:apply-templates select=".//owl:Declaration[owl:Class and (contains(owl:Class/@IRI, ':') = false()) and (contains(owl:Class/@IRI, '#') = false())]"/>
+                <xsl:apply-templates mode="Declaration" select=".//owl:Declaration[owl:Class and (contains(owl:Class/@IRI, ':') = false()) and (contains(owl:Class/@IRI, '#') = false()) and (owl:Class/@IRI != '')]"/>
                 
             </xsl:for-each>
         </fields>
@@ -40,7 +40,7 @@
 
     </xd:doc>
 
-    <xsl:template  match="owl:Declaration">
+    <xsl:template mode="Declaration" match="owl:Declaration">
         <xsl:variable name="iri" select="owl:Class/@IRI"/>
 <field>
     <id><xsl:value-of select="$iri"/></id>

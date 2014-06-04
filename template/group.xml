@@ -1,5 +1,27 @@
 <template id="group" xmlns="">
-	<group id="personalName" >
+	
+	
+	<group id="FamilyRelationships" >
+		
+		
+		
+		<!-- FAMILY RELATIONSHIP -->
+		<graph>
+			<node id="Name">
+				
+			</node>
+			
+			
+		</graph>
+		
+		<field id="Person" type=""  placeHolder="Enter name of Person 1"/>
+		<field id="FamilyRole" type=""  placeHolder="Enter name of family role of Person 1 in relation to Person 2"/>
+		<field id="Person" type=""  placeHolder="Enter name of Person 2"/>
+		
+	</group>
+	
+	
+	<group id="PersonalName" >
 		
 
 
@@ -7,16 +29,16 @@
 		<graph>
 			<node id="Name">
 				<link>NameComponent</link>
-				<link>DatabaseSystem</link>
+				
 			</node>
 
 			<node id="NameComponent"/>
 
-			<node id="DatabaseSystem"/>
+			
 		</graph>
 
 		<field id="nameComponent" type=""  placeHolder=""/>
-		<field id="" type="DatabaseSystem"  placeHolder=""/>
+		
 	</group>
 
 

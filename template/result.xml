@@ -1,8 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form>
    <section id="PersonalLife" title="Basic Data">
+      <group id="PersonalName" title="PersonalName">
+         <description/>
+         <graph>
+			         <node id="Name">
+				           <link>NameComponent</link>
+				
+			         </node>
+
+			         <node id="NameComponent"/>
+
+			
+		       </graph>
+         <field id="nameComponent"
+                repeat="yes"
+                help=""
+                title="nameComponent"
+                placeHolder="Enter details of nameComponent"/>
+         <field id="date_is_range"
+                position="start"
+                type="checkbox"
+                title="Is this a date range?"
+                placeHolder=""/>
+         <field id="date_year"
+                group="start"
+                position="start"
+                type=""
+                title="Year"
+                placeHolder="Enter year"/>
+         <field id="date_month"
+                type=""
+                title="Month"
+                placeHolder="Enter month  "/>
+         <field id="date_day" type="" title="Day" placeHolder="Enter day  "/>
+         <field id="date_inferred"
+                position="start"
+                type="checkbox"
+                title="Inferred date"
+                placeHolder=""/>
+         <field id="date_uncertain"
+                type="checkbox"
+                title="Uncertain date"
+                placeHolder=""/>
+         <field id="date_approximate"
+                group="end"
+                position="end"
+                type="checkbox"
+                title="Approximate date"
+                placeHolder=""/>
+         <field id="location_name"
+                position="start"
+                title="Location name"
+                placeHolder="Enter details of location name"/>
+         <field id="element_1_eg_room"
+                title="Room"
+                placeHolder="Enter details of room"/>
+         <field id="element_2_eg_building"
+                title="Building"
+                placeHolder="Enter details of building"/>
+         <field id="element_3_eg_parish"
+                title="Parish"
+                placeHolder="Enter details of parish"/>
+         <field id="element_4_eg_city"
+                title="City"
+                placeHolder="Enter details of city"/>
+         <field id="element_5_eg_county"
+                title="County"
+                placeHolder="Enter details of county"/>
+         <field id="element_6_eg_country"
+                title="Country"
+                placeHolder="Enter details of country"/>
+         <field id="element_7_eg_empire"
+                position="end"
+                title="Empire"
+                placeHolder="Enter details of empire"/>
+         <field id="notes_on_place"
+                size="12"
+                type="textarea"
+                position="end"
+                title="Notes on place"
+                placeHolder="Enter details of notes on place"/>
+      </group>
       <group id="Birth" title="Birth">
-         <description>The emergence of a baby or other young from the body of its mother and the start of life as a physically separate being.</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
@@ -33,17 +114,17 @@
 		       </graph>
          <field id="Child"
                 repeat="yes"
-                help="A young human being below the age of puberty or below the legal age of majority. The role of a person in relation to his/her parents."
+                help=""
                 title="Child"
                 placeHolder="Enter details of Child"/>
          <field id="Mother"
                 repeat="yes"
-                help="a woman in relation to a child or children to whom she has given birth, or adopted. The family role of a woman in relation to her child or children"
+                help=""
                 title="Mother"
                 placeHolder="Enter details of Mother"/>
          <field id="Father"
                 repeat="yes"
-                help="A man in relation to his child or children. The family role of a man in relation to his child or children"
+                help=""
                 title="Father"
                 placeHolder="Enter details of Father"/>
          <field id="date_is_range"
@@ -111,7 +192,7 @@
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="Death" title="Death">
-         <description>The activity of dying or being killed; the end of the life of a person or organism.</description>
+         <description/>
          <graph>
 
 			         <node id="death">
@@ -131,9 +212,97 @@
 		       </graph>
          <field id="Deceased"
                 repeat="yes"
-                help="A person who is recently dead."
+                help=""
                 title="Deceased"
                 placeHolder="Enter details of Deceased"/>
+         <field id="date_is_range"
+                position="start"
+                type="checkbox"
+                title="Is this a date range?"
+                placeHolder=""/>
+         <field id="date_year"
+                group="start"
+                position="start"
+                type=""
+                title="Year"
+                placeHolder="Enter year"/>
+         <field id="date_month"
+                type=""
+                title="Month"
+                placeHolder="Enter month  "/>
+         <field id="date_day" type="" title="Day" placeHolder="Enter day  "/>
+         <field id="date_inferred"
+                position="start"
+                type="checkbox"
+                title="Inferred date"
+                placeHolder=""/>
+         <field id="date_uncertain"
+                type="checkbox"
+                title="Uncertain date"
+                placeHolder=""/>
+         <field id="date_approximate"
+                group="end"
+                position="end"
+                type="checkbox"
+                title="Approximate date"
+                placeHolder=""/>
+         <field id="location_name"
+                position="start"
+                title="Location name"
+                placeHolder="Enter details of location name"/>
+         <field id="element_1_eg_room"
+                title="Room"
+                placeHolder="Enter details of room"/>
+         <field id="element_2_eg_building"
+                title="Building"
+                placeHolder="Enter details of building"/>
+         <field id="element_3_eg_parish"
+                title="Parish"
+                placeHolder="Enter details of parish"/>
+         <field id="element_4_eg_city"
+                title="City"
+                placeHolder="Enter details of city"/>
+         <field id="element_5_eg_county"
+                title="County"
+                placeHolder="Enter details of county"/>
+         <field id="element_6_eg_country"
+                title="Country"
+                placeHolder="Enter details of country"/>
+         <field id="element_7_eg_empire"
+                position="end"
+                title="Empire"
+                placeHolder="Enter details of empire"/>
+         <field id="notes_on_place"
+                size="12"
+                type="textarea"
+                position="end"
+                title="Notes on place"
+                placeHolder="Enter details of notes on place"/>
+      </group>
+      <group id="FamilyRelationships" title="FamilyRelationships">
+         <description/>
+         <graph>
+			         <node id="Name">
+				
+			</node>
+			
+			
+		       </graph>
+         <field id="Person"
+                repeat="yes"
+                help=""
+                title="Person"
+                placeHolder="Enter details of Person"/>
+         <field id="FamilyRole"
+                repeat="yes"
+                help=""
+                title="FamilyRole"
+                placeHolder="Enter details of FamilyRole"/>
+         <field id="Person"
+                repeat="yes"
+                help=""
+                title="Person"
+                placeHolder="Enter details of Person"/>
          <field id="date_is_range"
                 position="start"
                 type="checkbox"
@@ -201,7 +370,7 @@
    </section>
    <section id="LocationHistory" title="Location">
       <group id="Displacement" title="Displacement">
-         <description>The enforced departure of people from their homes, typically because of war, persecution, or natural disaster.</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
@@ -277,7 +446,7 @@
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="Emmigration" title="Emmigration">
-         <description>The activity of leaving one's own country to settle permanently in another; moving abroad.</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
@@ -353,7 +522,7 @@
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="Exile" title="Exile">
-         <description>The state of being barred from one's native country, typically for political or punitive reasons.</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
@@ -361,7 +530,7 @@
 		       </graph>
          <field id="ExiledPerson"
                 repeat="yes"
-                help="a person who lives away from their native country, either from choice or compulsion."
+                help=""
                 title="ExiledPerson"
                 placeHolder="Enter details of ExiledPerson"/>
          <field id="date_is_range"
@@ -429,7 +598,7 @@
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="Immigration" title="Immigration">
-         <description>The activity of of coming to live permanently in a foreign country.</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
@@ -437,7 +606,7 @@
 		       </graph>
          <field id="Immigrant"
                 repeat="yes"
-                help="A person who comes to live permanently in a country that is not the person's native country."
+                help=""
                 title="Immigrant"
                 placeHolder="Enter details of Immigrant"/>
          <field id="date_is_range"
@@ -505,7 +674,7 @@
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="Residence" title="Residence">
-         <description>The activity of living in a particular place.</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
@@ -513,7 +682,7 @@
 		       </graph>
          <field id="Resident"
                 repeat="yes"
-                help="A person who lives somewhere permanently or on a long-term basis."
+                help=""
                 title="Resident"
                 placeHolder="Enter details of Resident"/>
          <field id="date_is_range"
@@ -581,7 +750,7 @@
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="Travel" title="Travel">
-         <description>The activity of making a journey, typically of some length.</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
@@ -589,7 +758,7 @@
 		       </graph>
          <field id="Traveller"
                 repeat="yes"
-                help="A person who is travelling or who often travels."
+                help=""
                 title="Traveller"
                 placeHolder="Enter details of Traveller"/>
          <field id="date_is_range"
@@ -657,7 +826,7 @@
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="Visit" title="Visit">
-         <description>The activity of going to see a person or place as a guest, tourist, etc.</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
@@ -665,7 +834,7 @@
 		       </graph>
          <field id="Visitor"
                 repeat="yes"
-                help="The role of a person visiting someone or somewhere, especially socially or as a tourist."
+                help=""
                 title="Visitor"
                 placeHolder="Enter details of Visitor"/>
          <field id="date_is_range"
@@ -735,7 +904,7 @@
    </section>
    <section id="Education" title="Education">
       <group id="UniversityMatriculation" title="UniversityMatriculation">
-         <description>The formal process of entering a university or of becoming eligible to enter by fulfilling certain academic requirements.</description>
+         <description/>
          <graph>
 
 			         <node id="universityMatriculation">
@@ -766,17 +935,17 @@
 		       </graph>
          <field id="Matriculant"
                 repeat="yes"
-                help="A person who has matriculated or been registered on a list or roll, usually at a school."
+                help=""
                 title="Matriculant"
                 placeHolder="Enter details of Matriculant"/>
          <field id="MatriculationRegister"
                 repeat="yes"
-                help="An official list or record of names of people who have participated in the activity of matriculation at a university, the formal process of entering a university or of becoming eligible to enter by fulfilling certain academic requirements.&#xA;&#xA;source: https://en.wikipedia.org/wiki/Matriculation"
+                help=""
                 title="MatriculationRegister"
                 placeHolder="Enter details of MatriculationRegister"/>
          <field id="Entry"
                 repeat="yes"
-                help="An item written or printed in a diary, list, account book, or reference book."
+                help=""
                 title="Entry"
                 placeHolder="Enter details of Entry"/>
          <field id="date_is_range"
@@ -852,12 +1021,12 @@
 		       </graph>
          <field id="Student"
                 repeat="yes"
-                help="A person who is studying at a university or other place of higher education. A person who is studying at a university or other place of higher education."
+                help=""
                 title="Student"
                 placeHolder="Enter details of Student"/>
          <field id="Entry"
                 repeat="yes"
-                help="An item written or printed in a diary, list, account book, or reference book."
+                help=""
                 title="Entry"
                 placeHolder="Enter details of Entry"/>
          <field id="Classlist"
@@ -930,13 +1099,7 @@
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="Disputation" title="Disputation">
-         <description>Formal academic debate  
-source: http://www.oxforddictionaries.com/definition/english/disputation
-
-In the scholastic system of education of the Middle Ages, disputations (in Latin: disputationes, singular: disputatio) offered a formalized method of debate designed to uncover and establish truths in theology and in sciences. Fixed rules governed the process: they demanded dependence on traditional written authorities and the thorough understanding of each argument on each side.
-source https://en.wikipedia.org/wiki/Disputation
-
-Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
@@ -944,12 +1107,12 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
 		       </graph>
          <field id="Respondent"
                 repeat="yes"
-                help="A person or organization who makes an answer to the courts pursuant to an application for redress (usually in an equity proceeding) or a candidate for a degree who defends or opposes a thesis provided by the praeses in an academic disputation"
+                help=""
                 title="Respondent"
                 placeHolder="Enter details of Respondent"/>
          <field id="Praeses"
                 repeat="yes"
-                help="A person who is the faculty moderator of an academic disputation, normally proposing a thesis and participating in the ensuing disputation"
+                help=""
                 title="Praeses"
                 placeHolder="Enter details of Praeses"/>
          <field id="Thesis"
@@ -1022,7 +1185,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="PersonalTestimony" title="PersonalTestimony">
-         <description>A solemn written or oral statement as to the truth of a matter.</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
@@ -1030,7 +1193,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
 		       </graph>
          <field id="Testifier"
                 repeat="yes"
-                help="A person who gives a testimony, a solemn written or oral statement as to the truth of a matter."
+                help=""
                 title="Testifier"
                 placeHolder="Enter details of Testifier"/>
          <field id="date_is_range"
@@ -1098,19 +1261,19 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="PromotionToDegree" title="PromotionToDegree">
-         <description>The receiving or conferring of an academic degree.</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
 			      </graph>
          <field id="AwardingBody"
                 repeat="yes"
-                help="The role of an agent that gives an award."
+                help=""
                 title="AwardingBody"
                 placeHolder="Enter details of AwardingBody"/>
          <field id="Graduate"
                 repeat="yes"
-                help="A person who has successfully completed a course of study or training, especially a person who has been awarded an undergraduate or first academic degree."
+                help=""
                 title="Graduate"
                 placeHolder="Enter details of Graduate"/>
          <field id="date_is_range"
@@ -1178,24 +1341,24 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="Study" title="Study">
-         <description>The devotion of time and attention to acquiring knowledge on an academic subject, especially by means of books.</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
 			      </graph>
          <field id="TeachingInstitution"
                 repeat="yes"
-                help="An organisation where the activity of imparting knowledge to or instructing (someone) as to how to do something is conducted."
+                help=""
                 title="TeachingInstitution"
                 placeHolder="Enter details of TeachingInstitution"/>
          <field id="Student"
                 repeat="yes"
-                help="A person who is studying at a university or other place of higher education. A person who is studying at a university or other place of higher education."
+                help=""
                 title="Student"
                 placeHolder="Enter details of Student"/>
          <field id="Teacher"
                 repeat="yes"
-                help="The role of a person who imparts knowledge to or instructs someone as to how to do something."
+                help=""
                 title="Teacher"
                 placeHolder="Enter details of Teacher"/>
          <field id="date_is_range"
@@ -1263,24 +1426,24 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="Teaching" title="Teaching">
-         <description>The activity of giving instruction, especially in an elementary or secondary school or a university.</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
 		       </graph>
          <field id="TeachingInstitution"
                 repeat="yes"
-                help="An organisation where the activity of imparting knowledge to or instructing (someone) as to how to do something is conducted."
+                help=""
                 title="TeachingInstitution"
                 placeHolder="Enter details of TeachingInstitution"/>
          <field id="Student"
                 repeat="yes"
-                help="A person who is studying at a university or other place of higher education. A person who is studying at a university or other place of higher education."
+                help=""
                 title="Student"
                 placeHolder="Enter details of Student"/>
          <field id="Teacher"
                 repeat="yes"
-                help="The role of a person who imparts knowledge to or instructs someone as to how to do something."
+                help=""
                 title="Teacher"
                 placeHolder="Enter details of Teacher"/>
          <field id="date_is_range"
@@ -1350,19 +1513,19 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
    </section>
    <section id="SocialContacts" title="Social Contacts">
       <group id="Trade" title="Trade">
-         <description>Trade is to transfer the ownership of goods from one person or entity to another by getting something in exchange from the buyer.</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
 		       </graph>
          <field id="Buyer"
                 repeat="yes"
-                help=" The role of a person who makes a purchase."
+                help=""
                 title="Buyer"
                 placeHolder="Enter details of Buyer"/>
          <field id="Seller"
                 repeat="yes"
-                help=" The role of a person who sells something."
+                help=""
                 title="Seller"
                 placeHolder="Enter details of Seller"/>
          <field id="Item"
@@ -1435,19 +1598,19 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="Contract" title="Contract">
-         <description>A written or spoken agreement, especially one concerning employment, sales, or tenancy, that is intended to be enforceable by law.</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
 		       </graph>
          <field id="Contractee"
                 repeat="yes"
-                help="A party to a contract"
+                help=""
                 title="Contractee"
                 placeHolder="Enter details of Contractee"/>
          <field id="ContractDocument"
                 repeat="yes"
-                help="A document containing a written representation of a contract"
+                help=""
                 title="ContractDocument"
                 placeHolder="Enter details of ContractDocument"/>
          <field id="date_is_range"
@@ -1515,29 +1678,29 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="InclusionAlbumAmicorum" title="InclusionAlbumAmicorum">
-         <description>An activity where a personl includes a creative work in an Album Amicorum</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
 		       </graph>
          <field id="AlbumAmicorum"
                 repeat="yes"
-                help="The first true autograph books that appeared in German and Dutch linguistic regions (possibly originating in Wittenberg) by the mid-16th century. Known as an album amicorum (&#34;book of friends&#34;) or stammbuch (&#34;friendship book&#34;).http://en.wikipedia.org/wiki/Autograph_book"
+                help=""
                 title="AlbumAmicorum"
                 placeHolder="Enter details of AlbumAmicorum"/>
          <field id="CreativeWork"
                 repeat="yes"
-                help="A work that is a distinct intellectual or artistic creation and is the product of creative effort."
+                help=""
                 title="CreativeWork"
                 placeHolder="Enter details of CreativeWork"/>
          <field id="Contributor"
                 repeat="yes"
-                help="A person or thing that contributes something, in particular."
+                help=""
                 title="Contributor"
                 placeHolder="Enter details of Contributor"/>
          <field id="Owner"
                 repeat="yes"
-                help="The role of a person who owns something, ie that someone or something belongs or relates to the person mentioned. The role of a person who owns something."
+                help=""
                 title="Owner"
                 placeHolder="Enter details of Owner"/>
          <field id="date_is_range"
@@ -1605,14 +1768,14 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="ExchangeOccasionalVerse" title="ExchangeOccasionalVerse">
-         <description>An activity where one person authors verse and sends it to another person. </description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
 		       </graph>
          <field id="Verse"
                 repeat="yes"
-                help="Writing arranged with a metrical rhythm, typically having a rhyme."
+                help=""
                 title="Verse"
                 placeHolder="Enter details of Verse"/>
          <field id="Transmitter"
@@ -1622,12 +1785,12 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 placeHolder="Enter details of Transmitter"/>
          <field id="Sender"
                 repeat="yes"
-                help="The role of a person who sends something, especially a letter by post"
+                help=""
                 title="Sender"
                 placeHolder="Enter details of Sender"/>
          <field id="Recipient"
                 repeat="yes"
-                help="The role of a person or thing that receives or is awarded something."
+                help=""
                 title="Recipient"
                 placeHolder="Enter details of Recipient"/>
          <field id="date_is_range"
@@ -1695,14 +1858,14 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="Collaboration" title="Collaboration">
-         <description>Activity of working together to do a task and to achieve shared goals</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
 		       </graph>
          <field id="Collaborator"
                 repeat="yes"
-                help="The role of a person who works jointly on an activity or project; an associate."
+                help=""
                 title="Collaborator"
                 placeHolder="Enter details of Collaborator"/>
          <field id="date_is_range"
@@ -1770,7 +1933,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="Travel" title="Travel">
-         <description>The activity of making a journey, typically of some length.</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
@@ -1778,7 +1941,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
 		       </graph>
          <field id="Traveller"
                 repeat="yes"
-                help="A person who is travelling or who often travels."
+                help=""
                 title="Traveller"
                 placeHolder="Enter details of Traveller"/>
          <field id="date_is_range"
@@ -1846,19 +2009,19 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="SocialVisit" title="SocialVisit">
-         <description>The activity of going to see and spend time with (someone) socially</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
 		       </graph>
          <field id="Visitor"
                 repeat="yes"
-                help="The role of a person visiting someone or somewhere, especially socially or as a tourist."
+                help=""
                 title="Visitor"
                 placeHolder="Enter details of Visitor"/>
          <field id="Host"
                 repeat="yes"
-                help="The role of a person who receives or entertains other people as guests."
+                help=""
                 title="Host"
                 placeHolder="Enter details of Host"/>
          <field id="date_is_range"
@@ -1926,14 +2089,14 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="Meeting" title="Meeting">
-         <description>Activity when two or more people meet, by chance or arrangement</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
 		       </graph>
          <field id="Attendee"
                 repeat="yes"
-                help="The role of a person who participates and is present at a conference or other gathering."
+                help=""
                 title="Attendee"
                 placeHolder="Enter details of Attendee"/>
          <field id="date_is_range"
@@ -2001,19 +2164,19 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="Introduction" title="Introduction">
-         <description>The context of one person being introduced to another person by way of a third person who acts as an intermediary. </description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
 		       </graph>
          <field id="Intermediary"
                 repeat="yes"
-                help="The role of a person who acts as a link between people."
+                help=""
                 title="Intermediary"
                 placeHolder="Enter details of Intermediary"/>
          <field id="Participant"
                 repeat="yes"
-                help="The role of a person who takes part in something"
+                help=""
                 title="Participant"
                 placeHolder="Enter details of Participant"/>
          <field id="date_is_range"
@@ -2081,14 +2244,14 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="Acquaintanceship" title="Acquaintanceship">
-         <description>The context in which two people know each other slightly, but who are not  close friends</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
 		       </graph>
          <field id="Acquaintance"
                 repeat="yes"
-                help="The role of a person one knows slightly, but who is not a close friend."
+                help=""
                 title="Acquaintance"
                 placeHolder="Enter details of Acquaintance"/>
          <field id="date_is_range"
@@ -2156,24 +2319,24 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="Correspondence" title="Correspondence">
-         <description>an activity where one person writes a letter to another person.</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
 		       </graph>
          <field id="Correspondent"
                 repeat="yes"
-                help="The role of a person who writes letters on a regular basis."
+                help=""
                 title="Correspondent"
                 placeHolder="Enter details of Correspondent"/>
          <field id="LetterSender"
                 repeat="yes"
-                help="A person that sends a letter"
+                help=""
                 title="LetterSender"
                 placeHolder="Enter details of LetterSender"/>
          <field id="LetterRecipient"
                 repeat="yes"
-                help="The role of a person or thing that receives a letter."
+                help=""
                 title="LetterRecipient"
                 placeHolder="Enter details of LetterRecipient"/>
          <field id="date_is_range"
@@ -2241,14 +2404,14 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="Friendship" title="Friendship">
-         <description> a relationship of mutual affection between two or more people. Friendship is a stronger form of interpersonal bond than an association. </description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
 		       </graph>
          <field id="Friend"
                 repeat="yes"
-                help="A person with whom one has a bond of mutual affection, typically one exclusive of sexual or family relations."
+                help=""
                 title="Friend"
                 placeHolder="Enter details of Friend"/>
          <field id="date_is_range"
@@ -2318,7 +2481,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
    </section>
    <section id="StatusChange" title="Social Status Change">
       <group id="Ennoble" title="Ennoble">
-         <description>The activity of making someone a member of the nobility.</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
@@ -2394,19 +2557,19 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
    </section>
    <section id="learnedProduction" title="Learned Activity">
       <group id="CreationActivity" title="CreationActivity">
-         <description>Activity that brings something into existence.</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
 		       </graph>
          <field id="CreativeWork"
                 repeat="yes"
-                help="A work that is a distinct intellectual or artistic creation and is the product of creative effort."
+                help=""
                 title="CreativeWork"
                 placeHolder="Enter details of CreativeWork"/>
          <field id="Creator"
                 repeat="yes"
-                help=" The role of a person or thing that brings something into existence."
+                help=""
                 title="Creator"
                 placeHolder="Enter details of Creator"/>
          <field id="date_is_range"
@@ -2474,19 +2637,19 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="AuthoringActivity" title="AuthoringActivity">
-         <description>Activity that involves the writing of a book, article or document.</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
 		       </graph>
          <field id="CreativeWork"
                 repeat="yes"
-                help="A work that is a distinct intellectual or artistic creation and is the product of creative effort."
+                help=""
                 title="CreativeWork"
                 placeHolder="Enter details of CreativeWork"/>
          <field id="Author"
                 repeat="yes"
-                help="A writer of a book, article, or document.  The role of someone who writes a book, article, or document."
+                help=""
                 title="Author"
                 placeHolder="Enter details of Author"/>
          <field id="date_is_range"
@@ -2554,19 +2717,19 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="ContributionActivity" title="ContributionActivity">
-         <description>Activity that involves the contiribution of something by a person or thing</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
 		       </graph>
          <field id="CreativeWork"
                 repeat="yes"
-                help="A work that is a distinct intellectual or artistic creation and is the product of creative effort."
+                help=""
                 title="CreativeWork"
                 placeHolder="Enter details of CreativeWork"/>
          <field id="Contributor"
                 repeat="yes"
-                help="A person or thing that contributes something, in particular."
+                help=""
                 title="Contributor"
                 placeHolder="Enter details of Contributor"/>
          <field id="date_is_range"
@@ -2634,19 +2797,19 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="DedicationActivity" title="DedicationActivity">
-         <description>An activity that involves an address or inscription (of a literary work, for example) to another as a mark of respect or affection The activity of addressing or inscribing (a literary work, for example) to another as a mark of respect or affection.</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
 		       </graph>
          <field id="Dedicator"
                 repeat="yes"
-                help="The role of a person who dedicates something to someone or something"
+                help=""
                 title="Dedicator"
                 placeHolder="Enter details of Dedicator"/>
          <field id="Dedicatee"
                 repeat="yes"
-                help="The role of an entity to whom something is dedicated"
+                help=""
                 title="Dedicatee"
                 placeHolder="Enter details of Dedicatee"/>
          <field id="Item"
@@ -2656,12 +2819,12 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 placeHolder="Enter details of Item"/>
          <field id="CreativeWork"
                 repeat="yes"
-                help="A work that is a distinct intellectual or artistic creation and is the product of creative effort."
+                help=""
                 title="CreativeWork"
                 placeHolder="Enter details of CreativeWork"/>
          <field id="Inscription"
                 repeat="yes"
-                help="Writing or carving (words or symbols) on something, especially as a formal or permanent record., as on a monument or in a book"
+                help=""
                 title="Inscription"
                 placeHolder="Enter details of Inscription"/>
          <field id="date_is_range"
@@ -2729,19 +2892,19 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="DedicationOfItem" title="DedicationOfItem">
-         <description>To address or inscribe an item to another as a mark of respect or affection.</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
 		       </graph>
          <field id="Dedicator"
                 repeat="yes"
-                help="The role of a person who dedicates something to someone or something"
+                help=""
                 title="Dedicator"
                 placeHolder="Enter details of Dedicator"/>
          <field id="Dedicatee"
                 repeat="yes"
-                help="The role of an entity to whom something is dedicated"
+                help=""
                 title="Dedicatee"
                 placeHolder="Enter details of Dedicatee"/>
          <field id="Item"
@@ -2751,7 +2914,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 placeHolder="Enter details of Item"/>
          <field id="Inscription"
                 repeat="yes"
-                help="Writing or carving (words or symbols) on something, especially as a formal or permanent record., as on a monument or in a book"
+                help=""
                 title="Inscription"
                 placeHolder="Enter details of Inscription"/>
          <field id="date_is_range"
@@ -2819,29 +2982,29 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="DedicationOfWork" title="DedicationOfWork">
-         <description>To address or inscribe a literary work to another as a mark of respect or affection.</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
 		       </graph>
          <field id="Dedicator"
                 repeat="yes"
-                help="The role of a person who dedicates something to someone or something"
+                help=""
                 title="Dedicator"
                 placeHolder="Enter details of Dedicator"/>
          <field id="Dedicatee"
                 repeat="yes"
-                help="The role of an entity to whom something is dedicated"
+                help=""
                 title="Dedicatee"
                 placeHolder="Enter details of Dedicatee"/>
          <field id="CreativeWork"
                 repeat="yes"
-                help="A work that is a distinct intellectual or artistic creation and is the product of creative effort."
+                help=""
                 title="CreativeWork"
                 placeHolder="Enter details of CreativeWork"/>
          <field id="Inscription"
                 repeat="yes"
-                help="Writing or carving (words or symbols) on something, especially as a formal or permanent record., as on a monument or in a book"
+                help=""
                 title="Inscription"
                 placeHolder="Enter details of Inscription"/>
          <field id="date_is_range"
@@ -2909,19 +3072,19 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="PrintingActivity" title="PrintingActivity">
-         <description>Activity that involves the production of books, newspapers or other printed materials.</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
 		       </graph>
          <field id="Printer"
                 repeat="yes"
-                help=" "
+                help=""
                 title="Printer"
                 placeHolder="Enter details of Printer"/>
          <field id="CreativeWork"
                 repeat="yes"
-                help="A work that is a distinct intellectual or artistic creation and is the product of creative effort."
+                help=""
                 title="CreativeWork"
                 placeHolder="Enter details of CreativeWork"/>
          <field id="date_is_range"
@@ -2989,19 +3152,19 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="PublishingActivity" title="PublishingActivity">
-         <description>The activity of preparing and issuing books, journals and other materials for sale.</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
 		       </graph>
          <field id="Publisher"
                 repeat="yes"
-                help=" "
+                help=""
                 title="Publisher"
                 placeHolder="Enter details of Publisher"/>
          <field id="CreativeWork"
                 repeat="yes"
-                help="A work that is a distinct intellectual or artistic creation and is the product of creative effort."
+                help=""
                 title="CreativeWork"
                 placeHolder="Enter details of CreativeWork"/>
          <field id="date_is_range"
@@ -3069,14 +3232,14 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="Research" title="Research">
-         <description>An activity involving the systematic investigation into and study of materials and sources in order to establish facts and reach new conclusions.</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
 		       </graph>
          <field id="Researcher"
                 repeat="yes"
-                help="The role of a person who undertakes a systematic investigation into and study of materials and sources in order to establish facts and reach new conclusion."
+                help=""
                 title="Researcher"
                 placeHolder="Enter details of Researcher"/>
          <field id="date_is_range"
@@ -3144,14 +3307,14 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="Salon" title="Salon">
-         <description>A regular social gathering, especially of writers and artists</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
 		       </graph>
          <field id="Saloniste"
                 repeat="yes"
-                help="The role of a person who attends a salon (social gathering)."
+                help=""
                 title="Saloniste"
                 placeHolder="Enter details of Saloniste"/>
          <field id="date_is_range"
@@ -3221,19 +3384,19 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
    </section>
    <section id="Career" title="Career">
       <group id="Employment" title="Employment">
-         <description>The activity of having paid work.</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
 		       </graph>
          <field id="Employer"
                 repeat="yes"
-                help="a person or organization that employs people."
+                help=""
                 title="Employer"
                 placeHolder="Enter details of Employer"/>
          <field id="Employee"
                 repeat="yes"
-                help="a person employed for wages or salary, especially at non-executive level."
+                help=""
                 title="Employee"
                 placeHolder="Enter details of Employee"/>
          <field id="date_is_range"
@@ -3301,19 +3464,19 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="MembershipProfessionalBody" title="MembershipProfessionalBody">
-         <description>Membership of a person to a professional body</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
 		       </graph>
          <field id="Member"
                 repeat="yes"
-                help="The role of an agent belonging to a particular group The role of a person, country, or organization that has joined a group, society, or team."
+                help=""
                 title="Member"
                 placeHolder="Enter details of Member"/>
          <field id="ProfessionalBody"
                 repeat="yes"
-                help="A nonprofit formal organization seeking to further a particular profession, the interests of individuals engaged in that profession, and the public interest."
+                help=""
                 title="ProfessionalBody"
                 placeHolder="Enter details of ProfessionalBody"/>
          <field id="date_is_range"
@@ -3381,19 +3544,19 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="DisqualificationFromOffice" title="DisqualificationFromOffice">
-         <description>Activity declaring (someone) ineligible for an office because of an offence or infringement</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
 		       </graph>
          <field id="Office"
                 repeat="yes"
-                help="A position of authority or service, typically one of a public nature A post that is a position of authority or service, typically one of a public nature."
+                help=""
                 title="Office"
                 placeHolder="Enter details of Office"/>
          <field id="DisqualifiedFromOffice"
                 repeat="yes"
-                help="The role of a person who has been declared ineligible for an office because of an offence or infringement The role of a person that is declared ineligible for an office because of an offence or infringement"
+                help=""
                 title="DisqualifiedFromOffice"
                 placeHolder="Enter details of DisqualifiedFromOffice"/>
          <field id="Organization"
@@ -3474,7 +3637,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
 		       </graph>
          <field id="Office"
                 repeat="yes"
-                help="A position of authority or service, typically one of a public nature A post that is a position of authority or service, typically one of a public nature."
+                help=""
                 title="Office"
                 placeHolder="Enter details of Office"/>
          <field id="Organization"
@@ -3554,19 +3717,19 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
    </section>
    <section id="Ecclesiastic" title="Ecclesiastic Activity">
       <group id="MembershipProfessionalBody" title="MembershipProfessionalBody">
-         <description>Membership of a person to a professional body</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
 		       </graph>
          <field id="Member"
                 repeat="yes"
-                help="The role of an agent belonging to a particular group The role of a person, country, or organization that has joined a group, society, or team."
+                help=""
                 title="Member"
                 placeHolder="Enter details of Member"/>
          <field id="ProfessionalBody"
                 repeat="yes"
-                help="A nonprofit formal organization seeking to further a particular profession, the interests of individuals engaged in that profession, and the public interest."
+                help=""
                 title="ProfessionalBody"
                 placeHolder="Enter details of ProfessionalBody"/>
          <field id="date_is_range"
@@ -3642,7 +3805,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
 		       </graph>
          <field id="Office"
                 repeat="yes"
-                help="A position of authority or service, typically one of a public nature A post that is a position of authority or service, typically one of a public nature."
+                help=""
                 title="Office"
                 placeHolder="Enter details of Office"/>
          <field id="Organization"
@@ -3720,19 +3883,19 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="DisqualificationFromOffice" title="DisqualificationFromOffice">
-         <description>Activity declaring (someone) ineligible for an office because of an offence or infringement</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
 		       </graph>
          <field id="Office"
                 repeat="yes"
-                help="A position of authority or service, typically one of a public nature A post that is a position of authority or service, typically one of a public nature."
+                help=""
                 title="Office"
                 placeHolder="Enter details of Office"/>
          <field id="DisqualifiedFromOffice"
                 repeat="yes"
-                help="The role of a person who has been declared ineligible for an office because of an offence or infringement The role of a person that is declared ineligible for an office because of an offence or infringement"
+                help=""
                 title="DisqualifiedFromOffice"
                 placeHolder="Enter details of DisqualifiedFromOffice"/>
          <field id="Organization"
@@ -3805,7 +3968,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="Baptism" title="Baptism">
-         <description>The Christian religious rite of sprinkling water on to a person’s forehead or of immersing them in water, symbolizing purification or regeneration and admission to the Christian Church. In many denominations, baptism is performed on young children and is accompanied by name-giving.</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
@@ -3826,22 +3989,22 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
 		       </graph>
          <field id="BaptismalCandidate"
                 repeat="yes"
-                help="The role of a person who is admitted to membership of a Christian church."
+                help=""
                 title="BaptismalCandidate"
                 placeHolder="Enter details of BaptismalCandidate"/>
          <field id="Godparent"
                 repeat="yes"
-                help="The role of a person who presents a person at baptism and promises to take responsibility for their religious education."
+                help=""
                 title="Godparent"
                 placeHolder="Enter details of Godparent"/>
          <field id="Godchild"
                 repeat="yes"
-                help="The role of a person who is presented at baptism by a godparent who promises to take responsibility for their religious education."
+                help=""
                 title="Godchild"
                 placeHolder="Enter details of Godchild"/>
          <field id="Officiant"
                 repeat="yes"
-                help="The role of a person who performs a religious rite or presides over a religious service or ceremony."
+                help=""
                 title="Officiant"
                 placeHolder="Enter details of Officiant"/>
          <field id="date_is_range"
@@ -3909,7 +4072,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="Ordination" title="Ordination">
-         <description>The action of making (someone) a priest or minister; confer holy orders.</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
@@ -3917,7 +4080,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
 		       </graph>
          <field id="Officiant"
                 repeat="yes"
-                help="The role of a person who performs a religious rite or presides over a religious service or ceremony."
+                help=""
                 title="Officiant"
                 placeHolder="Enter details of Officiant"/>
          <field id="date_is_range"
@@ -3985,7 +4148,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="Preach" title="Preach">
-         <description>Deliver a sermon or religious address to an assembled group of people, typically in church.</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
@@ -4056,7 +4219,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="ReligiousConfirmation" title="ReligiousConfirmation">
-         <description>Confirmation is a rite of initiation in several Christian denominations, normally carried out through anointing, the laying on of hands, and prayer, for the purpose of bestowing the Gift of the Holy Spirit.</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
@@ -4064,12 +4227,12 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
 		       </graph>
          <field id="Officiant"
                 repeat="yes"
-                help="The role of a person who performs a religious rite or presides over a religious service or ceremony."
+                help=""
                 title="Officiant"
                 placeHolder="Enter details of Officiant"/>
          <field id="ConfirmationCandidate"
                 repeat="yes"
-                help="The role of a person who is confirmed during the religious rite or sacrament of confirmation"
+                help=""
                 title="ConfirmationCandidate"
                 placeHolder="Enter details of ConfirmationCandidate"/>
          <field id="date_is_range"
@@ -4137,9 +4300,7 @@ Also see https://en.wikipedia.org/wiki/Praeses#Old_German_academic_use </descrip
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="ReligiousConversion" title="ReligiousConversion">
-         <description>The adoption, wholesale, of a set of beliefs identified with one particular religious denomination to the exclusion of others. Religious conversion marks a transformation of religious identity and is symbolized by special rituals.
-
-https://en.wikipedia.org/wiki/Religious_conversion</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
@@ -4147,7 +4308,7 @@ https://en.wikipedia.org/wiki/Religious_conversion</description>
 		       </graph>
          <field id="Officiant"
                 repeat="yes"
-                help="The role of a person who performs a religious rite or presides over a religious service or ceremony."
+                help=""
                 title="Officiant"
                 placeHolder="Enter details of Officiant"/>
          <field id="ReligousConvert"
@@ -4220,7 +4381,7 @@ https://en.wikipedia.org/wiki/Religious_conversion</description>
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="ReligiousConfession" title="ReligiousConfession">
-         <description>Confession is the acknowledgment of sin (or one's sinfulness) or wrongs. It is a religious practice in a number of faith traditions.</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
@@ -4228,12 +4389,12 @@ https://en.wikipedia.org/wiki/Religious_conversion</description>
 		       </graph>
          <field id="Confessor"
                 repeat="yes"
-                help="The role of a priest who hears confessions and gives absolution and spiritual counsel"
+                help=""
                 title="Confessor"
                 placeHolder="Enter details of Confessor"/>
          <field id="Confessee"
                 repeat="yes"
-                help="The role of a person who repents their sins and (in the Christian Church) seeks forgiveness from God."
+                help=""
                 title="Confessee"
                 placeHolder="Enter details of Confessee"/>
          <field id="date_is_range"
@@ -4303,19 +4464,19 @@ https://en.wikipedia.org/wiki/Religious_conversion</description>
    </section>
    <section id="Political" title="Political Activity">
       <group id="MembershipProfessionalBody" title="MembershipProfessionalBody">
-         <description>Membership of a person to a professional body</description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>
 		       </graph>
          <field id="Member"
                 repeat="yes"
-                help="The role of an agent belonging to a particular group The role of a person, country, or organization that has joined a group, society, or team."
+                help=""
                 title="Member"
                 placeHolder="Enter details of Member"/>
          <field id="ProfessionalBody"
                 repeat="yes"
-                help="A nonprofit formal organization seeking to further a particular profession, the interests of individuals engaged in that profession, and the public interest."
+                help=""
                 title="ProfessionalBody"
                 placeHolder="Enter details of ProfessionalBody"/>
          <field id="date_is_range"
@@ -4391,7 +4552,7 @@ https://en.wikipedia.org/wiki/Religious_conversion</description>
 		       </graph>
          <field id="Office"
                 repeat="yes"
-                help="A position of authority or service, typically one of a public nature A post that is a position of authority or service, typically one of a public nature."
+                help=""
                 title="Office"
                 placeHolder="Enter details of Office"/>
          <field id="Organization"
@@ -4469,7 +4630,7 @@ https://en.wikipedia.org/wiki/Religious_conversion</description>
                 placeHolder="Enter details of notes on place"/>
       </group>
       <group id="RepresentativeAssembly" title="RepresentativeAssembly">
-         <description>A political institution in which a number of persons representing the population or privileged orders within the population of a state come together to debate, negotiate with the executive (originally the king or other ruler) and legislate. </description>
+         <description/>
          <graph>
 			         <node id="date"/>
 			         <node id="location"/>

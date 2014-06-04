@@ -64,37 +64,61 @@ function updateAssertion(value, id, svgid, circleid){
 }
 
 
-function addSection(sectionclass){
+function addSection(sectionclass){ 
+   var currentCount =  $(sectionclass).length; // number of sections
+   var val1 = "_" + currentCount; // value to replace in input id
+   var val2 = "_" + (Number(currentCount) + 1) ; // replacement value in input id
     
-   var currentCount =  $(sectionclass).length;
-    var newCount = currentCount+1;
-    var lastRepeatingGroup = $(sectionclass).last();
-    var newSection = lastRepeatingGroup.clone();
-    newSection.insertAfter(lastRepeatingGroup);
+    var lastRepeatingGroup = $(sectionclass).last(); // get last section in this group
+    var newSection = lastRepeatingGroup.clone(); // copy last section
+    newSection.insertAfter(lastRepeatingGroup); // insert copy after last section
     
+    var appendOrReplace = (currentCount == 1) ? "append" : "replace"; // decide whether to append value to input id or replace id
+    
+    // iterate through each input field
     newSection.find("input").each(function (index, input) {
-        input.id = input.id.replace("_" + currentCount, "_" + newCount);
-        input.name = input.name.replace("_" + currentCount, "_" + newCount);
-        
-        $(input).val("");
-       
-        
+        updateInput(input, appendOrReplace, val1, val2); // update id of input and set value to empty string
     });
     
-    newSection.find("textarea").each(function (index, input) {
-        input.id = input.id.replace("_" + currentCount, "_" + newCount);
-        input.name = input.name.replace("_" + currentCount, "_" + newCount);
-        $(input).val("");
+    // iterate through each textarea field
+    newSection.find("textarea").each(function (index, input) { 
+        updateInput(input, appendOrReplace, val1, val2); // update id of input and set value to empty string
     });
     
-    
+    // update each label
     newSection.find("label").each(function (index, label) {
         var l = $(label);
-        l.attr('for', l.attr('for').replace("_" + currentCount, "_" + newCount));
+        
+         if (appendOrReplace == "append"){ 
+            l.attr('for', l.attr('for').concat("_2"));
+       } else {
+            l.attr('for', l.attr('for').replace(val1, val2));
+       }   
     });
-    return false; 
-    
+    return false;    
 }
+
+
+function updateInput(input, appendOrReplace, val1, val2){
+    // update id of input 
+
+       if (appendOrReplace == "append"){
+            input.id = input.id.concat("_2");       
+       } else {
+            input.id = input.id.replace(val1, val2);
+       }
+       
+
+ // add autocomplete function to relationship field 
+ 
+ 
+       if ((sectionclass = 'repeatSectionFamilyRelationships') && (input.id.search('FamilyRelationships-FamilyRole') != -1 )){     
+            $(input).autocomplete({ source: relationships});     
+        }
+    
+     $(input).val(""); // set value to empty string
+}
+
 
 
 function deleteSection(obj, sectionclass){
@@ -106,6 +130,7 @@ function deleteSection(obj, sectionclass){
         return false;
     }
     
+    // remove fieldset element that contains this section
      $(obj).parent('p').parent('fieldset').remove();
     return false;
 }
@@ -218,11 +243,6 @@ function dateRange(obj, fieldId, groupId){
 			newelem.insertAfter(div2);
 		}
 
-
-
-		
-		
-		
 	} else {
 		
 		// checkbox is unchecked

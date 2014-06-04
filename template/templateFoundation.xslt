@@ -11,13 +11,25 @@
                
                 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
                 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+                <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+                <script>
+                    <!-- needed to implement autocomplete function-->
+                    $('.ui-autocomplete').addClass('f-dropdown');
+                    
+                    
+                    
+                </script>
                 
                 <link rel="stylesheet" href="../f5/css/foundation.css" />
                 <link rel="stylesheet" href="../f5/css/foundation-icons.css" />
                 <script src="../f5/js/vendor/modernizr.js"></script>
                
                 <script src="./js/form.js"></script>
+                
+                <script language="javascript" src="./js/typeahead.bundle.js"></script>
+                <script language="javascript" src="./js/family.js"></script>
                
+                
                 <script src="http://d3js.org/d3.v3.min.js"></script>
                 
                 <link rel="stylesheet" href="css/style.css"/>
@@ -96,8 +108,10 @@
                     <svg id="mySVG"/>
                 </div>
                 
+                
+               
 
-                <script src="http://code.jquery.com/jquery.js"></script>
+               
                 <script src="../f5/js/foundation.min.js"></script>
                 <script>
                     $(document).foundation();
@@ -109,8 +123,7 @@
                 <script language="javascript">                      
                     <xsl:apply-templates mode="graphFunction" select="/"/>
                 </script>
-                    
-                    
+                
                 
              
             </body>
@@ -160,6 +173,92 @@
    
    
    <xsl:template mode="group" match="group">
+        
+       <xsl:variable name="active2" select="if (count(preceding-sibling::group) = 0) then 'active' else ''"/>
+       <xsl:variable name="groupId" select="@id"/>
+       <xsl:variable name="groupTitle" select="@title"/>
+       <xsl:variable name="size" select="4"/>
+        
+<xsl:choose>
+    <xsl:when test="@id = 'PersonalName'">
+        
+        <div class="content {$active2}" id="{$groupId}">
+ 
+            <fieldset class="repeatSection{$groupId}">
+                
+                <p class="addRemove"><a href="#" class="add" onClick="addSection('.repeatSection{$groupId}')"><span data-tooltip="" class="has-tip" title="Add Section"><i class="fi-plus"></i></span></a>   <a href="#" class="delete" onClick="deleteSection(this, '.repeatSection{$groupId}')"><span data-tooltip="" class="has-tip" title="Delete this section"><i class="fi-minus"></i></span></a></p>
+                
+                
+                <legend><xsl:value-of select="$groupTitle"/></legend>
+                
+                <p><xsl:value-of select="description"/></p>
+                <div class="row">
+                    <div class="small-{$size} columns div{$groupId}-Name"> 
+                    <label for="{$groupId}-Name">Name</label> 
+                    <input type="text"  id="{$groupId}-Name" placeholder="Enter Person's Name "/>
+                </div>
+                    
+                </div>
+            </fieldset>
+            
+            
+        </div>
+        
+        
+    </xsl:when>
+    <xsl:when test="@id = 'FamilyRelationships'">
+       
+        <div class="content {$active2}" id="{$groupId}">
+            
+            <fieldset class="repeatSection{$groupId}">
+                
+                <p class="addRemove"><a href="#" class="add" onClick="addSection('.repeatSection{$groupId}')"><span data-tooltip="" class="has-tip" title="Add Section"><i class="fi-plus"></i></span></a>   <a href="#" class="delete" onClick="deleteSection(this, '.repeatSection{$groupId}')"><span data-tooltip="" class="has-tip" title="Delete this section"><i class="fi-minus"></i></span></a></p>
+                
+                
+                <legend><xsl:value-of select="$groupTitle"/></legend>
+                
+                <p><xsl:value-of select="description"/></p>
+                <div class="row">
+                   
+                        <div class="small-{$size} columns div{$groupId}-Person"> 
+                            <label for="{$groupId}-Person">Person A</label> 
+                            <input type="text"  id="{$groupId}-Person" placeholder="Enter Person's Name "/>
+                        </div>
+                    
+                    <div class="small-{$size} columns div{$groupId}-FamilyRole"> 
+                        <label for="{$groupId}-FamilyRole">Relationship</label> 
+                        <input type="text" class="{$groupId}-FamilyRole"   id="{$groupId}-FamilyRole" placeholder="Enter relationship of Person A to Person B "/>
+                    </div>
+                    
+                    <div class="small-{$size} columns div{$groupId}-PersonB"> 
+                        <label for="{$groupId}-PersonB">Person B</label> 
+                        <input type="text"  id="{$groupId}-PersonB" placeholder="Enter Person's Name "/>
+                    </div>
+                    
+                    
+                </div>
+            </fieldset>
+            
+            
+        </div>
+        
+    </xsl:when>
+    <xsl:otherwise>
+        <xsl:apply-templates mode="group-general" select="."/>
+        
+    </xsl:otherwise>
+</xsl:choose>
+
+
+
+      
+       
+       
+       
+       
+   </xsl:template>
+   
+   <xsl:template mode="group-general" match="group">
        
        <xsl:variable name="active2" select="if (count(preceding-sibling::group) = 0) then 'active' else ''"/>
        
@@ -194,7 +293,7 @@
                <h2>Assertions</h2>
                <ul>
                    <xsl:apply-templates mode="node" select="graph/node"/>
-                  
+                   
                    
                </ul>
                <a class="close-reveal-modal">&#215;</a>
@@ -220,9 +319,8 @@
        </div>
        
        
-       
-       
    </xsl:template>
+   
    
    
    <xsl:template mode="node" match="node">
